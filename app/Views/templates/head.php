@@ -23,7 +23,7 @@
 <link rel="stylesheet" href="assets/libs/icofont/icofont.min.css" />
 <link rel="stylesheet" href="assets/libs/flatpickr/flatpickr.min.css" type="text/css"  />
 <link rel="stylesheet" href="assets/css/tailwind.min.css" />
-<link rel="stylesheet" href="assets/css/custom.css" />
+<link rel="stylesheet" href="assets/css/custom.css?v=<?php echo $_ENV['version']; ?>" />
 
 <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700&display=swap" rel="stylesheet">
 <!--[if lt IE 9]>
@@ -31,6 +31,74 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 <style>
+.reveal_password {
+	width: auto;
+	height: auto;
+	display: block;
+	color: #000;
+	position: absolute;
+	top: 43px;
+    right: 15px;
+	z-index: 1;
+	line-height: 40px;
+	cursor: pointer;
+	font-size: 14px;
+}
+/* TABLE LOADER */
+.loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    border: 3px solid;
+    border-color: #666 #666 transparent transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+.loader::after,
+.loader::before {
+    content: '';  
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 3px solid;
+    border-color: transparent transparent #119c49 #119c49;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: rotationBack 0.5s linear infinite;
+    transform-origin: center center;
+}
+.loader::before {
+    width: 32px;
+    height: 32px;
+    border-color: #dadada #dadada transparent transparent;
+    animation: rotation 1.5s linear infinite;
+}
+    
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+} 
+@keyframes rotationBack {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+/* END TABLE LOADER */
 /* FOR LOADER ON BUTTONS - ajax */
 .bg--loading {
 	background-color: rgba(255,255,255, 0.05) !important;
@@ -286,11 +354,12 @@ body .dataTables_wrapper .dataTables_paginate .paginate_button.current, body .da
 }
 
 .dataTables_wrapper .dataTables_info {
-	font-size: 14px;
+	font-size: 12px;
 	color: #333;
 	font-family: 'Poppins';
 	font-weight: 700;
 	text-transform: uppercase;
+    padding-top: 0;
 }
 .table-filters {
 	display: flex;
@@ -420,14 +489,16 @@ body.show-popup {
 .bg-red-500:hover {
 	background: #ca2139 !important;
 }
-.removed {
-	background: rgba(255, 0, 0, 0.1) !important;
+body table tr.removed {
+    background-color: rgba(255, 0, 0, 0.3);
+    animation: delete_item 1.2s forwards 0.2s;
+}
+@keyframes delete_item {
+    0% {background-color: rgba(255, 0, 0, 0.3);}
+    100% {background-color: rgba(255, 0, 0, 0);}
 }
 .bg-green-100\/10 {
 	background: rgba(17, 156, 73, 0.4);
-}
-body .dataTables_wrapper .dataTables_info {
-	padding-top: 0;
 }
 /* RESPONSIVE */
 @media(max-width: 767px){

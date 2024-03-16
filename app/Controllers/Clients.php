@@ -22,7 +22,6 @@ class Clients extends BaseController
 
         echo view('clients/index_view', $data);
     }
-
     public function datatable()
     {
 		$post = $this->request->getPost();
@@ -124,7 +123,7 @@ class Clients extends BaseController
 
         echo json_encode($response, JSON_PRETTY_PRINT);
     }
-    public function client_contact_persons_datatable($id = 0)
+    public function client_users_datatable($id = 0)
     {
         $response = [];
         if($id > 0){
@@ -140,14 +139,14 @@ class Clients extends BaseController
             $searchValue = $post['search']['value']; // Search value
 
             $clientsModel = new ClientsModel();
-            $data = $clientsModel->client_contact_persons($id);        
+            $data = $clientsModel->client_users($id);        
             
             $totalRecords = is_array($data) ? count($data) : 0;
 
-            $data = $clientsModel->client_contact_persons($id, $searchValue);
+            $data = $clientsModel->client_users($id, $searchValue);
             $totalRecordwithFilter = is_array($data) ? count($data) : 0;
 
-            $data_final = $clientsModel->client_contact_persons($id, $searchValue, $columnName." ".$columnSortOrder, $rowperpage, $row);
+            $data_final = $clientsModel->client_users($id, $searchValue, $columnName." ".$columnSortOrder, $rowperpage, $row);
             $response = array(
             //"mrnj" => $sql,
             "draw" => intval($draw),
@@ -158,8 +157,7 @@ class Clients extends BaseController
         }
 
         echo json_encode($response, JSON_PRETTY_PRINT);
-    }
-    
+    }    
     public function show($id = 0)
     {
         $ClientsModel = new ClientsModel();
@@ -170,52 +168,35 @@ class Clients extends BaseController
         // $data['all_reports'] = $ClientsModel->client_reports($id);
         $data['count_reports'] = $ClientsModel->client_reports_count($id);
         // $data['all_contact_persons'] = $ClientsModel->clients_users($id);
-        $data['count_contact_persons'] = $ClientsModel->client_contact_persons_count($id);
+        $data['count_users'] = $ClientsModel->client_users_count($id);
         
         echo view('clients/show_view', $data);
-    }
-    
+    }    
     public function edit($id = 0)
     {
       $ClientsModel = new ClientsModel();
       $data['current'] = $ClientsModel->single_client($id);      
       
       echo view('clients/edit_view', $data);
-    }
-    
-    
+    }    
     public function save()
     {
-      $Client = $this->request->getPost('client'); 
-      $Client['client_date'] = date_us_2_mysql($Client['client_date']);
-      $clientModel = new ClientsModel();      
-//      echo "<pre>";
-//      print_r($Client);
-//      die();
-      $res = $clientModel->save($Client);
-      if( $res ) {
-        $response['success'] = true;
-        $response['message'] = 'Data successfully saved';
-      }
-      else
-      {
-        $response['success'] = false;
-        $response['message'] = 'Data not saved';
-      }
-      return $this->respond($response);
-    }
-    
-    // Ajax delete
-    public function delete()
-    {
-      $id = $this->request->getPost('id');
-      if( $id ) {
-        $clientModel = new ClientsModel();
-        $response['success'] = $clientModel->delete($id);
-      }
-      else {
-        $response['success'] = false;
-      }
-      return $this->respond($response);
+        $Client = $this->request->getPost('client'); 
+        $Client['client_date'] = date_us_2_mysql($Client['client_date']);
+        $clientModel = new ClientsModel();      
+        // echo "<pre>";
+        // print_r($Client);
+        // die();
+        $res = $clientModel->save($Client);
+        if( $res ) {
+            $response['success'] = true;
+            $response['message'] = 'Data successfully saved';
+        }
+        else
+        {
+            $response['success'] = false;
+            $response['message'] = 'Data not saved';
+        }
+        return $this->respond($response);
     }
 }

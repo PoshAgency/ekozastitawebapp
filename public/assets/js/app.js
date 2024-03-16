@@ -471,6 +471,55 @@ $('#form-login').on('submit', function (e) {
     });
 });
   
+$('.regular-form').on('submit', function (e) {
+    e.preventDefault();
+    var form = $(this);
+    console.log(form.attr('id') + ' submit');
+    var url = form.attr('action');
+    var formData = form.serialize();
+    $("#form-login .submit-btn").prop('disabled', true);
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: formData,
+        dataType: "json",
+        beforeSend: function(){  },
+        success: function (data) {
+            console.log(data);
+            if (data.success) {
+                console.log('SUCCESS');
+                app_msg('Snimljeno','success',1000);
+                setTimeout(function(){ 
+                    if(data.return_url){
+                        window.location = data.return_url;
+                    }else{
+                        window.location = BASE_URL + "dashboard";
+                    }
+                },1000);
+            } else {
+                console.log('NO SUCCESS');
+                app_msg('Dogodila se greška. Molimo pokušajte ponovo','danger',3500);
+                $("#form-login .submit-btn").prop('disabled', false);
+            }
+        },
+        error: function (result) {
+            console.log('ERROR WITH PHP');
+            console.log(result);
+            app_msg('Problem sa serverom. Pokušajte ponovo ili kontaktirajte administratora.','error');
+            $("#form-login .submit-btn").prop('disabled', false);
+      }
+    });
+});
+  
+$(".reveal_password").click(function () {
+    $(this).toggleClass('active');
+    var input = $(this).next();
+    if (input.attr("type") == "password") {
+        input.attr("type", "text");
+    } else {
+        input.attr("type", "password");
+    }
+});
 $('html, body').click(function () {
     close_all();
 });
@@ -581,9 +630,12 @@ $('.delete_item').on('click', function(){
                         setTimeout(function(){
                             $('.' + model + '_row[data-id="' + id + '"]').remove();
                             btn.removeClass('btn--loading');
-                            // if(ids.length == i){
+                            // if(ids.length == (i-1)){
                             //     location.reload();
                             // }
+                            if(table){table.ajax.reload()};
+                            if(table2){table2.ajax.reload()};
+                            if(table3){table3.ajax.reload()};
                         },600);
                         $('.deselect_checked').trigger('click');
                         success = 'true';
@@ -619,11 +671,11 @@ $('.delete_item').on('click', function(){
                     if(refresh){
                         window.location.reload();
                     };
-                    $('.' + model + '_row[data-id="' + id + '"]').slideUp();
+                    $('.' + model + '_row[data-id="' + id + '"]').addClass('removed');
                     setTimeout(function(){
                         $('.' + model + '_row[data-id="' + id + '"]').remove();
                         btn.removeClass('btn--loading');
-                    },600);
+                    },1200);
                     close_all();
                 }else{
                     console.log('NO SUCCESS');

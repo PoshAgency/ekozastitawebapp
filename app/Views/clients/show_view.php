@@ -177,7 +177,7 @@
 									<span class="text-green-500">
 										<i class="mdi mdi-checkbox-marked-circle-outline me-1"></i>
 									</span>
-									<a href="objects/edit" class="px-2 py-1 lg:px-4 bg-primary text-white text-sm rounded-full transition hover:bg-primary-600 border border-primary font-medium mb-2 inline-block">Dodaj novi</a>
+									<a href="objects/edit" class="px-2 py-1 lg:px-4 bg-primary text-white text-sm rounded-full transition hover:bg-primary-600 border border-primary font-medium mb-2 inline-block">Dodaj objekat</a>
 								</p>
 							</div>
 						</div>
@@ -190,7 +190,7 @@
 								<h4 class="my-1 font-semibold text-3xl dark:text-slate-200"><?php echo $count_reports; ?></h4>
 								<h6 class="text-gray-800 dark:text-gray-400 text-lg mb-0 font-medium uppercase">Ukupan broj radnih naloga</h6>
 								<p class="truncate text-gray-700 dark:text-slate-500 text-sm font-normal">
-									<a href="reports/edit" class="px-2 py-1 lg:px-4 bg-primary text-white text-sm rounded-full transition hover:bg-primary-600 border border-primary font-medium mb-2 inline-block">Dodaj novi</a>
+									<a href="reports/edit" class="px-2 py-1 lg:px-4 bg-primary text-white text-sm rounded-full transition hover:bg-primary-600 border border-primary font-medium mb-2 inline-block">Dodaj radni nalog</a>
 								</p>
 							</div>
 						</div>
@@ -200,10 +200,10 @@
 								<span class="inline-flex  justify-center items-center h-14 w-14 rounded-full bg-white dark:bg-gray-900 border border-dashed border-purple-600">
 									<i data-lucide="users" class="stroke-purple-500 text-3xl"></i>
 								</span>
-								<h4 class="my-1 font-semibold text-3xl dark:text-slate-200"><?php echo $count_contact_persons; ?></h4>
-								<h6 class="text-gray-800 dark:text-gray-400 mb-0 text-lg font-medium uppercase">Broj kontakt osoba</h6>
+								<h4 class="my-1 font-semibold text-3xl dark:text-slate-200"><?php echo $count_users; ?></h4>
+								<h6 class="text-gray-800 dark:text-gray-400 mb-0 text-lg font-medium uppercase">Broj korisnika</h6>
 								<p class="truncate text-gray-700 dark:text-slate-500 text-sm font-normal">
-									<a href="javascript:;" data-popup="contact-person-popup" onclick="$('#client_id').val(<?php echo (isset($current['id']) AND $current['id'] != '') ? $current['id'] : ''; ?>);" class="px-2 py-1 lg:px-4 bg-primary text-white text-sm rounded-full transition hover:bg-primary-600 border border-primary font-medium mb-2 inline-block">Dodaj novi</a>
+									<a href="javascript:;" data-popup="users-popup" data-popup-title="Nov korisnik" onclick="$('#client_id').val(<?php echo (isset($current['id']) AND $current['id'] != '') ? $current['id'] : ''; ?>);" class="px-2 py-1 lg:px-4 bg-primary text-white text-sm rounded-full transition hover:bg-primary-600 border border-primary font-medium mb-2 inline-block">Dodaj korisnika</a>
 								</p>
 							</div>
 						</div>
@@ -219,7 +219,7 @@
 										<button class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="wishlist-tab" data-fc-target="#wishlist" type="button" role="tab" aria-controls="wishlist" aria-selected="false">Radni nalozi <span class="text-gray-500 dark:text-slate-400">(<?php echo $count_reports; ?>)</span></button>
 									</li>
 									<li class="me-2" role="presentation">
-										<button class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="ratings-tab" data-fc-target="#ratings" type="button" role="tab" aria-controls="ratings" aria-selected="false">Kontakt osobe <span class="text-gray-500 dark:text-slate-400">(<?php echo $count_contact_persons; ?>)</span></button>
+										<button class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="ratings-tab" data-fc-target="#ratings" type="button" role="tab" aria-controls="ratings" aria-selected="false">Korisnici <span class="text-gray-500 dark:text-slate-400">(<?php echo $count_users; ?>)</span></button>
 									</li>
 								</ul>
 							</div>
@@ -232,7 +232,7 @@
 												<table class="w-full" id="client_objects">
 													<thead class="bg-gray-50 dark:bg-gray-700/20">
 														<tr>
-															<th scope="col" class="p-3">
+															<th scope="col" class="p-3" width="1%">
 																<label class="custom-label">
 																	<div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
 																	<input type="checkbox" class="hidden" onchange="select_all($(this))">
@@ -279,7 +279,7 @@
 												<table class="w-full" id="client_reports">
 													<thead class="bg-gray-50 dark:bg-gray-700/20">
 														<tr>
-															<th scope="col" class="p-3">
+															<th scope="col" class="p-3" width="1%">
 																<label class="custom-label">
 																	<div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
 																	<input type="checkbox" class="hidden" onchange="select_all($(this))">
@@ -314,10 +314,10 @@
 									<div class="grid grid-cols-1 p-0 md:p-4">
 										<div class="sm:-mx-6 lg:-mx-8">
 											<div class="relative overflow-x-auto block w-full sm:px-6 lg:px-8">
-												<table class="w-full" id="client_contact_persons">
+												<table class="w-full" id="client_users">
 													<thead class="bg-gray-50 dark:bg-gray-700/20">
 														<tr>
-															<th scope="col" class="p-3">
+															<th scope="col" class="p-3" width="1%">
 																<label class="custom-label">
 																	<div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
 																	<input type="checkbox" class="hidden" onchange="select_all($(this))">
@@ -326,22 +326,16 @@
 																</label>
 															</th>
 															<th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
-																Ime i prezime
+																Ime
 															</th>
 															<th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
-																Telefon
-															</th>
-															<th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
-																Mobilni
+																Prezime
 															</th>
 															<th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
 																Email
 															</th>
 															<th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
-																Pozicija
-															</th>
-															<th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
-																Napomena
+																Username
 															</th>
 															<th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
 																Akcija
@@ -386,7 +380,7 @@
 <script src="assets/js/app.js"></script>
 <script>
 var svg = '<?php echo svg(); ?>'
-var tablee = $('#client_objects').DataTable({
+var table = $('#client_objects').DataTable({
     processing: true,
     serverSide: true,
     serverMethod: 'post',
@@ -394,7 +388,7 @@ var tablee = $('#client_objects').DataTable({
         url: "<?= base_url() ?>/clients/client_objects_datatable/<?php echo (isset($current['id']) AND $current['id'] != '') ? $current['id'] : 0; ?>",
     },
     rowCallback: function( row, data ) {
-        $(row).attr('data-id', data.id);
+        $(row).addClass('ObjectsModel_row').attr('data-id', data.id);
     },
     retrieve: true,
     cache: true,
@@ -445,7 +439,7 @@ var tablee = $('#client_objects').DataTable({
         searchPlaceholder: "Pretraži...",
         info: "_TOTAL_ Objekata",
         infoFiltered: "",
-        processing: "<div class='loading-wrap'><span class='fa-stack fa-lg'><i class='fa fa-spinner fa-spin fa-stack-2x fa-fw'></i></span>&emsp;Loading ...</div>",
+        processing: "<div class='loading-wrap'><span class='loader'></span>&emsp;Loading ...</div>",
         infoEmpty: "0 Rezultata",
         paginate: {
             previous: " < ",
@@ -453,11 +447,10 @@ var tablee = $('#client_objects').DataTable({
         }
     },
     columnDefs: [
-        {className: 'text-left', targets: [-2]},
         {className: 'p-3 text-xs font-medium text-left text-gray-700 dark:text-gray-400', targets: "_all" },
         {orderable: false, targets: [0,-1] } // last column (Actions) not orderable
     ],
-    dom: '<"table-filters"i<"btn-holder"<"date_range">fBr>>t<"table-footer"<"bottom-footer-container"pl>>',
+    dom: '<"table-filters"iB<"btn-holder"<"date_range">fr>>t<"table-footer"<"bottom-footer-container"pl>>',
     buttons: [
         {
             extend: 'excel',
@@ -473,14 +466,20 @@ var tablee = $('#client_objects').DataTable({
             }
         },
         {
-            text: 'Reload',
-            action: function ( e, dt, node, config ) {
-                dt.ajax.reload();
-            }
+            text: 'Obriši selektovano',
+            attr: {
+                class: 'delete_multiple focus:outline-none bg-red-500 text-white hover:bg-brand-600 hover:text-white  text-md font-medium py-2 px-4 rounded ml-5',
+                style: 'max-height: 32px;display: none;line-height: 13px;',
+                "data-popup": 'delete-popup',
+                "data-model": 'ObjectsModel',
+            },
+            // action: function ( e, dt, node, config ) {
+            //     dt.ajax.reload();
+            // }
         }
     ]
 });
-var tablee2 = $('#client_reports').DataTable({
+var table2 = $('#client_reports').DataTable({
     processing: true,
     serverSide: true,
     serverMethod: 'post',
@@ -488,7 +487,7 @@ var tablee2 = $('#client_reports').DataTable({
         url: "<?= base_url() ?>/clients/client_reports_datatable/<?php echo (isset($current['id']) AND $current['id'] != '') ? $current['id'] : 0; ?>",
     },
     rowCallback: function( row, data ) {
-        $(row).attr('data-id', data.id);
+        $(row).addClass('ReportsModel_row').attr('data-id', data.id);
     },
     retrieve: true,
     cache: true,
@@ -541,9 +540,9 @@ var tablee2 = $('#client_reports').DataTable({
 
         search: "",
         searchPlaceholder: "Pretraži...",
-        info: "_TOTAL_ Objekata",
+        info: "_TOTAL_ radnih naloga",
         infoFiltered: "",
-        processing: "<div class='loading-wrap'><span class='fa-stack fa-lg'><i class='fa fa-spinner fa-spin fa-stack-2x fa-fw'></i></span>&emsp;Loading ...</div>",
+        processing: "<div class='loading-wrap'><span class='loader'></span>&emsp;Loading ...</div>",
         infoEmpty: "0 Rezultata",
         paginate: {
             previous: " < ",
@@ -551,36 +550,47 @@ var tablee2 = $('#client_reports').DataTable({
         }
     },
     columnDefs: [
-        {className: 'text-left', targets: [-2]},
         {className: 'p-3 text-xs font-medium text-left text-gray-700 dark:text-gray-400', targets: "_all" },
         {orderable: false, targets: [0,-1] } // last column (Actions) not orderable
     ],
-    dom: '<"table-filters"i<"btn-holder"<"date_range">fBr>>t<"table-footer"<"bottom-footer-container"pl>>',
+    dom: '<"table-filters"iB<"btn-holder"<"date_range">fr>>t<"table-footer"<"bottom-footer-container"pl>>',
     buttons: [
+        // {
+        //     extend: 'excel',
+        //     text: 'Export',
+        //     attr: {
+        //         class: 'flex items-center focus:outline-none bg-brand-500 text-white hover:bg-brand-600 hover:text-white  text-md font-medium py-2 px-4 rounded',
+        //         style: 'max-height: 32px;'
+        //     },
+        //     title: "<?php echo $_ENV['company_name']; ?>",
+        //     messageBottom: null,
+        //     exportOptions: {
+        //         columns: ':visible'
+        //     }
+        // }
         {
-            extend: 'excel',
-            text: 'Export',
+            text: 'Obriši selektovano',
             attr: {
-                class: 'flex items-center focus:outline-none bg-brand-500 text-white hover:bg-brand-600 hover:text-white  text-md font-medium py-2 px-4 rounded',
-                style: 'max-height: 32px;'
+                class: 'delete_multiple focus:outline-none bg-red-500 text-white hover:bg-brand-600 hover:text-white  text-md font-medium py-2 px-4 rounded ml-5',
+                style: 'max-height: 32px;display: none;line-height: 13px;',
+                "data-popup": 'delete-popup',
+                "data-model": 'ObjectsModel',
             },
-            title: "<?php echo $_ENV['company_name']; ?>",
-            messageBottom: null,
-            exportOptions: {
-                columns: ':visible'
-            }
+            // action: function ( e, dt, node, config ) {
+            //     dt.ajax.reload();
+            // }
         }
     ]
 });
-var tablee3 = $('#client_contact_persons').DataTable({
+var table3 = $('#client_users').DataTable({
     processing: true,
     serverSide: true,
     serverMethod: 'post',
     ajax: {
-        url: "<?= base_url() ?>/clients/client_contact_persons_datatable/<?php echo (isset($current['id']) AND $current['id'] != '') ? $current['id'] : 0; ?>",
+        url: "<?= base_url() ?>/clients/client_users_datatable/<?php echo (isset($current['id']) AND $current['id'] != '') ? $current['id'] : 0; ?>",
     },
     rowCallback: function( row, data ) {
-        $(row).attr('data-id', data.id);
+        $(row).addClass('UsersModel_row').attr('data-id', data.id);
     },
     retrieve: true,
     cache: true,
@@ -589,17 +599,15 @@ var tablee3 = $('#client_contact_persons').DataTable({
                 return '<label class="custom-label"><div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]"><input type="checkbox" class="hidden" data-remove onchange="data_remove($(this))" data-id="' + row.id + '" ><i class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i></div></label>';
             }
         }, 
-        {data: 'name'},
-        {data: 'phone'},
-        {data: 'mobile'},
+        {data: 'firstname'},
+        {data: 'lastname'},
         {data: 'email'},
-        {data: 'position'},
-        {data: 'comment'},
+        {data: 'username'},
         {data: null, render: function(data,type,row){
                 if(row.id != 0)
                     return '<div class="flex gap-5 justify-end">'+
-                                '<a href="javascript:;" data-popup="edit-contact-person-popup" data-id="' + row.id + '"><i class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"></i></a>'+
-                                '<a href="javascript:;" class="delete_record" data-popup="delete-popup" data-id="' + row.id + '" data-model="ClientContactPersonesModel"><i class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"></i></a>'+
+                                '<a href="javascript:;" data-popup="users-popup" onclick="$(\'#client_id\').val(<?php echo (isset($current['id']) AND $current['id'] != '') ? $current['id'] : ''; ?>);" data-id="' + row.id + '"><i class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"></i></a>'+
+                                '<a href="javascript:;" class="delete_record" data-popup="delete-popup" data-id="' + row.id + '" data-model="UsersModel"><i class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"></i></a>'+
                             '</div>';
                 else
                     return "";
@@ -618,9 +626,9 @@ var tablee3 = $('#client_contact_persons').DataTable({
 
         search: "",
         searchPlaceholder: "Pretraži...",
-        info: "_TOTAL_ Objekata",
+        info: "_TOTAL_ korisnika",
         infoFiltered: "",
-        processing: "<div class='loading-wrap'><span class='fa-stack fa-lg'><i class='fa fa-spinner fa-spin fa-stack-2x fa-fw'></i></span>&emsp;Loading ...</div>",
+        processing: "<div class='loading-wrap'><span class='loader'></span>&emsp;Loading ...</div>",
         infoEmpty: "0 Rezultata",
         paginate: {
             previous: " < ",
@@ -628,24 +636,35 @@ var tablee3 = $('#client_contact_persons').DataTable({
         }
     },
     columnDefs: [
-        {className: 'text-left', targets: [-2]},
         {className: 'p-3 text-xs font-medium text-left text-gray-700 dark:text-gray-400', targets: "_all" },
         {orderable: false, targets: [0,-1] } // last column (Actions) not orderable
     ],
     dom: '<"table-filters"i<"btn-holder"<"date_range">fBr>>t<"table-footer"<"bottom-footer-container"pl>>',
     buttons: [
+        // {
+        //     extend: 'excel',
+        //     text: 'Export',
+        //     attr: {
+        //         class: 'flex items-center focus:outline-none bg-brand-500 text-white hover:bg-brand-600 hover:text-white  text-md font-medium py-2 px-4 rounded',
+        //         style: 'max-height: 32px;'
+        //     },
+        //     title: "<?php echo $_ENV['company_name']; ?>",
+        //     messageBottom: null,
+        //     exportOptions: {
+        //         columns: ':visible'
+        //     }
+        // }
         {
-            extend: 'excel',
-            text: 'Export',
+            text: 'Obriši selektovano',
             attr: {
-                class: 'flex items-center focus:outline-none bg-brand-500 text-white hover:bg-brand-600 hover:text-white  text-md font-medium py-2 px-4 rounded',
-                style: 'max-height: 32px;'
+                class: 'delete_multiple focus:outline-none bg-red-500 text-white hover:bg-brand-600 hover:text-white  text-md font-medium py-2 px-4 rounded ml-5',
+                style: 'max-height: 32px;display: none;line-height: 13px;',
+                "data-popup": 'delete-popup',
+                "data-model": 'UsersModel',
             },
-            title: "<?php echo $_ENV['company_name']; ?>",
-            messageBottom: null,
-            exportOptions: {
-                columns: ':visible'
-            }
+            // action: function ( e, dt, node, config ) {
+            //     dt.ajax.reload();
+            // }
         }
     ]
 });

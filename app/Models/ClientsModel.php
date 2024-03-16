@@ -96,6 +96,42 @@ class ClientsModel extends Model
         
         return count($objects);
     }
+    public function client_users($id = NULL, $searchTerm = '', $order = '', $limit = NULL, $offset = NULL){
+        if($id != NULL AND $id > 0){
+            $objects = $this->query("SELECT users.*
+                    FROM users
+                    WHERE ref_id = " . $id . "
+                    AND deleted_at IS NULL
+                    AND 
+                    (
+                        firstname LIKE '%{$searchTerm}%'
+                        OR lastname LIKE '%{$searchTerm}%' 
+                        OR email LIKE '%{$searchTerm}%' 
+                        OR username LIKE '%{$searchTerm}%'
+                    )
+                    " . ($order != NULL ? " ORDER BY ". print_r($order,true) : '') . "
+                    " . (($limit != NULL AND $limit != -1) ? " LIMIT {$limit} " : '') . "
+                    " . (($limit != NULL AND $limit != -1 AND $offset != NULL) ? " OFFSET {$offset} " : '') . "
+            ")->getResultArray();
+        }else{
+            $objects = [];
+        }
+        
+        return $objects;
+    }
+    public function client_users_count($id = NULL){
+        if($id != NULL AND $id > 0){
+            $objects = $this->query("SELECT users.*
+                    FROM users
+                    WHERE ref_id = " . $id . "
+                    AND deleted_at IS NULL
+            ")->getResultArray();
+        }else{
+            $objects = [];
+        }
+        
+        return count($objects);
+    }
     public function client_reports($id = NULL, $searchTerm = '', $order = '', $limit = NULL, $offset = NULL){
         if($id != NULL AND $id > 0){
             $reports = $this->query("SELECT app_reports.*, '' as date_done_srb, cobjects.name as object_name, clients.name as client_name, cobjects.id as object_id, clients.id as client_id

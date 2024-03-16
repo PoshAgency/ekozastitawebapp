@@ -210,7 +210,7 @@ var tablee = $('#clients_table').DataTable({
         searchPlaceholder: "Pretraži...",
         info: "_TOTAL_ Klijenata",
         infoFiltered: "",
-        processing: "<div class='loading-wrap'><span class='fa-stack fa-lg'><i class='fa fa-spinner fa-spin fa-stack-2x fa-fw'></i></span>&emsp;Loading ...</div>",
+        processing: "<div class='loading-wrap'><span class='loader'></span>&emsp;Loading ...</div>",
         infoEmpty: "0 Rezultata",
         paginate: {
             previous: " < ",
