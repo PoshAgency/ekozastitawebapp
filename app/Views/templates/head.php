@@ -31,6 +31,17 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 <style>
+.error_msg {
+	font-size: 10px;
+	position: absolute;
+	top: 100%;
+	right: 0;
+	color: red;
+	z-index: 1;
+}
+form > div {
+    position: relative;
+}
 .reveal_password {
 	width: auto;
 	height: auto;
@@ -273,7 +284,7 @@ body .btn--loading::after {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 30px 0 0;
+	padding: 30px 20px 0;
 }
 body .dataTables_wrapper .dataTables_paginate {
 	padding-top: 0;
@@ -364,7 +375,7 @@ body .dataTables_wrapper .dataTables_paginate .paginate_button.current, body .da
 .table-filters {
 	display: flex;
 	align-items: center;
-	padding: 0 0 20px 0;
+	padding: 0 10px 30px 20px;
 }
 table.dataTable thead th, table.dataTable thead td {
 	padding: 10px 18px;

@@ -5,22 +5,22 @@ use CodeIgniter\Controller;
 use CodeIgniter\API\ResponseTrait;
 use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\RequestInterface;
-use App\Models\ObjectsModel;
 use App\Models\ClientsModel;
 use App\Models\SettingsModel;
 use App\Models\UsersModel;
 
-class Objects extends BaseController
+class Users extends BaseController
 {
     use ResponseTrait;
-    
+    protected $helpers = ['form'];
+
     public function index()
     {         
-        $objectsModel = new ObjectsModel();
+        $UsersModel = new UsersModel();
 
-        $data['objects'] = $objectsModel->where('not_active', 0)->findAll();
+        $data['Users'] = $UsersModel->where('not_active', 0)->findAll();
 
-        echo view('objects/index_view', $data);
+        echo view('Users/index_view', $data);
     }
 
     public function datatable()
@@ -36,15 +36,15 @@ class Objects extends BaseController
 		$columnSortOrder = $post['order'][0]['dir']; // asc or desc
 		$searchValue = $post['search']['value']; // Search value
 
-        $objectsModel = new ObjectsModel();
-		$data = $objectsModel->all_objects();        
+        $UsersModel = new UsersModel();
+		$data = $UsersModel->all_Users();        
         
 		$totalRecords = is_array($data) ? count($data) : 0;
 
-        $data = $objectsModel->all_objects($searchValue);
+        $data = $UsersModel->all_Users($searchValue);
 		$totalRecordwithFilter = is_array($data) ? count($data) : 0;
 
-        $data_final = $objectsModel->all_objects($searchValue, $columnName." ".$columnSortOrder, $rowperpage, $row );
+        $data_final = $UsersModel->all_Users($searchValue, $columnName." ".$columnSortOrder, $rowperpage, $row );
 		$response = array(
 		  //"mrnj" => $sql,
 		  "draw" => intval($draw),
@@ -58,48 +58,66 @@ class Objects extends BaseController
     
     public function show($id = 0)
     {
-        $ObjectsModel = new ObjectsModel();
-        $data['current'] = $ObjectsModel->where('id', $id)->first();
-        $data['all_objects'] = $ObjectsModel->objects_objects($id);
+        $UsersModel = new UsersModel();
+        $data['current'] = $UsersModel->where('id', $id)->first();
+        $data['all_Users'] = $UsersModel->Users_Users($id);
         
-        echo view('objects/show_view',$data);
+        echo view('Users/show_view',$data);
     }
     
     public function edit($id = 0)
     {
-      // Object
-      $objectsModel = new ObjectsModel();
-      $Object = $objectsModel->getOneObjects($id);
-      $Object['object_date'] = date_mysql_to_us($Object['object_date']);
-      $data['Object'] = $Object;
+      // user
+      $UsersModel = new UsersModel();
+      $data['current'] = $UsersModel->single_user($id);
       
-      $usersModel = new UsersModel();
-      $data['usersList'] = $usersModel->getUsersList();
-      
-      echo view('objects/edit_view',$data);
+      echo view('Users/edit_view',$data);
     }
     
-    
+	public function single_user($id = 0)
+	{
+        $UsersModel = new UsersModel();
+		$response['success'] = FALSE;
+		if ($id > 0){
+    		$response = $UsersModel->where(['id' => $id])->first();
+			$response['success'] = TRUE;
+		}
+		return $this->respond($response);
+	}
+   
     public function save()
     {
-        $ObjectsModel = new ObjectsModel();
+        $UsersModel = new UsersModel();
 
         $validation =  \Config\Services::validation();
-		$rules = $this->model->validationRules;
 		$data = $this->request->getPost();
-
+		$rules = $UsersModel->validationRules;
+        if(isset($data['id']) AND $data['id'] > 0){
+            unset($rules['password']);
+            unset($data['password']);
+            $rules['id'] = 'required';
+        }else{
+            unset($data['id']);
+            unset($rules['id']);
+        }
+        $data = array_filter($data);
+        $rules = array_filter($rules);
+        
 		$validation->reset();
 		$validation->setRules($rules);
 		if (!$validation->run($data)){
+            $response['validatedData'] = $validation->getValidated();
 			// handle validation errors
 			//$prepared['validation_list'] = $validation->listErrors();
 			//$response['message'] = implode('</br>', $this->model->errors());
-			$response['message'] = implode('</br>', $validation->getErrors());
+			// $response['message'] = implode('</br>', $validation->getErrors());
+			// $response['message'] = 'Dodavanje Korisnika nije uspelo.';
 			$response['json'] = $validation->getErrors();
 		}else{
-			$response['message'] = 'Objekat uspešno snimljen';
+            $response['validatedData'] = $validation->getValidated();
+			$response['message'] = 'Korisnik uspešno snimljen';
 
-            $response = $ObjectsModel->save($data);
+            $response['success'] = $UsersModel->save($data);
 		}
 		$response['data'] = $data;
 		//echo json_encode($response);
@@ -111,8 +129,8 @@ class Objects extends BaseController
     {
       $id = $this->request->getPost('id');
       if( $id ) {
-        $ObjectModel = new ObjectsModel();
-        $response['success'] = $ObjectModel->delete($id);
+        $userModel = new UsersModel();
+        $response['success'] = $userModel->delete($id);
       }
       else {
         $response['success'] = false;

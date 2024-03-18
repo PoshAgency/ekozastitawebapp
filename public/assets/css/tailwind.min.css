@@ -15039,7 +15039,7 @@ body[data-sidebar-size="collapsed"] .main-sidebar {
 .group.dark[data-sidebar="brand"]
 	.group-\[\.dark\]\:group-data-\[sidebar\=brand\]\:bg-\[\#603dc3\] {
 	--tw-bg-opacity: 1 !important;
-	background-color: rgb(17 156 73 / var(--tw-bg-opacity)) !important;
+	background-color: #15181e !important;
 }
 .group.dark[data-sidebar="brand"]
 	.group-\[\.dark\]\:group-data-\[sidebar\=brand\]\:bg-dark-sidebar {
@@ -15250,7 +15250,7 @@ body[data-sidebar-size="collapsed"] .main-sidebar {
 }
 :is(.dark .dark\:bg-\[\#603dc3\]) {
 	--tw-bg-opacity: 1 !important;
-	background-color: rgb(17 156 73 / var(--tw-bg-opacity)) !important;
+	background-color: #15181e !important;
 }
 :is(.dark .dark\:bg-blue-200) {
 	--tw-bg-opacity: 1 !important;

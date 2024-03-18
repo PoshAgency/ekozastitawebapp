@@ -8,18 +8,17 @@ class AdminAuthFilter implements FilterInterface
 {
     public function before(RequestInterface $request, $arguments = null)
     {
-		/*
-		var_dump($arguments);
-		var_dump($_ENV['database.default.database']);
-		die();
-		*/
-		if (!session()->has('user'))
-		{
-			return redirect()->to('login?return_url=' . current_url());
-		}
-    }
+        // User is logged?
+        if ( ! session()->has('isLogged')){
+            return redirect()->to('login?return_url=' . current_url());
+        }
+        // Check user priority (Config/Routes.php)
+        if( is_array($arguments) && count($arguments) > 0 && !in_array( session()->get('priority'), $arguments) ) {
+            session()->setFlashdata('msg', 'Nemate pristup prethodnoj strani.');
+            return redirect('dashboard');
+        }
 
-    //--------------------------------------------------------------------
+    }
 
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {

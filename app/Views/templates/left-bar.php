@@ -11,18 +11,28 @@
 			<ul class="navbar-nav">
 				<li>
 					<div id="parent-accordion" data-fc-type="accordion">
-						<a href="<?php echo base_url(); ?>dashboard" class="nav-link hover:bg-transparent hover:text-black rounded-md dark:hover:text-slate-200 flex items-center decoration-0 px-3 py-3 cursor-pointer group-data-[sidebar=dark]:hover:text-slate-200 group-data-[sidebar=brand]:hover:text-slate-200">
+						<a href="<?php echo base_url(); ?><?php echo session('user')['group_id'] == 5 ? 'clients/' : ''; ?>dashboard" class="nav-link hover:bg-transparent hover:text-black rounded-md dark:hover:text-slate-200 flex items-center decoration-0 px-3 py-3 cursor-pointer group-data-[sidebar=dark]:hover:text-slate-200 group-data-[sidebar=brand]:hover:text-slate-200">
 							<span data-lucide="home" class="w-5 h-5 text-center text-slate-800 dark:text-slate-400 me-2 group-data-[sidebar=dark]:text-slate-400 group-data-[sidebar=brand]:text-slate-400"></span>
 							<span>Početna</span>
 						</a>
+                        <?php if(in_array(session('user')['group_id'], [1,2])){ ?>
 						<a href="<?php echo base_url(); ?>clients" class="nav-link hover:bg-transparent hover:text-black rounded-md dark:hover:text-slate-200 flex items-center decoration-0 px-3 py-3 cursor-pointer group-data-[sidebar=dark]:hover:text-slate-200 group-data-[sidebar=brand]:hover:text-slate-200">
 							<span data-lucide="users" class="w-5 h-5 text-center text-slate-800 me-2 dark:text-slate-400 group-data-[sidebar=dark]:text-slate-400 group-data-[sidebar=brand]:text-slate-400"></span>
 							<span>Klijenti</span>						
 						</a>
+                        <?php }else if(session('user')['group_id'] == 5){ ?>
+						<a href="<?php echo base_url(); ?>clients/show/<?php echo session('user')['ref_id']; ?>" class="nav-link hover:bg-transparent hover:text-black rounded-md dark:hover:text-slate-200 flex items-center decoration-0 px-3 py-3 cursor-pointer group-data-[sidebar=dark]:hover:text-slate-200 group-data-[sidebar=brand]:hover:text-slate-200">
+							<span data-lucide="users" class="w-5 h-5 text-center text-slate-800 me-2 dark:text-slate-400 group-data-[sidebar=dark]:text-slate-400 group-data-[sidebar=brand]:text-slate-400"></span>
+							<span>Profil</span>						
+						</a>
+                        <?php } ?>
+                        <?php if(in_array(session('user')['group_id'], [1,2,5])){ ?>
 						<a href="reports" class="nav-link hover:bg-transparent hover:text-black rounded-md dark:hover:text-slate-200 flex items-center decoration-0 px-3 py-3 cursor-pointer group-data-[sidebar=dark]:hover:text-slate-200 group-data-[sidebar=brand]:hover:text-slate-200">
 							<span data-lucide="file-text" class="w-5 h-5 text-center text-slate-800 me-2 dark:text-slate-400 group-data-[sidebar=dark]:text-slate-400 group-data-[sidebar=brand]:text-slate-400"></span>
 							<span>Izveštaji</span>
 						</a>
+                        <?php } ?>
+                        <?php if(in_array(session('user')['group_id'], [1,2])){ ?>
 						<a href="employees" class="nav-link hover:bg-transparent hover:text-black rounded-md dark:hover:text-slate-200 flex items-center decoration-0 px-3 py-3 cursor-pointer group-data-[sidebar=dark]:hover:text-slate-200 group-data-[sidebar=brand]:hover:text-slate-200">
 							<span data-lucide="Twitch" class="w-5 h-5 text-center text-slate-800 me-2 dark:text-slate-400 group-data-[sidebar=dark]:text-slate-400 group-data-[sidebar=brand]:text-slate-400"></span>
 							<span>Operativci</span>
@@ -66,6 +76,7 @@
 								</li>
 							</ul>
 						</div>
+                        <?php } ?>
 					</div>
 				</li>
 			</ul>

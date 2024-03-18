@@ -13,26 +13,37 @@ $routes->set404Override(function(){
 $routes->get('/', 'Home::index');
 
 /**
-1 => "Super Admin"
-2 => "Admin"
-3 => "Manager"
-4 => "Client"
-5 => "Content editor"
+    1 => "God"
+    2 => "Admin"
+    3 => "commercialist"
+    4 => "operator"
+    5 => "client"
+    6 => "manager"
 */
 
-$routes->group('dashboard', ['filter' => 'adminAuthFilter:dual,noreturn,blocked'] , function ($routes) {
+$routes->group('dashboard', ['filter' => 'adminAuthFilter:1,2,3,4,5'] , function ($routes) {
     $routes->add('', 'Home::index');
     $routes->add('(:any)', 'Home::$1');
 });
-$routes->group('menu', ['filter' => 'adminAuthFilter:dual,noreturn,blocked'], function ($routes) {
+$routes->group('menu', ['filter' => 'adminAuthFilter:1,2,3,4,5'], function ($routes) {
     $routes->add('', 'Menu::index');
     $routes->add('(:any)', 'Menu::$1');
     $routes->add('(:any)/(:any)', 'Menu::$1/$2');
 });
-$routes->group('clients', ['filter' => 'adminAuthFilter:dual,noreturn,blocked'], function ($routes) {
+$routes->group('clients', ['filter' => 'adminAuthFilter:1,2,5'], function ($routes) {
     $routes->add('', 'Clients::index');
     $routes->add('(:any)', 'Clients::$1');
     $routes->add('(:any)/(:any)', 'Clients::$1/$2');
+});
+$routes->group('objects', ['filter' => 'adminAuthFilter:1,2,5'], function ($routes) {
+    $routes->add('', 'Clients::index');
+    $routes->add('(:any)', 'Clients::$1');
+    $routes->add('(:any)/(:any)', 'Clients::$1/$2');
+});
+$routes->group('users', ['filter' => 'adminAuthFilter:1,2,5'], function ($routes) {
+    $routes->add('', 'Users::index');
+    $routes->add('(:any)', 'Users::$1');
+    $routes->add('(:any)/(:any)', 'Users::$1/$2');
 });
 
 $routes->add('login', 'Login::index');

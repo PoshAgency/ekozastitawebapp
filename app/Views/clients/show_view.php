@@ -23,16 +23,27 @@
 				<div class="flex items-center w-full">
 					<div class="w-full">                    
 						<div class="px-4">
-							<div class="flex flex-wrap justify-between mt-4 p-4 bg-white rounded-md shadow-md">
+							<div class="flex flex-wrap justify-between mt-4 p-4 bg-white rounded-md shadow-md dark:bg-gray-700/20">
 								<div class="items-center ">
-									<h1 class="font-medium text-3xl block dark:text-slate-100">Klijenti</h1>
+									<!-- <h1 class="font-medium text-3xl block dark:text-slate-100">Klijenti</h1>
 									<ol class="list-reset flex text-sm">
 										<li><a href="<?php echo base_url(); ?>" class="text-green-500 dark:text-green-400">Ekozaštita</a></li>
 										<li><span class="text-gray-500 dark:text-slate-400 mx-2">/</span></li>
 										<li><a href="clients" class="text-green-500 hover:text-green-900 dark:text-green-400">Klijenti</a></li>
 										<li><span class="text-gray-500 dark:text-slate-400 mx-2">/</span></li>
 										<li class="text-gray-500 dark:text-slate-400">Detalji</li>
-									</ol>
+									</ol> -->
+                                    <div class="flex gap-3 items-center">
+                                        <?php if(isset($current['image']) AND $current['image'] != ''){ ?>
+                                            <img src="<?php echo (isset($current['image']) AND $current['image'] != '') ? $current['image'] : ''; ?>" alt="Logo" class="mx-auto inline-block">
+                                        <?php }else{ ?>
+                                            <?php echo svg(); ?>
+                                        <?php } ?>
+                                        <div class="my-4">                                                                        
+                                            <h5 class="text-xxl font-semibold text-slate-700 dark:text-gray-400"><?php echo (isset($current['name']) AND $current['name'] != '') ? $current['name'] : ''; ?></h5>
+                                            <!-- <span class="block font-medium text-slate-500">maloprodajni lanac prodavnica</span> -->
+                                        </div>
+                                    </div>
 								</div>
 							</div>
 						</div>
@@ -44,92 +55,86 @@
         <div class="xl:w-full min-h-[calc(100vh-138px)] relative pb-14 pl-4"> 
 			<div class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4">
 				<div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-4 xl:col-span-3">
-					<div class=" mt-4 p-4 bg-white rounded-md shadow-md bg-green-100\/10">
-						<div class="text-center">
-							<?php if(isset($current['image']) AND $current['image'] != ''){ ?>
-                                <img src="<?php echo (isset($current['image']) AND $current['image'] != '') ? $current['image'] : ''; ?>" alt="Logo" class="mx-auto inline-block">
-                            <?php }else{ ?>
-                                <?php echo svg(); ?>
-                            <?php } ?>
+					<div class=" mt-4 p-4 bg-white rounded-md shadow-md bg-green-100\/10 dark:bg-gray-700/20">
+						<div class="text-left">
 							<div class="my-4">                                                                        
-								<h5 class="text-xxl font-semibold text-slate-700 dark:text-gray-400"><?php echo (isset($current['name']) AND $current['name'] != '') ? $current['name'] : ''; ?></h5>
-								<!-- <span class="block font-medium text-slate-500">maloprodajni lanac prodavnica</span> -->
+								<h5 class="text-xxl font-semibold text-slate-700 dark:text-gray-400">Osnovne informacije</h5>
 							</div>
 						</div>
-						<div class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4">
-							<div class="col-span-12 sm:col-span-12 md:col-span-5 text-end">
+						<div class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-3">
+							<div class="col-span-12 sm:col-span-12 md:col-span-5">
 								<span class="dark:text-slate-300">Država:</span>
 							</div>
 							<div class="col-span-12 sm:col-span-12 md:col-span-7">
 								<span class="dark:text-slate-400"><?php echo (isset($current['state']) AND $current['state'] != '') ? $current['state'] : ''; ?></span>
 							</div>
-							<div class="col-span-12 sm:col-span-12 md:col-span-5 text-end">
+							<div class="col-span-12 sm:col-span-12 md:col-span-5">
 								<span class="dark:text-slate-300">Region:</span>
 							</div>
 							<div class="col-span-12 sm:col-span-12 md:col-span-7">
 								<span class="dark:text-slate-400"><?php echo (isset($current['region']) AND $current['region'] != '') ? $current['region'] : ''; ?></span>
 							</div>
-							<div class="col-span-12 sm:col-span-12 md:col-span-5 text-end">
+							<div class="col-span-12 sm:col-span-12 md:col-span-5">
 								<span class="dark:text-slate-300">Grad:</span>
 							</div>
 							<div class="col-span-12 sm:col-span-12 md:col-span-7">
 								<span class="dark:text-slate-400"><?php echo (isset($current['city']) AND $current['city'] != '') ? $current['city'] : ''; ?></span>
 							</div>
-							<div class="col-span-12 sm:col-span-12 md:col-span-5 text-end">
+							<div class="col-span-12 sm:col-span-12 md:col-span-5">
 								<span class="dark:text-slate-300">Adresa:</span>
 							</div>
 							<div class="col-span-12 sm:col-span-12 md:col-span-7">
 								<span class="dark:text-slate-400"><?php echo (isset($current['address']) AND $current['address'] != '') ? $current['address'] : ''; ?></span>
 							</div>
-							<div class="col-span-12 sm:col-span-12 md:col-span-5 text-end">
+							<div class="col-span-12 sm:col-span-12 md:col-span-5">
 								<span class="dark:text-slate-300">Poštanski broj:</span>
 							</div>
 							<div class="col-span-12 sm:col-span-12 md:col-span-7">
 								<span class="dark:text-slate-400"><?php echo (isset($current['zip']) AND $current['zip'] != '') ? $current['zip'] : ''; ?></span>
 							</div>
-							<div class="col-span-12 sm:col-span-12 md:col-span-5 text-end">
+							<div class="col-span-12 sm:col-span-12 md:col-span-5">
 								<span class="dark:text-slate-300">PIB:</span>
 							</div>
 							<div class="col-span-12 sm:col-span-12 md:col-span-7">
 								<span class="dark:text-slate-400"><?php echo (isset($current['pib']) AND $current['pib'] != '') ? $current['pib'] : ''; ?></span>
 							</div>
-							<div class="col-span-12 sm:col-span-12 md:col-span-5 text-end">
+							<div class="col-span-12 sm:col-span-12 md:col-span-5">
 								<span class="dark:text-slate-300">Matični broj:</span>
 							</div>
 							<div class="col-span-12 sm:col-span-12 md:col-span-7">
 								<span class="dark:text-slate-400"><?php echo (isset($current['id_number']) AND $current['id_number'] != '') ? $current['id_number'] : ''; ?></span>
 							</div>
-							<div class="col-span-12 sm:col-span-12 md:col-span-5 text-end">
+							<div class="col-span-12 sm:col-span-12 md:col-span-5">
 								<span class="dark:text-slate-300">Email:</span>
 							</div>
 							<div class="col-span-12 sm:col-span-12 md:col-span-7">
 								<span class="dark:text-slate-400"><?php echo (isset($current['mail']) AND $current['mail'] != '') ? $current['mail'] : ''; ?></span>
 							</div>
-							<div class="col-span-12 sm:col-span-12 md:col-span-5 text-end">
+							<div class="col-span-12 sm:col-span-12 md:col-span-5">
 								<span class="dark:text-slate-300">Web:</span>
 							</div>
 							<div class="col-span-12 sm:col-span-12 md:col-span-7">
 								<span class="dark:text-slate-400"><?php echo (isset($current['web']) AND $current['web'] != '') ? '<a href="' . $current['web'] . '">' . $current['web'] . '</a>' : '/'; ?></span>
 							</div>
-							<div class="col-span-12 sm:col-span-12 md:col-span-5 text-end">
+							<div class="col-span-12 sm:col-span-12 md:col-span-5">
 								<span class="dark:text-slate-300">Telefon:</span>
 							</div>
 							<div class="col-span-12 sm:col-span-12 md:col-span-7">
 								<span class="dark:text-slate-400"><?php echo (isset($current['fax']) AND $current['fax'] != '') ? '<a href="tel:' . $current['fax'] . '">' . $current['fax'] . '</a>' : '/'; ?></span>
 							</div>
-							<div class="col-span-12 sm:col-span-12 md:col-span-5 text-end">
+							<div class="col-span-12 sm:col-span-12 md:col-span-5">
 								<span class="dark:text-slate-300">Telefon 2:</span>
 							</div>
 							<div class="col-span-12 sm:col-span-12 md:col-span-7">
 								<span class="dark:text-slate-400"><?php echo (isset($current['telefon']) AND $current['telefon'] != '') ? '<a href="tel:' . $current['telefon'] . '">' . $current['telefon'] . '</a>' : '/'; ?></span>
 							</div>
-							<div class="col-span-12 sm:col-span-12 md:col-span-5 text-end">
+							<div class="col-span-12 sm:col-span-12 md:col-span-5">
 								<span class="dark:text-slate-300">Kontakt osoba:</span>
 							</div>
 							<div class="col-span-12 sm:col-span-12 md:col-span-7">
 								<span class="dark:text-slate-400"><?php echo (isset($current['contract']) AND $current['contract'] != '') ? $current['contract'] : ''; ?></span>
 							</div>
-							<div class="col-span-12 sm:col-span-12 md:col-span-5 text-end">
+							<div class="col-span-12 sm:col-span-12 md:col-span-5">
 								<span class="dark:text-slate-300">Napomena:</span>
 							</div>
 							<div class="col-span-12 sm:col-span-12 md:col-span-7">
@@ -171,7 +176,7 @@
 								<span class="inline-flex  justify-center items-center h-14 w-14 rounded-full bg-white dark:bg-gray-900 border border-dashed border-primary-500">
 									<i data-lucide="map" class="stroke-primary-500 text-3xl"></i>
 								</span>
-								<h4 class="my-1 font-semibold text-3xl dark:text-slate-200"><?php echo $count_objects; ?></h4>
+								<h4 class="my-1 font-semibold text-3xl dark:text-slate-200 objects_count"><?php echo $count_objects; ?></h4>
 								<h6 class="text-gray-800 dark:text-gray-400 mb-0 text-lg font-medium uppercase">Ukupan broj objekata</h6>
 								<p class="truncate text-gray-700 dark:text-slate-500 text-sm font-normal">
 									<span class="text-green-500">
@@ -187,7 +192,7 @@
 								<span class="inline-flex  justify-center items-center h-14 w-14 rounded-full bg-white dark:bg-gray-900 border border-dashed border-orange-500">
 									<i data-lucide="book" class="stroke-orange-500 text-3xl"></i>
 								</span>
-								<h4 class="my-1 font-semibold text-3xl dark:text-slate-200"><?php echo $count_reports; ?></h4>
+								<h4 class="my-1 font-semibold text-3xl dark:text-slate-200 reports_count"><?php echo $count_reports; ?></h4>
 								<h6 class="text-gray-800 dark:text-gray-400 text-lg mb-0 font-medium uppercase">Ukupan broj radnih naloga</h6>
 								<p class="truncate text-gray-700 dark:text-slate-500 text-sm font-normal">
 									<a href="reports/edit" class="px-2 py-1 lg:px-4 bg-primary text-white text-sm rounded-full transition hover:bg-primary-600 border border-primary font-medium mb-2 inline-block">Dodaj radni nalog</a>
@@ -200,26 +205,26 @@
 								<span class="inline-flex  justify-center items-center h-14 w-14 rounded-full bg-white dark:bg-gray-900 border border-dashed border-purple-600">
 									<i data-lucide="users" class="stroke-purple-500 text-3xl"></i>
 								</span>
-								<h4 class="my-1 font-semibold text-3xl dark:text-slate-200"><?php echo $count_users; ?></h4>
+								<h4 class="my-1 font-semibold text-3xl dark:text-slate-200 users_count"><?php echo $count_users; ?></h4>
 								<h6 class="text-gray-800 dark:text-gray-400 mb-0 text-lg font-medium uppercase">Broj korisnika</h6>
 								<p class="truncate text-gray-700 dark:text-slate-500 text-sm font-normal">
-									<a href="javascript:;" data-popup="users-popup" data-popup-title="Nov korisnik" onclick="$('#client_id').val(<?php echo (isset($current['id']) AND $current['id'] != '') ? $current['id'] : ''; ?>);" class="px-2 py-1 lg:px-4 bg-primary text-white text-sm rounded-full transition hover:bg-primary-600 border border-primary font-medium mb-2 inline-block">Dodaj korisnika</a>
+									<a href="javascript:;" data-popup="users-popup" data-popup-title="Nov korisnik" onclick="$('#user_ref_id').val(<?php echo (isset($current['id']) AND $current['id'] != '') ? $current['id'] : ''; ?>);" class="px-2 py-1 lg:px-4 bg-primary text-white text-sm rounded-full transition hover:bg-primary-600 border border-primary font-medium mb-2 inline-block">Dodaj korisnika</a>
 								</p>
 							</div>
 						</div>
 					</div>
 					<div class="w-full relative mb-4">  
 						<div class="flex-auto p-0 md:p-4">
-							<div class="mb-4 mt-4 p-4 bg-white rounded-md shadow-md border-b border-gray-200 dark:border-slate-700" data-fc-type="tab">
+							<div class="mb-4 mt-4 p-4 bg-white dark:bg-gray-700/20 rounded-md shadow-md border-b border-gray-200 dark:border-slate-700" data-fc-type="tab">
 								<ul class="flex flex-wrap -mb-px text-sm font-medium text-center" aria-label="Tabs">
 									<li class="me-2" role="presentation">
-										<button class="inline-block p-4 rounded-t-lg border-b-2 active " id="orders-tab" data-fc-target="#orders" type="button" role="tab" aria-controls="orders" aria-selected="false">Objekti <span class="text-gray-500 dark:text-slate-400">(<?php echo $count_objects; ?>)</span></button>
+										<button class="inline-block p-4 rounded-t-lg border-b-2 active " id="orders-tab" data-fc-target="#orders" type="button" role="tab" aria-controls="orders" aria-selected="false">Objekti <span class="text-gray-500 dark:text-slate-400 objects_count">(<?php echo $count_objects; ?>)</span></button>
 									</li>
 									<li class="me-2" role="presentation">
-										<button class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="wishlist-tab" data-fc-target="#wishlist" type="button" role="tab" aria-controls="wishlist" aria-selected="false">Radni nalozi <span class="text-gray-500 dark:text-slate-400">(<?php echo $count_reports; ?>)</span></button>
+										<button class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="wishlist-tab" data-fc-target="#wishlist" type="button" role="tab" aria-controls="wishlist" aria-selected="false">Radni nalozi <span class="text-gray-500 dark:text-slate-400 reports_count">(<?php echo $count_reports; ?>)</span></button>
 									</li>
 									<li class="me-2" role="presentation">
-										<button class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="ratings-tab" data-fc-target="#ratings" type="button" role="tab" aria-controls="ratings" aria-selected="false">Korisnici <span class="text-gray-500 dark:text-slate-400">(<?php echo $count_users; ?>)</span></button>
+										<button class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="ratings-tab" data-fc-target="#ratings" type="button" role="tab" aria-controls="ratings" aria-selected="false">Korisnici <span class="text-gray-500 dark:text-slate-400 users_count_brackets">(<?php echo $count_users; ?>)</span></button>
 									</li>
 								</ul>
 							</div>
@@ -228,7 +233,7 @@
 								<div class="active  p-4 bg-white rounded-lg shadow-md dark:bg-gray-700/20" id="orders" role="tabpanel" aria-labelledby="orders-tab">
 									<div class="grid grid-cols-1 p-0 md:p-4">
 										<div class="sm:-mx-6 lg:-mx-8">
-											<div class="relative overflow-x-auto block w-full sm:px-6 lg:px-8">
+											<div class="relative overflow-x-auto block w-full px-0">
 												<table class="w-full" id="client_objects">
 													<thead class="bg-gray-50 dark:bg-gray-700/20">
 														<tr>
@@ -275,7 +280,7 @@
 								<div class="hidden p-4 bg-white rounded-lg shadow-md dark:bg-gray-800" id="wishlist" role="tabpanel" aria-labelledby="wishlist-tab">
 									<div class="grid grid-cols-1 p-0 md:p-4">
 										<div class="sm:-mx-6 lg:-mx-8">
-											<div class="relative overflow-x-auto block w-full sm:px-6 lg:px-8">
+											<div class="relative overflow-x-auto block w-full sm:px-0">
 												<table class="w-full" id="client_reports">
 													<thead class="bg-gray-50 dark:bg-gray-700/20">
 														<tr>
@@ -313,7 +318,7 @@
 								<div class="hidden p-4 bg-white rounded-lg shadow-md dark:bg-gray-800" id="ratings" role="tabpanel" aria-labelledby="ratings-tab">
 									<div class="grid grid-cols-1 p-0 md:p-4">
 										<div class="sm:-mx-6 lg:-mx-8">
-											<div class="relative overflow-x-auto block w-full sm:px-6 lg:px-8">
+											<div class="relative overflow-x-auto block w-full sm:px-0">
 												<table class="w-full" id="client_users">
 													<thead class="bg-gray-50 dark:bg-gray-700/20">
 														<tr>
@@ -606,7 +611,7 @@ var table3 = $('#client_users').DataTable({
         {data: null, render: function(data,type,row){
                 if(row.id != 0)
                     return '<div class="flex gap-5 justify-end">'+
-                                '<a href="javascript:;" data-popup="users-popup" onclick="$(\'#client_id\').val(<?php echo (isset($current['id']) AND $current['id'] != '') ? $current['id'] : ''; ?>);" data-id="' + row.id + '"><i class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"></i></a>'+
+                                '<a href="javascript:;" data-popup="users-popup" onclick="get_user(' + row.id +')"><i class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"></i></a>'+
                                 '<a href="javascript:;" class="delete_record" data-popup="delete-popup" data-id="' + row.id + '" data-model="UsersModel"><i class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"></i></a>'+
                             '</div>';
                 else
@@ -639,7 +644,7 @@ var table3 = $('#client_users').DataTable({
         {className: 'p-3 text-xs font-medium text-left text-gray-700 dark:text-gray-400', targets: "_all" },
         {orderable: false, targets: [0,-1] } // last column (Actions) not orderable
     ],
-    dom: '<"table-filters"i<"btn-holder"<"date_range">fBr>>t<"table-footer"<"bottom-footer-container"pl>>',
+    dom: '<"table-filters"iB<"btn-holder"<"date_range">fr>>t<"table-footer"<"bottom-footer-container"pl>>',
     buttons: [
         // {
         //     extend: 'excel',
@@ -668,7 +673,30 @@ var table3 = $('#client_users').DataTable({
         }
     ]
 });
-
+function get_user(id){
+    $.ajax({
+        type: 'POST',
+        url: 'users/single_user/' + id,
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+            console.log('Success');
+            if(data.success){
+                $('#user_firstname').val(data.firstname);
+                $('#user_lastname').val(data.lastname);
+                $('#user_username').val(data.username);
+                $('#user_email').val(data.email);
+                $('#user_group_id').val(data.group_id);
+                $('#user_ref_id').val(data.ref_id);
+                $('#user_id').val(data.id);
+                // $('#user_password').val(data.password);
+            }
+        },
+        error: function (request, status, error) {
+            console.log('PHP Error');
+        }
+    });
+}
 </script>
 </body>
 </html>

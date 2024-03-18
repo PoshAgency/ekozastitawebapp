@@ -22,6 +22,14 @@ class Clients extends BaseController
 
         echo view('clients/index_view', $data);
     }
+    public function dashboard()
+    {         
+        $clientsModel = new ClientsModel();
+
+        $data['clients'] = $clientsModel->where('not_active', 0)->findAll();
+
+        echo view('clients/client-dashboard_view', $data);
+    }
     public function datatable()
     {
 		$post = $this->request->getPost();

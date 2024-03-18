@@ -430,87 +430,6 @@ function app_msg(msg, type = 'success', dur = 2500, redirect = null){ //success(
 $('.close_popup').on('click', function(){
     $('.msg-popup').removeClass('showw');
 });
-
-$('#form-login').on('submit', function (e) {
-    console.log('form-login submit');
-    e.preventDefault();
-    var form = $(this);
-    var url = form.attr('action');
-    var formData = form.serialize();
-    $("#form-login .submit-btn").prop('disabled', true);
-    $.ajax({
-        type: "POST",
-        url: url,
-        data: formData,
-        dataType: "json",
-        beforeSend: function(){  },
-        success: function (data) {
-            console.log(data);
-            if (data.success) {
-                console.log('SUCCESS');
-                app_msg('Uspesno logovanje','success',1000);
-                setTimeout(function(){ 
-                    if(data.return_url){
-                        window.location = data.return_url;
-                    }else{
-                        window.location = BASE_URL + "dashboard";
-                    }
-                },1000);
-            } else {
-                console.log('NO SUCCESS');
-                app_msg('Ne postoji nalog sa ovim podacima.','danger',3500);
-                $("#form-login .submit-btn").prop('disabled', false);
-            }
-        },
-        error: function (result) {
-            console.log('ERROR WITH PHP');
-            console.log(result);
-            app_msg('Problem with server. Try again or contact administrator.','error');
-            $("#form-login .submit-btn").prop('disabled', false);
-      }
-    });
-});
-  
-$('.regular-form').on('submit', function (e) {
-    e.preventDefault();
-    var form = $(this);
-    console.log(form.attr('id') + ' submit');
-    var url = form.attr('action');
-    var formData = form.serialize();
-    $("#form-login .submit-btn").prop('disabled', true);
-    $.ajax({
-        type: "POST",
-        url: url,
-        data: formData,
-        dataType: "json",
-        beforeSend: function(){  },
-        success: function (data) {
-            console.log(data);
-            if (data.success) {
-                console.log('SUCCESS');
-                app_msg('Snimljeno','success',1000);
-                setTimeout(function(){ 
-                    if(data.return_url){
-                        window.location = data.return_url;
-                    }else{
-                        window.location = BASE_URL + "dashboard";
-                    }
-                },1000);
-            } else {
-                console.log('NO SUCCESS');
-                app_msg('Dogodila se greška. Molimo pokušajte ponovo','danger',3500);
-                $("#form-login .submit-btn").prop('disabled', false);
-            }
-        },
-        error: function (result) {
-            console.log('ERROR WITH PHP');
-            console.log(result);
-            app_msg('Problem sa serverom. Pokušajte ponovo ili kontaktirajte administratora.','error');
-            $("#form-login .submit-btn").prop('disabled', false);
-      }
-    });
-});
-  
 $(".reveal_password").click(function () {
     $(this).toggleClass('active');
     var input = $(this).next();
@@ -606,6 +525,7 @@ $(document).on('click', '.delete_record', function(){
     $('.delete_item').data('delete-model', model).attr('data-delete-model', model);
     // $('.delete_item').data('refresh', refresh).attr('data-refresh', refresh);
 });
+// FORMS SUBMIT
 $('.delete_item').on('click', function(){
     var id = $(this).data('delete-id');
     var model = $(this).data('delete-model');
@@ -675,6 +595,9 @@ $('.delete_item').on('click', function(){
                     setTimeout(function(){
                         $('.' + model + '_row[data-id="' + id + '"]').remove();
                         btn.removeClass('btn--loading');
+                        if(table){table.ajax.reload()};
+                        if(table2){table2.ajax.reload()};
+                        if(table3){table3.ajax.reload()};
                     },1200);
                     close_all();
                 }else{
@@ -689,4 +612,110 @@ $('.delete_item').on('click', function(){
         });
     }
 });
+$('#form-login').on('submit', function (e) {
+    console.log('form-login submit');
+    e.preventDefault();
+    var form = $(this);
+    var url = form.attr('action');
+    var formData = form.serialize();
+    $("#form-login .submit-btn").prop('disabled', true);
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: formData,
+        dataType: "json",
+        beforeSend: function(){  },
+        success: function (data) {
+            console.log(data);
+            if (data.success) {
+                console.log('SUCCESS');
+                app_msg('Uspesno logovanje','success',1000);
+                setTimeout(function(){ 
+                    if(data.return_url){
+                        window.location = data.return_url;
+                    }else{
+                        window.location = BASE_URL + "dashboard";
+                    }
+                },1000);
+            } else {
+                console.log('NO SUCCESS');
+                app_msg('Ne postoji nalog sa ovim podacima.','danger',3500);
+                $("#form-login .submit-btn").prop('disabled', false);
+            }
+        },
+        error: function (result) {
+            console.log('ERROR WITH PHP');
+            console.log(result);
+            app_msg('Problem with server. Try again or contact administrator.','error');
+            $("#form-login .submit-btn").prop('disabled', false);
+      }
+    });
+});
+  
+$('.user-form').on('submit', function (e) {
+    e.preventDefault();
+    var form = $(this);
+    console.log(form.attr('id') + ' submit');
+    var url = form.attr('action');
+    var formData = form.serialize();
+    var button = form.find('button[type="submit"]');
 
+    button.addClass('btn--loading');
+    $("#form-login .submit-btn").prop('disabled', true);
+    $('p.error_msg').remove();
+    $('input').removeClass('error');
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: formData,
+        dataType: "json",
+        beforeSend: function(){  },
+        success: function (data) {
+            console.log(data);
+            if (data.success) {
+                console.log('SUCCESS');
+                app_msg('Snimljeno','success',1000);
+                setTimeout(function(){ 
+                    if(data.return_url){
+                        window.location = data.return_url;
+                    }else{
+                        if(table){table.ajax.reload()};
+                        if(table2){table2.ajax.reload()};
+                        if(table3){table3.ajax.reload()};
+                    }
+                    button.removeClass('btn--loading');
+                },1000);
+                if(form.hasClass('add-user-form')){
+                    var users_count = Number($('.users_count:first').text()) + 1;
+                    $('.users_count').text(users_count);
+                    $('.users_count_brackets').text('(' + users_count + ')');
+                }                
+                close_all();
+            } else {
+                console.log('NO SUCCESS');
+                if(data.json){
+                    $.each(data.json, function(key, val){
+                        form.find('[id=user_' + key + "]").addClass('error').next('p.error_msg').remove();
+                        $('<p class="error_msg">' + val + '</p>').insertAfter(form.find('#user_' + key));
+                    });
+                }
+                // if(data.message){
+                //     app_msg(data.message,'danger',3500);
+                // }else{
+                //     app_msg('Dogodila se greška. Molimo pokušajte ponovo','danger',3500);
+                // }
+                $("#form-login .submit-btn").prop('disabled', false);
+                button.removeClass('btn--loading');
+            }
+        },
+        error: function (result) {
+            console.log('ERROR WITH PHP');
+            console.log(result);
+            button.removeClass('btn--loading');
+            app_msg('Problem sa serverom. Pokušajte ponovo ili kontaktirajte administratora.','error');
+            $("#form-login .submit-btn").prop('disabled', false);
+      }
+    });
+});
+// END FORMS

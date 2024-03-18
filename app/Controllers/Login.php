@@ -54,7 +54,9 @@ class Login extends Basecontroller
 
 		$response = $this->model->login_user($data);
 		if($response['success']){
-			session()->set('user', $response['user_id']);
+            session()->set('isLogged', true);
+            session()->set('priority', $response['group_id'] );
+            session()->set('user', $response['user']);
 		}
 		$response['method'] = $request->getMethod();
 		$response['request'] = $request;
