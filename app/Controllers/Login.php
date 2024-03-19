@@ -8,7 +8,7 @@ use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\RequestInterface;
 use Google_Client;
 
-class Login extends Basecontroller
+class Login extends BaseController
 {
 	use ResponseTrait;
 
