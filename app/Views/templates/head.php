@@ -205,7 +205,7 @@ body .btn--loading::after {
     width: 100%;
     max-width: 38vw;
     z-index: 111111111111;
-    padding: 30px;
+    padding: 30px 65px 30px 30px !important;
     color: #000;
     background: #fff;
     border-radius: 0px;
@@ -363,14 +363,16 @@ body .dataTables_wrapper .dataTables_paginate .paginate_button.current, body .da
 	line-height: 35px !important;
 	font-size: 12px !important;
 }
-
+.ellipsis {
+	margin-right: 10px;
+}
 .dataTables_wrapper .dataTables_info {
 	font-size: 12px;
 	color: #333;
 	font-family: 'Poppins';
 	font-weight: 700;
 	text-transform: uppercase;
-    padding-top: 0;
+    padding-top: 0 !important;
 }
 .table-filters {
 	display: flex;
@@ -388,6 +390,8 @@ table.dataTable.no-footer {
 	border: 1px solid rgb(229, 231, 235) !important;
 	padding: 6px;
 	font-size: 13px;
+    background: #fff;
+    border-radius: 5px;
 }
 /* POPUP CSS */
 body.show-popup {

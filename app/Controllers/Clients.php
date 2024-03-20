@@ -189,22 +189,61 @@ class Clients extends BaseController
     }    
     public function save()
     {
-        $Client = $this->request->getPost('client'); 
-        $Client['client_date'] = date_us_2_mysql($Client['client_date']);
-        $clientModel = new ClientsModel();      
-        // echo "<pre>";
-        // print_r($Client);
-        // die();
-        $res = $clientModel->save($Client);
-        if( $res ) {
-            $response['success'] = true;
-            $response['message'] = 'Data successfully saved';
+        $ClientsModel = new ClientsModel();
+
+        $validation =  \Config\Services::validation();
+		$data = $this->request->getPost();
+		$rules = $ClientsModel->validationRules;
+        if(isset($data['id']) AND $data['id'] > 0){
+            $image_exists = $data['image_exists'];
         }
-        else
-        {
-            $response['success'] = false;
-            $response['message'] = 'Data not saved';
+        if(isset($data['id']) AND $data['id'] > 0){
+            $rules['id'] = 'required';
+        }else{
+            unset($data['id']);
+            unset($rules['id']);
         }
-        return $this->respond($response);
+        $data = array_filter($data);
+        $rules = array_filter($rules);
+        
+		$validation->reset();
+		$validation->setRules($rules);
+		if (!$validation->run($data)){
+            $response['validatedData'] = $validation->getValidated();
+			$response['json'] = $validation->getErrors();
+		}else{
+			$response['message'] = 'Klijent uspešno snimljen';
+			$files = $this->request->getFiles();
+			$response['files'] = $files;
+			if (isset($files['image'][0]) AND $files['image'][0]->isValid()){
+				$file = $files['image'][0];
+				$response['ClientExtension'] = $file->getClientExtension();
+				$response['guessExtension'] = $file->guessExtension();
+				$response['getClientMimeType'] = $file->getClientMimeType();
+				$response['getMimeType'] = $file->getMimeType();
+				$name = $file->getRandomName();
+                $file->move(ROOTPATH . 'public/uploads/clients', $name);
+
+				// \Config\Services::image()
+				// 	->withFile(ROOTPATH . 'public/uploads/classes/' . $name)
+				// 	->resize(750, 410, true, 'width')
+				// 	->save(ROOTPATH . 'public/uploads/classes/' . $name, 90);
+
+				// \Config\Services::image()
+				// 	->withFile(ROOTPATH . 'public/uploads/classes/' . $name)
+				// 	->resize(510, 300, true, 'width')
+				// 	->save(ROOTPATH . 'public/uploads/classes/thumb_' . $name, 100);
+
+                $data['image'] = 'uploads/clients/' . $name;
+                // $data['image_small'] = 'uploads/classes/thumb_' . $name;
+			}else if(isset($image_exists) AND $image_exists == 0){
+                $data['image'] = '';
+            }
+
+            $response['success'] = $ClientsModel->save($data);
+		}
+		$response['data'] = $data;
+		//echo json_encode($response);
+		return $this->respond($response);
     }
 }

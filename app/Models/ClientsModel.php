@@ -23,8 +23,9 @@ class ClientsModel extends Model
     protected $deletedField  = 'deleted_at';
 	
     protected $validationRules    = [
-        //'message'         => 'required', 
-        //'due_date'        => 'required',
+        'name'         => 'required', 
+        'city'        => 'required',
+        'email'        => 'required',
     ];
     protected $validationMessages = [];
     protected $skipValidation     = false;

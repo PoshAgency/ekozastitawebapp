@@ -525,6 +525,13 @@ $(document).on('click', '.delete_record', function(){
     $('.delete_item').data('delete-model', model).attr('data-delete-model', model);
     // $('.delete_item').data('refresh', refresh).attr('data-refresh', refresh);
 });
+$(document).on('click', '.remove_image', function(){
+    $(this).prev().attr('src', '');
+    $(this).parent().removeClass('show');
+    $(this).parent().prev().addClass('show');
+});
+
+
 // FORMS SUBMIT
 $('.delete_item').on('click', function(){
     var id = $(this).data('delete-id');
@@ -661,7 +668,6 @@ $('.user-form').on('submit', function (e) {
     var button = form.find('button[type="submit"]');
 
     button.addClass('btn--loading');
-    $("#form-login .submit-btn").prop('disabled', true);
     $('p.error_msg').remove();
     $('input').removeClass('error');
 
@@ -683,6 +689,69 @@ $('.user-form').on('submit', function (e) {
                         if(table){table.ajax.reload()};
                         if(table2){table2.ajax.reload()};
                         if(table3){table3.ajax.reload()};
+                    }
+                    button.removeClass('btn--loading');
+                },1000);
+                if(form.hasClass('add-user-form')){
+                    var users_count = Number($('.users_count:first').text()) + 1;
+                    $('.users_count').text(users_count);
+                    $('.users_count_brackets').text('(' + users_count + ')');
+                }                
+                close_all();
+            } else {
+                console.log('NO SUCCESS');
+                if(data.json){
+                    $.each(data.json, function(key, val){
+                        form.find('[id=user_' + key + "]").addClass('error').next('p.error_msg').remove();
+                        $('<p class="error_msg">' + val + '</p>').insertAfter(form.find('#user_' + key));
+                    });
+                }
+                // if(data.message){
+                //     app_msg(data.message,'danger',3500);
+                // }else{
+                //     app_msg('Dogodila se greška. Molimo pokušajte ponovo','danger',3500);
+                // }
+                $("#form-login .submit-btn").prop('disabled', false);
+                button.removeClass('btn--loading');
+            }
+        },
+        error: function (result) {
+            console.log('ERROR WITH PHP');
+            console.log(result);
+            button.removeClass('btn--loading');
+            app_msg('Problem sa serverom. Pokušajte ponovo ili kontaktirajte administratora.','error');
+            $("#form-login .submit-btn").prop('disabled', false);
+      }
+    });
+});
+$('.clients-form').on('submit', function (e) {
+    e.preventDefault();
+    var form = $(this);
+    console.log(form.attr('id') + ' submit');
+    var url = form.attr('action');
+	var formData = new FormData(this);
+    var button = form.find('button[type="submit"]');
+
+    button.addClass('btn--loading');
+    $('p.error_msg').remove();
+    $('input').removeClass('error');
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: formData,
+        processData: false,
+        contentType: false,
+        dataType: "json",
+        beforeSend: function(){  },
+        success: function (data) {
+            console.log(data);
+            if (data.success) {
+                console.log('SUCCESS');
+                app_msg('Snimljeno','success',1000);
+                setTimeout(function(){ 
+                    if(data.return_url){
+                        window.location = data.return_url;
                     }
                     button.removeClass('btn--loading');
                 },1000);

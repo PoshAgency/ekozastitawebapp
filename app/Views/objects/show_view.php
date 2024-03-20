@@ -6,20 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
 <?php echo view('templates/head'); ?>
-<style>
-.datatable-input, .datatable-selector {
-	border-color: rgba(0, 0, 0, 0.3);
-}
-</style>
-<!-- export datatable -->
-<link href="https://cdn.datatables.net/1.11.0/css/jquery.dataTables.min.css" rel="stylesheet">
-<link href="https://editor.datatables.net/extensions/Editor/css/editor.dataTables.min.css" rel="stylesheet">
-<link href="https://cdn.datatables.net/select/1.3.3/css/select.dataTables.min.css" rel="stylesheet">
-<link href="https://cdn.datatables.net/buttons/2.0.0/css/buttons.dataTables.min.css" rel="stylesheet">
-<link href="https://cdn.datatables.net/datetime/1.1.1/css/dataTables.dateTime.min.css" rel="stylesheet">
-<link href="https://cdn.datatables.net/colreorder/1.5.4/css/colReorder.dataTables.min.css" rel="stylesheet">
-<!-- fixedcolumns datatable -->
-<link href="https://cdn.datatables.net/fixedcolumns/3.3.3/css/fixedColumns.dataTables.min.css" rel="stylesheet">
 
 </head>
 
@@ -49,7 +35,7 @@
 									</ol> -->
                                     <div class="flex gap-3 items-center">
                                         <?php if(isset($current['image']) AND $current['image'] != ''){ ?>
-                                            <img src="<?php echo (isset($current['image']) AND $current['image'] != '') ? $current['image'] : ''; ?>" alt="Logo" class="mx-auto inline-block" width="60" height="60">
+                                            <img src="<?php echo (isset($current['image']) AND $current['image'] != '') ? $current['image'] : ''; ?>" alt="Logo" class="mx-auto inline-block">
                                         <?php }else{ ?>
                                             <?php echo svg(); ?>
                                         <?php } ?>
@@ -77,79 +63,79 @@
 						</div>
 						<div class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-3">
 							<div class="col-span-12 sm:col-span-12 md:col-span-5">
-								<span class="text-gray-500 dark:text-slate-300">Država:</span>
+								<span class="dark:text-slate-300">Država:</span>
 							</div>
 							<div class="col-span-12 sm:col-span-12 md:col-span-7">
 								<span class="dark:text-slate-400"><?php echo (isset($current['state']) AND $current['state'] != '') ? $current['state'] : ''; ?></span>
 							</div>
 							<div class="col-span-12 sm:col-span-12 md:col-span-5">
-								<span class="text-gray-500 dark:text-slate-300">Region:</span>
+								<span class="dark:text-slate-300">Region:</span>
 							</div>
 							<div class="col-span-12 sm:col-span-12 md:col-span-7">
 								<span class="dark:text-slate-400"><?php echo (isset($current['region']) AND $current['region'] != '') ? $current['region'] : ''; ?></span>
 							</div>
 							<div class="col-span-12 sm:col-span-12 md:col-span-5">
-								<span class="text-gray-500 dark:text-slate-300">Grad:</span>
+								<span class="dark:text-slate-300">Grad:</span>
 							</div>
 							<div class="col-span-12 sm:col-span-12 md:col-span-7">
 								<span class="dark:text-slate-400"><?php echo (isset($current['city']) AND $current['city'] != '') ? $current['city'] : ''; ?></span>
 							</div>
 							<div class="col-span-12 sm:col-span-12 md:col-span-5">
-								<span class="text-gray-500 dark:text-slate-300">Adresa:</span>
+								<span class="dark:text-slate-300">Adresa:</span>
 							</div>
 							<div class="col-span-12 sm:col-span-12 md:col-span-7">
 								<span class="dark:text-slate-400"><?php echo (isset($current['address']) AND $current['address'] != '') ? $current['address'] : ''; ?></span>
 							</div>
 							<div class="col-span-12 sm:col-span-12 md:col-span-5">
-								<span class="text-gray-500 dark:text-slate-300">Poštanski broj:</span>
+								<span class="dark:text-slate-300">Poštanski broj:</span>
 							</div>
 							<div class="col-span-12 sm:col-span-12 md:col-span-7">
 								<span class="dark:text-slate-400"><?php echo (isset($current['zip']) AND $current['zip'] != '') ? $current['zip'] : ''; ?></span>
 							</div>
 							<div class="col-span-12 sm:col-span-12 md:col-span-5">
-								<span class="text-gray-500 dark:text-slate-300">PIB:</span>
+								<span class="dark:text-slate-300">PIB:</span>
 							</div>
 							<div class="col-span-12 sm:col-span-12 md:col-span-7">
 								<span class="dark:text-slate-400"><?php echo (isset($current['pib']) AND $current['pib'] != '') ? $current['pib'] : ''; ?></span>
 							</div>
 							<div class="col-span-12 sm:col-span-12 md:col-span-5">
-								<span class="text-gray-500 dark:text-slate-300">Matični broj:</span>
+								<span class="dark:text-slate-300">Matični broj:</span>
 							</div>
 							<div class="col-span-12 sm:col-span-12 md:col-span-7">
 								<span class="dark:text-slate-400"><?php echo (isset($current['id_number']) AND $current['id_number'] != '') ? $current['id_number'] : ''; ?></span>
 							</div>
 							<div class="col-span-12 sm:col-span-12 md:col-span-5">
-								<span class="text-gray-500 dark:text-slate-300">Email:</span>
+								<span class="dark:text-slate-300">Email:</span>
 							</div>
 							<div class="col-span-12 sm:col-span-12 md:col-span-7">
 								<span class="dark:text-slate-400"><?php echo (isset($current['mail']) AND $current['mail'] != '') ? $current['mail'] : ''; ?></span>
 							</div>
 							<div class="col-span-12 sm:col-span-12 md:col-span-5">
-								<span class="text-gray-500 dark:text-slate-300">Web:</span>
+								<span class="dark:text-slate-300">Web:</span>
 							</div>
 							<div class="col-span-12 sm:col-span-12 md:col-span-7">
 								<span class="dark:text-slate-400"><?php echo (isset($current['web']) AND $current['web'] != '') ? '<a href="' . $current['web'] . '">' . $current['web'] . '</a>' : '/'; ?></span>
 							</div>
 							<div class="col-span-12 sm:col-span-12 md:col-span-5">
-								<span class="text-gray-500 dark:text-slate-300">Telefon:</span>
+								<span class="dark:text-slate-300">Telefon:</span>
 							</div>
 							<div class="col-span-12 sm:col-span-12 md:col-span-7">
 								<span class="dark:text-slate-400"><?php echo (isset($current['fax']) AND $current['fax'] != '') ? '<a href="tel:' . $current['fax'] . '">' . $current['fax'] . '</a>' : '/'; ?></span>
 							</div>
 							<div class="col-span-12 sm:col-span-12 md:col-span-5">
-								<span class="text-gray-500 dark:text-slate-300">Telefon 2:</span>
+								<span class="dark:text-slate-300">Telefon 2:</span>
 							</div>
 							<div class="col-span-12 sm:col-span-12 md:col-span-7">
 								<span class="dark:text-slate-400"><?php echo (isset($current['telefon']) AND $current['telefon'] != '') ? '<a href="tel:' . $current['telefon'] . '">' . $current['telefon'] . '</a>' : '/'; ?></span>
 							</div>
 							<div class="col-span-12 sm:col-span-12 md:col-span-5">
-								<span class="text-gray-500 dark:text-slate-300">Kontakt osoba:</span>
+								<span class="dark:text-slate-300">Kontakt osoba:</span>
 							</div>
 							<div class="col-span-12 sm:col-span-12 md:col-span-7">
 								<span class="dark:text-slate-400"><?php echo (isset($current['contract']) AND $current['contract'] != '') ? $current['contract'] : ''; ?></span>
 							</div>
 							<div class="col-span-12 sm:col-span-12 md:col-span-5">
-								<span class="text-gray-500 dark:text-slate-300">Napomena:</span>
+								<span class="dark:text-slate-300">Napomena:</span>
 							</div>
 							<div class="col-span-12 sm:col-span-12 md:col-span-7">
 								<span class="dark:text-slate-400"><?php echo (isset($current['napomena']) AND $current['napomena'] != '') ? $current['napomena'] : '/'; ?></span>
