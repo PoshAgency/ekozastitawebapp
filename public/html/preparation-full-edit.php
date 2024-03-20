@@ -46,40 +46,39 @@
 			</div>
 		</div>
 		<div class="main-content-container xl:w-full  min-h-[calc(100vh-138px)] relative pb-14"> 
-			<div class="main-content-wrapper grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 justify-between">
-				<div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-4">
-					<div class="w-full relative p-4"> 
-						<label for="" class="font-medium text-sm text-slate-600 dark:text-slate-400">Dokumenti</label>				
-						<div id="uploads-container" class="grid grid-cols-2 gap-2">
-							<div class="mb-2">
-								<input type="file" class="filepond mb-1"/>
-								<input type="text" name="" class="form-input w-full rounded-md border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700" placeholder="Ime dokumenta" required="">
+			<form action="javascript:;" class="main-content-wrapper grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 justify-between">
+					<div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-4">
+						<div class="w-full relative p-4"> 
+							<label for="" class="font-medium text-sm text-slate-600 dark:text-slate-400">Dokumenti</label>				
+							<div id="uploads-container" class="grid grid-cols-2 gap-2">
+								<div class="mb-2">
+									<input type="file" class="filepond mb-1"/>
+									<input type="text" name="" class="form-input w-full rounded-md border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700" placeholder="Ime dokumenta" required="">
+								</div>
+								<div class="mb-2">
+									<input type="file" class="filepond mb-1"/>
+									<input type="text" name="" class="form-input w-full rounded-md border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700" placeholder="Ime dokumenta" required="">
+								</div>
 							</div>
-							<div class="mb-2">
-								<input type="file" class="filepond mb-1"/>
-								<input type="text" name="" class="form-input w-full rounded-md border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700" placeholder="Ime dokumenta" required="">
+							<div class="btn-holder col-span-12 text-center mt-5">
+								<button id="add-more-uploads" type="button" class="px-2 py-1 lg:px-4 bg-primary text-white text-sm  rounded-full transition hover:bg-primary-600 border border-primary font-medium">Dodaj još dokumenata</button>
 							</div>
-						</div>
-						<div class="btn-holder col-span-12 text-center mt-5">
-							<button id="add-more-uploads" type="button" class="px-2 py-1 lg:px-4 bg-primary text-white text-sm  rounded-full transition hover:bg-primary-600 border border-primary font-medium">Dodaj još dokumenata</button>
-						</div>
-					</div>                               
-				</div>
-				<div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-8">
-					<div class="w-full relative mb-4">  
-						<form action="javascript:;" class="flex-auto p-0 md:p-4">
-							<div class="mb-2">
-								<label for="company" class="font-medium text-sm text-slate-600 dark:text-slate-400">Naziv preparata</label>
-								<input type="text" id="company" name="company" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500 dark:hover:border-slate-700" placeholder="Naziv objekta" required>
-							</div>						
-							<div class="">
-								<button class="px-2 py-2 lg:px-4 bg-brand  text-white text-sm  rounded hover:bg-brand-600 border border-brand-500">Snimi</button>
-								<!-- <button class="px-2 py-2 lg:px-4 bg-transparent  text-brand text-sm  rounded transition hover:bg-brand-500 hover:text-white border border-brand font-medium">Save Product</button> -->
+						</div>                               
+					</div>
+					<div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-8">
+						<div class="w-full relative mb-4">  
+							<div class="flex-auto p-0 md:p-4">
+								<div class="mb-2">
+									<label for="preparation" class="font-medium text-sm text-slate-600 dark:text-slate-400">Naziv preparata</label>
+									<input type="text" id="preparation" name="preparation" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500 dark:hover:border-slate-700" placeholder="Naziv objekta" required>
+								</div>						
+								<div class="">
+									<button type="submit" class="px-2 py-2 lg:px-4 bg-brand  text-white text-sm  rounded hover:bg-brand-600 border border-brand-500">Snimi</button>
+								</div>
 							</div>
-						</form>
-					</div>                             
-				</div>			                     
-			</div>
+						</div>                             
+					</div>	
+			</form>
 
 			<!-- footer -->
 			<?php include('templates/footer.php'); ?>  

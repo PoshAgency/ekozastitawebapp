@@ -2,16 +2,17 @@
 <html lang="en" class="scroll-smooth group" data-sidebar="brand" dir="ltr">
 <head>
 <?php echo view('templates/head'); ?>
+<link rel="stylesheet" href="assets/css/custom.css">
 </head>
 
 <body data-layout-mode="light"  data-sidebar-size="default" data-theme-layout="vertical" class="bg-[#EEF0FC] dark:bg-gray-900">
 
 <div class="relative flex flex-col justify-center min-h-screen overflow-hidden">
     <div class="w-full  m-auto bg-white dark:bg-slate-800/60 rounded shadow-lg ring-2 ring-slate-300/50 dark:ring-slate-700/50 lg:max-w-md">
-        <div class="text-center p-6 bg-slate-900 rounded-t">
+        <div class="text-center p-6 bg-brand rounded-t">
             <a href="index.html"><img src="assets/images/logo.png" alt="" class="mx-auto mb-6" width="150"></a>
             <h3 class="font-semibold text-white text-xl mb-1">Straica ne postoji</h3>
-            <p class="text-xs text-slate-400">Back to dashboard of Robotech.</p>
+            <p class="text-xs text-slate-400">Vratite se na kontrolnu tabliu Ekozaštite.</p>
         </div>
 
         <form class="p-6">

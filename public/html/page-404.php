@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="assets/libs/icofont/icofont.min.css">
 <link href="assets/libs/flatpickr/flatpickr.min.css" type="text/css" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/tailwind.min.css">
+<link rel="stylesheet" href="assets/css/custom.css">
 
 </head>
     
@@ -23,7 +24,7 @@
 <div class="relative flex flex-col justify-center min-h-screen overflow-hidden">
     <div class="w-full  m-auto bg-white dark:bg-slate-800/60 rounded shadow-lg ring-2 ring-slate-300/50 dark:ring-slate-700/50 lg:max-w-md">
         <div class="text-center p-6 bg-brand rounded-t">
-            <a href="index.html"><img src="assets/images/logo.png" alt="" class="h-14 mx-auto mb-5"></a>
+            <a href="dashboard.php"><img src="assets/images/logo.png" alt="" class="h-14 mx-auto mb-5"></a>
             <h3 class="font-semibold text-white text-xl mb-1">Ups! Stranica nije pronađena.</h3>
             <p class="text-xs text-slate-200">Vratite se na kontrolnu tabliu Ekozaštite.</p>
         </div>
@@ -35,7 +36,7 @@
                 <h5 class="font-medium text-lg text-slate-400">Nešto nije uredu!</h5>
             </div>        
             <div class="mt-4">
-                <a href="index.html"
+                <a href="dashboard.php"
                     class="w-full block text-center px-2 py-2 tracking-wide text-white transition-colors duration-200 transform bg-brand-500 rounded hover:bg-brand-600 focus:outline-none focus:bg-brand-600">
                     Nazad
                 </a>

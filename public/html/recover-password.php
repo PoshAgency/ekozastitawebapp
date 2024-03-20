@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="assets/libs/icofont/icofont.min.css">
 <link href="assets/libs/flatpickr/flatpickr.min.css" type="text/css" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/tailwind.min.css">
+<link rel="stylesheet" href="assets/css/custom.css">
 </head>
 
 <body data-layout-mode="light"  data-sidebar-size="default" data-theme-layout="vertical" class="bg-[#EEF0FC] dark:bg-gray-900">

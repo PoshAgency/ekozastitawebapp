@@ -15,9 +15,10 @@
 <link rel="stylesheet" href="assets/libs/icofont/icofont.min.css">
 <link href="assets/libs/flatpickr/flatpickr.min.css" type="text/css" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/tailwind.min.css">
+<link rel="stylesheet" href="assets/css/custom.css">
 </head>
     
-<body data-layout-mode="light"  data-sidebar-size="default" data-theme-layout="vertical" class="bg-[#EEF0FC] dark:bg-gray-900">
+<body data-layout-mode="light"  data-sidebar-size="default" data-theme-layout="vertical" class="login-page bg-[#EEF0FC] dark:bg-gray-900">
 
 <div class="relative flex flex-col justify-center min-h-screen overflow-hidden">
     <div class="w-full  m-auto bg-white dark:bg-slate-800/60 rounded shadow-lg ring-2 ring-slate-300/50 dark:ring-slate-700/50 lg:max-w-md">
@@ -38,9 +39,9 @@
             </div>
             <a href="recover-password.php" class="text-xs font-medium text-brand-500 underline ">Zaboravljena šifra?</a>
             <div class="block mt-3">
-                <label class="custom-label block dark:text-slate-300">
+                <label for="remeber_me" class="custom-label block dark:text-slate-300">
                     <div class="bg-white dark:bg-slate-700  border border-slate-200 dark:border-slate-600 rounded w-4 h-4  inline-block leading-4 text-center -mb-[3px]">
-                        <input type="checkbox" class="hidden">
+                        <input id="remeber_me" name="remeber_me" type="checkbox" class="hidden">
                         <i class="fas fa-check hidden text-xs text-slate-700 dark:text-slate-200"></i>
                     </div>
                     Zapamti me

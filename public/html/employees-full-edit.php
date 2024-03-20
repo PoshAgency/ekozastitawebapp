@@ -36,11 +36,6 @@
 									<li class="text-primary-500 hover:text-primary-600 dark:text-primary-400">Dragan Dragutinović</li>
 								</ol>
 							</div>
-							<!-- <div class="flex items-center">
-								<div class="today-date leading-5 mt-2 lg:mt-0 form-input w-auto rounded-md border inline-block border-primary-500/60 dark:border-primary-500/60 text-primary-500 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-primary-400 focus:border-primary-500 dark:focus:border-primary-500 dark:hover:border-slate-700">
-									<input type="text" class="dash_date border-0 focus:border-0 focus:outline-none" readonly required="" />
-								</div>
-							</div> -->
 						</div>
 					</div>
 				</div>
@@ -69,7 +64,6 @@
 							</div>							
 							<div class="">
 								<button class="px-2 py-2 lg:px-4 bg-brand  text-white text-sm  rounded hover:bg-brand-600 border border-brand-500">Snimi</button>
-								<!-- <button class="px-2 py-2 lg:px-4 bg-transparent  text-brand text-sm  rounded transition hover:bg-brand-500 hover:text-white border border-brand font-medium">Save Product</button> -->
 							</div>
 						</form>
 					</div>                             

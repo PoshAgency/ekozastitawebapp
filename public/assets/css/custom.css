@@ -165,3 +165,22 @@ html {
 .selectr-tag {
 	background: rgb(17 156 73 / 1);
 }
+.hover\:bg-brand-600:hover {
+	background-color: rgb(17 156 73 / 0.8) !important;
+}
+.text-brand-600 {
+	color: rgb(17 156 73 / 1) !important;
+}
+.border-green,
+.border-green-500 {
+	border-color: rgb(17 156 73 / 1) !important;
+}
+.from-green-500 {
+	--tw-gradient-from: rgb(17 156 73 / 1) var(--tw-gradient-from-position) !important;
+}
+.active.hover\:bg-green-600 {
+	background-color: blue;
+}
+.active.hover\:bg-gradient-to-br {
+	background-image: unset !important;
+}

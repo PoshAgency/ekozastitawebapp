@@ -125,7 +125,6 @@
 							</div>					
 							<div class="">
 								<button class="px-2 py-2 lg:px-4 bg-brand  text-white text-sm  rounded hover:bg-brand-600 border border-brand-500">Snimi</button>
-								<!-- <button class="px-2 py-2 lg:px-4 bg-transparent  text-brand text-sm  rounded transition hover:bg-brand-500 hover:text-white border border-brand font-medium">Save Product</button> -->
 							</div>
 						</form>
 					</div>                             
@@ -159,7 +158,6 @@ const inputElement = document.querySelectorAll('input[type="file"]');
 inputElement.forEach(element => {
 	const pond = FilePond.create(element);    
 });
-
 
 var elem = document.querySelector('input[name="foo"]');
 new Datepicker(elem, {

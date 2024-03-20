@@ -36,9 +36,14 @@ $routes->group('clients', ['filter' => 'adminAuthFilter:1,2,5'], function ($rout
     $routes->add('(:any)/(:any)', 'Clients::$1/$2');
 });
 $routes->group('objects', ['filter' => 'adminAuthFilter:1,2,5'], function ($routes) {
-    $routes->add('', 'Clients::index');
-    $routes->add('(:any)', 'Clients::$1');
-    $routes->add('(:any)/(:any)', 'Clients::$1/$2');
+    $routes->add('', 'Objects::index');
+    $routes->add('(:any)', 'Objects::$1');
+    $routes->add('(:any)/(:any)', 'Objects::$1/$2');
+});
+$routes->group('reports', ['filter' => 'adminAuthFilter:1,2,5'], function ($routes) {
+    $routes->add('', 'Reports::index');
+    $routes->add('(:any)', 'Reports::$1');
+    $routes->add('(:any)/(:any)', 'Reports::$1/$2');
 });
 $routes->group('users', ['filter' => 'adminAuthFilter:1,2,5'], function ($routes) {
     $routes->add('', 'Users::index');

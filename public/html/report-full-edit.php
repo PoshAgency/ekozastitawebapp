@@ -47,13 +47,13 @@
 			</div>
 		</div>
 
-		<div class="xl:w-full  min-h-[calc(100vh-152px)] relative pb-14">            
+		<form action="javascript:;" class="xl:w-full  min-h-[calc(100vh-152px)] relative pb-14">            
             <div class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 mb-4">
                 <div class="sm:col-span-12  md:col-span-12 lg:col-span-3 xl:col-span-3 sticky top-70 mh-100vh">
                     <div class="bg-white dark:bg-slate-800 shadow  rounded-md w-full relative">
                         <div class="flex-auto p-4">
                             <h5 class="text-lg font-medium text-slate-700 dark:text-slate-300 mb-3">Izveštaj 1450 <i class="fas fa-minus text-primary-500"></i></h5>
-                            <form action="javascript:;" class="flex-auto p-0 md:p-4">
+                            <div class="flex-auto p-0 md:p-4">
                                 <div class="mb-2 select-bg-transparent">
                                     <label for="default" class="font-medium text-sm text-slate-600 dark:text-slate-400">Izveštaj za klijenta</label>
                                     <select id="default" name="company" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500 dark:hover:border-slate-700">
@@ -63,8 +63,8 @@
                                     </select>
                                 </div>
                                 <div class="mb-2">
-								    <label for="type" class="font-medium text-sm text-slate-600 dark:text-slate-400">Objekat</label>
-								    <select id="work_order_type" name="work_order_type" class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700">
+								    <label for="location" class="font-medium text-sm text-slate-600 dark:text-slate-400">Objekat</label>
+								    <select id="location" name="location" class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700">
                                         <option>Objekat 1</option>
                                         <option>Objekat 2</option>
                                         <option>Objekat 3</option>
@@ -78,10 +78,6 @@
                                     <label for="town" class="font-medium text-sm text-slate-600 dark:text-slate-400">Grad</label>
                                     <input readonly  value="Beograd" type="text" id="town" name="town" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500 dark:hover:border-slate-700" placeholder="Grad" required>
                                 </div>
-                                <!-- <div class="mb-2">
-                                    <label for="state" class="font-medium text-sm text-slate-600 dark:text-slate-400">Broj izveštaja</label>
-                                    <input type="text" id="state" name="state" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500 dark:hover:border-slate-700" placeholder="Zemlja" required>
-                                </div> -->
                                 <div class="mb-2">
                                     <label for="date" class="font-medium text-sm text-slate-600 dark:text-slate-400">Datum</label>
                                     <input value="13.03.2024." id="date" name="date" class="flatpickr form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500 dark:hover:border-slate-700" type="text" placeholder="Select Date.." readonly="readonly">
@@ -90,7 +86,7 @@
                                     <label for="contact_name" class="font-medium text-sm text-slate-600 dark:text-slate-400">Izvršilac</label>
                                     <input  readonly value="Marko Marković" type="text" id="contact_name" name="contact_name" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500 dark:hover:border-slate-700" placeholder="Kontakt osoba" required>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -130,10 +126,10 @@
                                                     <div class="w-full"> 
                                                         <div class="grid md:grid-cols-12 lg:grid-cols-12">
                                                             <div class="col-span-12 md:col-span-12 lg:col-span-3 self-center text-right mr-2">
-                                                                <label for="countries" class="font-medium text-sm text-slate-600 dark:text-slate-400">Ocena</label>
+                                                                <label for="mark" class="font-medium text-sm text-slate-600 dark:text-slate-400">Ocena</label>
                                                             </div>
-                                                            <div class="col-span-12 md:col-span-12 lg:col-span-9  mb-2">
-                                                                <select id="countries" class=" w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700">
+                                                            <div class="col-span-12 md:col-span-12 lg:col-span-9 mb-2">
+                                                                <select id="mark" class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700">
                                                                     <option>0</option>
                                                                     <option>1</option>
                                                                     <option>2</option>
@@ -141,13 +137,13 @@
                                                                 </select>
                                                             </div>
                                                             <div class="col-span-12 md:col-span-12 lg:col-span-3 self-center text-right mr-2">
-                                                                <label for="Contact_Phone" class="font-medium text-sm text-slate-600 dark:text-slate-400">Komentar</label>
+                                                                <label for="message" class="font-medium text-sm text-slate-600 dark:text-slate-400">Komentar</label>
                                                             </div>
                                                             <div class="col-span-12 md:col-span-12 lg:col-span-9  mb-2">
                                                                 <textarea id="message" rows="2" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700" placeholder="Write a comment and press enter"></textarea>
                                                             </div>
                                                              <div class="col-span-12 md:col-span-12 lg:col-span-3 self-center text-right mr-2">
-                                                                <label for="Contact_Phone" class="font-medium text-sm text-slate-600 dark:text-slate-400">Fotografija</label>
+                                                                <label for="photo" class="font-medium text-sm text-slate-600 dark:text-slate-400">Fotografija</label>
                                                             </div>
                                                             <div class="col-span-12 md:col-span-12 lg:col-span-9  mb-2">
                                                                 <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-4">
@@ -181,10 +177,10 @@
                                                     <div class="w-full"> 
                                                         <div class="grid md:grid-cols-12 lg:grid-cols-12">
                                                             <div class="col-span-12 md:col-span-12 lg:col-span-3 self-center text-right mr-2">
-                                                                <label for="countries" class="font-medium text-sm text-slate-600 dark:text-slate-400">Ocena</label>
+                                                                <label for="mark" class="font-medium text-sm text-slate-600 dark:text-slate-400">Ocena</label>
                                                             </div>
                                                             <div class="col-span-12 md:col-span-12 lg:col-span-9  mb-2">
-                                                                <select id="countries" class=" w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700">
+                                                                <select id="mark" class=" w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700">
                                                                     <option>0</option>
                                                                     <option>1</option>
                                                                     <option>2</option>
@@ -192,13 +188,13 @@
                                                                 </select>
                                                             </div>
                                                             <div class="col-span-12 md:col-span-12 lg:col-span-3 self-center text-right mr-2">
-                                                                <label for="Contact_Phone" class="font-medium text-sm text-slate-600 dark:text-slate-400">Komentar</label>
+                                                                <label for="message" class="font-medium text-sm text-slate-600 dark:text-slate-400">Komentar</label>
                                                             </div>
                                                             <div class="col-span-12 md:col-span-12 lg:col-span-9  mb-2">
                                                                 <textarea id="message" rows="2" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700" placeholder="Write a comment and press enter"></textarea>
                                                             </div>
                                                              <div class="col-span-12 md:col-span-12 lg:col-span-3 self-center text-right mr-2">
-                                                                <label for="Contact_Phone" class="font-medium text-sm text-slate-600 dark:text-slate-400">Fotografija</label>
+                                                                <label for="photo" class="font-medium text-sm text-slate-600 dark:text-slate-400">Fotografija</label>
                                                             </div>
                                                             <div class="col-span-12 md:col-span-12 lg:col-span-9  mb-2">
                                                                 <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-4">
@@ -243,13 +239,13 @@
                                                                 </select>
                                                             </div>
                                                             <div class="col-span-12 md:col-span-12 lg:col-span-3 self-center text-right mr-2">
-                                                                <label for="Contact_Phone" class="font-medium text-sm text-slate-600 dark:text-slate-400">Komentar</label>
+                                                                <label for="message" class="font-medium text-sm text-slate-600 dark:text-slate-400">Komentar</label>
                                                             </div>
                                                             <div class="col-span-12 md:col-span-12 lg:col-span-9  mb-2">
                                                                 <textarea id="message" rows="2" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700" placeholder="Write a comment and press enter"></textarea>
                                                             </div>
                                                              <div class="col-span-12 md:col-span-12 lg:col-span-3 self-center text-right mr-2">
-                                                                <label for="Contact_Phone" class="font-medium text-sm text-slate-600 dark:text-slate-400">Fotografija</label>
+                                                                <label for="photo" class="font-medium text-sm text-slate-600 dark:text-slate-400">Fotografija</label>
                                                             </div>
                                                             <div class="col-span-12 md:col-span-12 lg:col-span-9  mb-2">
                                                                 <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-4">
@@ -294,13 +290,13 @@
                                                                 </select>
                                                             </div>
                                                             <div class="col-span-12 md:col-span-12 lg:col-span-3 self-center text-right mr-2">
-                                                                <label for="Contact_Phone" class="font-medium text-sm text-slate-600 dark:text-slate-400">Komentar</label>
+                                                                <label for="message" class="font-medium text-sm text-slate-600 dark:text-slate-400">Komentar</label>
                                                             </div><!--end col-->
                                                             <div class="col-span-12 md:col-span-12 lg:col-span-9  mb-2">
                                                                 <textarea id="message" rows="2" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700" placeholder="Write a comment and press enter"></textarea>
                                                             </div><!--end col-->
                                                              <div class="col-span-12 md:col-span-12 lg:col-span-3 self-center text-right mr-2">
-                                                                <label for="Contact_Phone" class="font-medium text-sm text-slate-600 dark:text-slate-400">Fotografija</label>
+                                                                <label for="photo" class="font-medium text-sm text-slate-600 dark:text-slate-400">Fotografija</label>
                                                             </div><!--end col-->
                                                             <div class="col-span-12 md:col-span-12 lg:col-span-9  mb-2">
                                                                 <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-4">
@@ -351,7 +347,7 @@
                                                                 </select>
                                                             </div>
                                                             <div class="col-span-12 md:col-span-12 lg:col-span-3 self-center text-right mr-2">
-                                                                <label for="Contact_Phone" class="font-medium text-sm text-slate-600 dark:text-slate-400">Komentar</label>
+                                                                <label for="message" class="font-medium text-sm text-slate-600 dark:text-slate-400">Komentar</label>
                                                             </div>
                                                             <div class="col-span-12 md:col-span-12 lg:col-span-9  mb-2">
                                                                 <textarea id="message" rows="2" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700" placeholder="Write a comment and press enter"></textarea>
@@ -371,24 +367,24 @@
                     <div class="bg-white dark:bg-slate-800 shadow  rounded-md w-full relative mb-4">
                         <div class="border-b border-dashed border-slate-200 dark:border-slate-700 py-3 px-4 dark:text-slate-300/70">
                             <h4 class="font-medium">Opšte informacije</h4>
-                            <form action="javascript:;" class="flex-auto p-0 md:p-4">                              
+                            <div class="flex-auto p-0 md:p-4">                              
                                 <div class="mb-2">
-                                    <label for="contact_name" class="font-medium text-sm text-slate-600 dark:text-slate-400">Deratizacione kutije</label>
-                                    <input type="text" id="contact_name" name="contact_name" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500 dark:hover:border-slate-700" placeholder="Kontakt osoba" required>
+                                    <label for="pest-control-boxes" class="font-medium text-sm text-slate-600 dark:text-slate-400">Deratizacione kutije</label>
+                                    <input type="text" id="pest-control-boxes" name="pest-control-boxes" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500 dark:hover:border-slate-700" placeholder="Kontakt osoba" required>
                                 </div>
                                 <div class="mb-2">
-                                    <label for="contact_name" class="font-medium text-sm text-slate-600 dark:text-slate-400">Zamke sa lepkom</label>
-                                    <input type="text" id="contact_name" name="contact_name" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500 dark:hover:border-slate-700" placeholder="Kontakt osoba" required>
+                                    <label for="glue-traps" class="font-medium text-sm text-slate-600 dark:text-slate-400">Zamke sa lepkom</label>
+                                    <input type="text" id="glue-traps" name="glue-traps" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500 dark:hover:border-slate-700" placeholder="Kontakt osoba" required>
                                 </div>
                                 <div class="mb-2">
-                                    <label for="contact_name" class="font-medium text-sm text-slate-600 dark:text-slate-400">Insekt lampe</label>
-                                    <input type="text" id="contact_name" name="contact_name" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500 dark:hover:border-slate-700" placeholder="Kontakt osoba" required>
+                                    <label for="insect-lamp" class="font-medium text-sm text-slate-600 dark:text-slate-400">Insekt lampe</label>
+                                    <input type="text" id="insect-lamp" name="insect-lamp" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500 dark:hover:border-slate-700" placeholder="Kontakt osoba" required>
                                 </div>
                                 <div class="mb-2">
-                                    <label for="contact_name" class="font-medium text-sm text-slate-600 dark:text-slate-400">Feromonske klopke</label>
-                                    <input type="text" id="contact_name" name="contact_name" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500 dark:hover:border-slate-700" placeholder="Kontakt osoba" required>
+                                    <label for="pheromone-traps" class="font-medium text-sm text-slate-600 dark:text-slate-400">Feromonske klopke</label>
+                                    <input type="text" id="contact_name" name="pheromone-traps" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500 dark:hover:border-slate-700" placeholder="Kontakt osoba" required>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                     <div class="bg-white dark:bg-slate-800 shadow  rounded-md w-full relative mb-4">

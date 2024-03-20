@@ -166,3 +166,9 @@ html {
 .selectr-tag {
 	background: rgb(17 156 73 / 1);
 }
+.hover\:bg-brand-600:hover {
+	background-color: rgb(17 156 73 / 0.8) !important;
+}
+.text-brand-600 {
+	color: rgb(17 156 73 / 1) !important;
+}

@@ -36,11 +36,6 @@
 									<li class="text-primary-500 hover:text-primary-600 dark:text-primary-400">Lista preparata</li>
 								</ol>
 							</div>
-							<div class="flex items-center">
-								<div class="today-date leading-5 mt-2 lg:mt-0 form-input w-auto rounded-md border inline-block border-primary-500/60 dark:border-primary-500/60 text-primary-500 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-primary-400 focus:border-primary-500 dark:focus:border-primary-500 dark:hover:border-slate-700">
-									<input type="text" class="dash_date border-0 focus:border-0 focus:outline-none" readonly required="" />
-								</div>
-							</div>
 						</div>
 					</div>
 				</div>
@@ -88,18 +83,6 @@
 															<th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
 																Ime preparata
 															</th>
-															<!-- <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
-																Telefon
-															</th>
-															<th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
-																Email
-															</th>
-															<th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
-																Grad
-															</th>
-															<th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
-																Akcija
-															</th> -->
 														</tr>
 													</thead>
 													<tbody>
@@ -121,15 +104,6 @@
 																	</div>
 																</a>
 															</td>
-															<!-- <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																+1 123 456789
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																<a href="mailto:exemple@gmail.com">exemple@gmail.com</a>
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																<span class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">Beograd</span>
-															</td> -->
 															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
 																<a class="mr-3" href="preparation-full-edit.php"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
@@ -153,15 +127,6 @@
 																	</div>
 																</a>
 															</td>
-															<!-- <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																+1 123 456789
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																<a href="mailto:exemple@gmail.com">exemple@gmail.com</a>
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																<span class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">Beograd</span>
-															</td> -->
 															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
 																<a class="mr-3" href="preparation-full-edit.php"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
@@ -185,15 +150,6 @@
 																	</div>
 																</a>
 															</td>
-															<!-- <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																+1 123 456789
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																<a href="mailto:exemple@gmail.com">exemple@gmail.com</a>
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																<span class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">Beograd</span>
-															</td> -->
 															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
 																<a class="mr-3" href="preparation-full-edit.php"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
@@ -217,15 +173,6 @@
 																	</div>
 																</a>
 															</td>
-															<!-- <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																+1 123 456789
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																<a href="mailto:exemple@gmail.com">exemple@gmail.com</a>
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																<span class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">Beograd</span>
-															</td> -->
 															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
 																<a class="mr-3" href="preparation-full-edit.php"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
@@ -249,15 +196,6 @@
 																	</div>
 																</a>
 															</td>
-															<!-- <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																+1 123 456789
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																<a href="mailto:exemple@gmail.com">exemple@gmail.com</a>
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																<span class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">Beograd</span>
-															</td> -->
 															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
 																<a class="mr-3" href="preparation-full-edit.php"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
@@ -281,15 +219,6 @@
 																	</div>
 																</a>
 															</td>
-															<!-- <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																+1 123 456789
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																<a href="mailto:exemple@gmail.com">exemple@gmail.com</a>
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																<span class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">Beograd</span>
-															</td> -->
 															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
 																<a class="mr-3" href="preparation-full-edit.php"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
@@ -313,15 +242,6 @@
 																	</div>
 																</a>
 															</td>
-															<!-- <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																+1 123 456789
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																<a href="mailto:exemple@gmail.com">exemple@gmail.com</a>
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																<span class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">Beograd</span>
-															</td> -->
 															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
 																<a class="mr-3" href="preparation-full-edit.php"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
@@ -345,15 +265,6 @@
 																	</div>
 																</a>
 															</td>
-															<!-- <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																+1 123 456789
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																<a href="mailto:exemple@gmail.com">exemple@gmail.com</a>
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																<span class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">Beograd</span>
-															</td> -->
 															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
 																<a class="mr-3" href="preparation-full-edit.php"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
@@ -377,15 +288,6 @@
 																	</div>
 																</a>
 															</td>
-															<!-- <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																+1 123 456789
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																<a href="mailto:exemple@gmail.com">exemple@gmail.com</a>
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																<span class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">Beograd</span>
-															</td> -->
 															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
 																<a class="mr-3" href="preparation-full-edit.php"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
@@ -407,16 +309,7 @@
 																		<h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">Preparat 10</h5>
 																	</div>
 																</a>
-															<!-- </td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																+1 123 456789
 															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																<a href="mailto:exemple@gmail.com">exemple@gmail.com</a>
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																<span class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">Beograd</span>
-															</td> -->
 															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
 																<a class="mr-3" href="preparation-full-edit.php"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
