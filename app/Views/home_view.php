@@ -9,7 +9,7 @@
 
 </head>
 
-<body data-layout-mode="light" data-sidebar-size="default" data-theme-layout="vertical" class="home-page bg-[#EEF0FC] dark:bg-gray-900">
+<body data-layout-mode="light" data-sidebar-size="default" data-theme-layout="vertical" class="home-page bg-green-50 dark:bg-gray-900">
 
 <!-- leftbar-tab-menu -->
 <?php echo view('templates/left-bar'); ?>		
@@ -20,19 +20,19 @@
 	<div class="page-wrapper relative ltr:ml-auto rtl:mr-auto rtl:ml-0 w-[calc(100%-260px)] px-4 pt-[64px] duration-300">
 		<div class="breadcrumbs-container xl:w-full">
 			<div class="flex flex-wrap">
-				<div class="flex items-center py-4 w-full">
-					<div class="w-full">
-						<div class="flex flex-wrap justify-between">
+				<div class="flex items-center py-4 px-4 w-full">
+					<div class="w-full p-4 bg-white rounded-md shadow-md">
+						<div class="flex flex-wrap justify-between items-center">
 							<div class="items-center">
 								<h1 class="font-medium text-3xl block dark:text-slate-100">Kontrolna tabla</h1>
 								<ol class="list-reset flex text-sm">
 									<li>
-										<a href="#" class="text-gray-500 dark:text-slate-400">Ekozaštita</a>
+										<a href="<?php echo base_url(); ?>" class="text-gray-500 dark:text-slate-400">Ekozaštita</a>
 									</li>
 									<li>
 										<span class="text-gray-500 dark:text-slate-400 mx-2">/</span>
 									</li>
-									<li class="text-gray-500 dark:text-slate-400">Kontrolna tabla</li>
+									<li class="text-green-500 dark:text-gray-400">Kontrolna tabla</li>
 								</ol>
 							</div>
 							<div class="flex items-center">
@@ -102,6 +102,30 @@
 									</button>
 								</div>
 							</div>
+
+							<div class="breadcrumbs-container xl:w-full">
+								<div class="flex flex-wrap">
+									<div class="flex items-center py-4 px-4 w-full">
+										<div class="w-full p-4 bg-white rounded-md shadow-md">
+											<div class="flex flex-wrap justify-between items-center">
+												<div class="items-center">
+													<h1 class="font-medium text-3xl block dark:text-slate-100">Radni nalozi</h1>
+													<ol class="list-reset flex text-sm">
+														<li>
+															<a href="<?php echo base_url(); ?>" class="text-gray-500 dark:text-slate-400">Ekozaštita</a>
+														</li>
+														<li>
+															<span class="text-gray-500 dark:text-slate-400 mx-2">/</span>
+														</li>
+														<li class="text-green-500 dark:text-gray-400">Radni nalozi</li>
+													</ol>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							
 							
 							<div id="myTabContent">
 								<div class="active  p-4 bg-gray-50 rounded-lg dark:bg-gray-800/40" id="all" role="tabpanel" aria-labelledby="all-tab">

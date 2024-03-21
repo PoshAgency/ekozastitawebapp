@@ -178,9 +178,12 @@ html {
 .from-green-500 {
 	--tw-gradient-from: rgb(17 156 73 / 1) var(--tw-gradient-from-position) !important;
 }
-.active.hover\:bg-green-600 {
+.selected.hover\:bg-green-600 {
 	background-color: blue;
 }
-.active.hover\:bg-gradient-to-br {
+.selected.hover\:bg-gradient-to-br {
 	background-image: unset !important;
+}
+.critical {
+	border: 2px solid red !important;
 }

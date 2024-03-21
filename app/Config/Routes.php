@@ -40,6 +40,11 @@ $routes->group('objects', ['filter' => 'adminAuthFilter:1,2,5'], function ($rout
     $routes->add('(:any)', 'Objects::$1');
     $routes->add('(:any)/(:any)', 'Objects::$1/$2');
 });
+$routes->group('workorders', ['filter' => 'adminAuthFilter:1,2,5'], function ($routes) {
+    $routes->add('', 'WorkOrders::index');
+    $routes->add('(:any)', 'WorkOrders::$1');
+    $routes->add('(:any)/(:any)', 'WorkOrders::$1/$2');
+});
 $routes->group('reports', ['filter' => 'adminAuthFilter:1,2,5'], function ($routes) {
     $routes->add('', 'Reports::index');
     $routes->add('(:any)', 'Reports::$1');

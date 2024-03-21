@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="assets/css/custom.css" />
 </head>
 
-<body data-layout-mode="light" data-sidebar-size="default" data-theme-layout="vertical" class="report-group-page bg-green-50 dark:bg-gray-900">
+<body data-layout-mode="light" data-sidebar-size="default" data-theme-layout="vertical" class="report-group-page bg-[#EEF0FC] dark:bg-gray-900">
 
 <?php echo view('templates/left-bar.php'); ?>		
 <?php echo view('templates/header.php'); ?>		
@@ -24,7 +24,7 @@
 					<div class="w-full p-4 bg-white rounded-md shadow-md">
 						<div class="flex flex-wrap justify-between items-center">
 							<div class="items-center">
-								<h1 class="font-medium text-3xl block dark:text-slate-100">Kreiraj Izveštaj</h1>
+								<h1 class="font-medium text-3xl block dark:text-slate-100">Show - Izveštaji</h1>
 								<ol class="list-reset flex text-sm">
 									<li>
 										<a href="<?php echo base_url(); ?>" class="text-gray-500 dark:text-slate-400">Ekozaštita</a>
@@ -36,8 +36,8 @@
 								</ol>
 							</div>
                             <div class="ms-auto">
-                                <a href="reports/edit" class="inline-block focus:outline-none bg-brand-500 mt-1 text-white hover:bg-brand-600 hover:text-white  text-md font-medium py-2 px-4 rounded">
-                                    Kreiraj izveštaj na osnovu odabranih filtera
+                                <a href="clients/edit" class="inline-block focus:outline-none bg-brand-500 mt-1 text-white hover:bg-brand-600 hover:text-white  text-md font-medium py-2 px-4 rounded">
+                                    Napravi nov izveštaj
                                 </a>
                             </div>
 						</div>
@@ -82,6 +82,14 @@
                                     <input type="search" id="productSearch" class="form-input w-52 rounded-md border border-slate-600 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none placeholder:text-slate-400 placeholder:font-normal placeholder:text-sm placeholder:text-gray-500 dark:focus:border-primary-500 dark:hover:border-slate-700 pl-10 p-2.5 text-gray-500" placeholder="Filtriraj po nazivu">
                                 </div>
                             </div>
+                            <div>
+                                <a href="report-full-edit.php" class="inline-block focus:outline-none bg-brand-500 text-white hover:bg-brand-600 hover:text-white  text-md font-medium py-2 px-4 rounded">
+                                    Filtriraj
+                                </a>
+                                <a href="report-full-edit.php" class="inline-block focus:outline-none bg-brand-500 text-white hover:bg-brand-600 hover:text-white  text-md font-medium py-2 px-4 rounded">
+                                    Kreiraj izveštaj
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -93,7 +101,7 @@
 				<div class="flex items-center py-4 px-4 w-full">
 					<div class="w-full p-4 bg-white rounded-md shadow-md">
                         <div class="flex flex-wrap gap-4 items-center">
-                            <a href="javasript:;" class="selected object-item px-2 py-1 lg:px-4 text-white bg-gradient-to-r from-green-500 via-green-600 to-green-700 hover:bg-gradient-to-br text-sm rounded transition hover:bg-green-600 border border-green font-medium mb-2">MAXI 276 ZRENJANIN</a>
+                            <a href="javasript:;" class="active object-item px-2 py-1 lg:px-4 text-white bg-gradient-to-r from-green-500 via-green-600 to-green-700 hover:bg-gradient-to-br text-sm rounded transition hover:bg-green-600 border border-green font-medium mb-2">MAXI 276 ZRENJANIN</a>
                             <a href="javasript:;" class="object-item px-2 py-1 lg:px-4 text-white bg-gradient-to-r from-green-500 via-green-600 to-green-700 hover:bg-gradient-to-br text-sm rounded transition hover:bg-green-600 border border-green font-medium mb-2">MAXI 276 ZRENJANIN</a>
                             <a href="javasript:;" class="object-item px-2 py-1 lg:px-4 text-white bg-gradient-to-r from-green-500 via-green-600 to-green-700 hover:bg-gradient-to-br text-sm rounded transition hover:bg-green-600 border border-green font-medium mb-2">MAXI 276 ZRENJANIN</a>
                             <a href="javasript:;" class="critical object-item px-2 py-1 lg:px-4 text-white bg-gradient-to-r from-green-500 via-green-600 to-green-700 hover:bg-gradient-to-br text-sm rounded transition hover:bg-green-600 border border-green font-medium mb-2">MAXI 276 ZRENJANIN</a>
@@ -129,6 +137,7 @@
             </div>
             <div class="relative flex-auto p-4 text-slate-600 dark:text-gray-300 leading-relaxed">
                 <p class="font-semibold text-base">Da li ste sigurni da želite da obrišete?</p>
+                <!-- <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, pariatur.</p>                     -->
             </div>
             <div class="flex flex-wrap shrink-0 justify-end p-3 rounded-b border-t border-dashed dark:border-gray-700">
                 <button class="inline-block focus:outline-none text-red-500 hover:bg-red-500 hover:text-white bg-transparent border border-gray-200 dark:bg-transparent dark:text-red-500 dark:hover:text-white dark:border-gray-700 dark:hover:bg-red-500 text-sm font-medium py-1 px-3 rounded mr-1 close" data-fc-dismiss>Da</button>
@@ -148,6 +157,7 @@
             </div>
             <div class="relative flex-auto p-4 text-slate-600 dark:text-gray-300 leading-relaxed">
                 <p class="font-semibold text-base">Da li ste sigurni da želite da odobrite?</p>
+                <!-- <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, pariatur.</p> -->
             </div>
             <div class="flex flex-wrap shrink-0 justify-end p-3 rounded-b border-t border-dashed dark:border-gray-700">
                 <button class="inline-block focus:outline-none text-red-500 hover:bg-red-500 hover:text-white bg-transparent border border-gray-200 dark:bg-transparent dark:text-red-500 dark:hover:text-white dark:border-gray-700 dark:hover:bg-red-500 text-sm font-medium py-1 px-3 rounded mr-1 close" data-fc-dismiss>Da</button>
@@ -167,6 +177,7 @@
             </div>
             <div class="relative flex-auto p-4 text-slate-600 dark:text-gray-300 leading-relaxed">
                 <p class="font-semibold text-base">Da li ste sigurni da želite da pošeljete mejlove?</p>
+                <!-- <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, pariatur.</p> -->
             </div>
             <div class="flex flex-wrap shrink-0 justify-end p-3 rounded-b border-t border-dashed dark:border-gray-700">
                 <button class="inline-block focus:outline-none text-red-500 hover:bg-red-500 hover:text-white bg-transparent border border-gray-200 dark:bg-transparent dark:text-red-500 dark:hover:text-white dark:border-gray-700 dark:hover:bg-red-500 text-sm font-medium py-1 px-3 rounded mr-1 close" data-fc-dismiss>Da</button>
@@ -189,44 +200,7 @@ flatpickr(".flatpickr", {
 });
 </script>
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-    const selectAllCheckbox = document.getElementById('all');
-    const objectItems = document.querySelectorAll('.object-item');
-    
-    objectItems.forEach(item => {
-        item.addEventListener('click', function() {
-            this.classList.toggle('selected');
-        });
-    });
 
-    selectAllCheckbox.addEventListener('change', function () {
-        if (this.checked) {
-            objectItems.forEach(function (item) {
-                item.classList.add('selected');
-            });
-        } else {
-            objectItems.forEach(function (item) {
-                item.classList.remove('selected');
-            });
-        }
-        criticalCheckbox.checked = false;
-    });
-
-    const criticalCheckbox = document.getElementById('critical');
-    const criticalItems = document.querySelectorAll('.critical');
-
-    criticalCheckbox.addEventListener('change', function () {
-        if (this.checked) {
-            criticalItems.forEach(function (item) {
-                item.classList.add('selected');
-            });
-        } else {
-            criticalItems.forEach(function (item) {
-                item.classList.remove('selected');
-            });
-        }
-    });
-});
 </script>
 <script src="assets/libs/@frostui/tailwindcss/frostui.js"></script>
 <script src="assets/libs/mobius1-selectr/selectr.min.js"></script>

@@ -209,7 +209,7 @@
 								<h4 class="my-1 font-semibold text-3xl dark:text-slate-200 reports_count"><?php echo $count_reports; ?></h4>
 								<h6 class="text-gray-800 dark:text-gray-400 text-lg mb-0 font-medium uppercase">Ukupan broj radnih naloga</h6>
 								<p class="truncate text-gray-700 dark:text-slate-500 text-sm font-normal">
-									<a href="reports/edit" class="px-2 py-1 lg:px-4 bg-primary text-white text-sm rounded-full transition hover:bg-primary-600 border border-primary font-medium mb-2 inline-block">Dodaj radni nalog</a>
+									<a href="workorders/edit" class="px-2 py-1 lg:px-4 bg-primary text-white text-sm rounded-full transition hover:bg-primary-600 border border-primary font-medium mb-2 inline-block">Dodaj radni nalog</a>
 								</p>
 							</div>
 						</div>
@@ -539,7 +539,7 @@ var table2 = $('#client_reports').DataTable({
         {data: null, render: function(data,type,row){
                 if(row.id != 0)
                     return '<div class="flex gap-5 justify-end">'+
-                                '<a href="reports/edit/' + row.id + '"><i class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"></i></a>'+
+                                '<a href="workorders/edit/' + row.id + '"><i class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"></i></a>'+
                                 '<a href="javascript:;" class="delete_record" data-popup="delete-popup" data-id="' + row.id + '" data-model="ReportsModel"><i class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"></i></a>'+
                             '</div>';
                 else
