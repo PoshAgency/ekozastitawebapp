@@ -37,7 +37,7 @@
 							</div>
                             <div class="ms-auto">
                                 <a href="reports/edit" class="inline-block focus:outline-none bg-brand-500 mt-1 text-white hover:bg-brand-600 hover:text-white  text-md font-medium py-2 px-4 rounded">
-                                    Kreiraj izveštaj na osnovu odabranih filtera
+                                    Kreiraj filter
                                 </a>
                             </div>
 						</div>
@@ -53,7 +53,6 @@
                         <div class="flex flex-wrap gap-4 items-center">
                             <div class="w-44 ">  
                                 <select id="default" class="form-input w-full rounded-md border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500 dark:hover:border-slate-700">
-                                    <option>Izaberi klijenta</option>
                                     <option>Delhaize Serbia d.o.o.</option>
                                     <option>Klijent 2</option>
                                     <option>Klijent 3</option>

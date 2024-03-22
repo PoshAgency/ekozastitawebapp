@@ -53,7 +53,7 @@
 							</div>
                             <div class="ms-auto">
                                 <a href="reports/show" class="inline-block focus:outline-none bg-brand-500 mt-1 text-white hover:bg-brand-600 hover:text-white  text-md font-medium py-2 px-4 rounded">
-                                    Kreiraj nov izveštaj
+                                    Filter
                                 </a>
                             </div>
 						</div>
@@ -69,14 +69,32 @@
                         <div class="flex flex-wrap gap-4 items-center">
                             <div class="w-44 ">  
                                 <select id="default" class="form-input w-full rounded-md border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500 dark:hover:border-slate-700">
-                                    <option>Izaberi klijenta</option>
                                     <option>Delhaize Serbia d.o.o.</option>
                                     <option>Klijent 2</option>
                                     <option>Klijent 3</option>
                                 </select>
                             </div>
+                            <div class="w-44 ">  
+                                <select id="default" class="form-input w-full rounded-md border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500 dark:hover:border-slate-700">
+                                    <option>Objekti 1</option>
+                                    <option>Objekti 2</option>
+                                    <option>Objekti 3</option>
+                                </select>
+                            </div>
                             <div> 
                                 <input id="date" name="date" class="flatpickr form-input w-full rounded-md border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700" type="text" placeholder="Izveštaj za period" readonly="readonly">
+                            </div>
+							<div class="w-44">
+                                <label id="select-all" class="flex items-center">
+                                    <input id="all" name="all" type="checkbox" class="accent-primary-500"> 
+                                    <span for="all" class="ml-1 text-sm font-medium text-slate-600 dark:text-gray-300"> Svi objekti</span>
+                                </label>
+                            </div>
+                            <div class="w-44">
+                                <label id="select-critical" class="flex items-center">
+                                    <input id="critical" name="critical" type="checkbox" class="accent-primary-500"> 
+                                    <span for="critical" class="ml-1 text-sm font-medium text-slate-600 dark:text-gray-300"> Kritični objekti</span>
+                                </label> 
                             </div>
                             <div class="ms-auto">
                                 <div class="relative">
@@ -115,10 +133,10 @@
                                                                         </label>
                                                                     </th>
                                                                     <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
-                                                                        Klijent
+                                                                        Objekti
                                                                     </th>
                                                                     <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
-                                                                        Datim
+                                                                        Datum
                                                                     </th>
                                                                     <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
                                                                         Broj izveštaja
