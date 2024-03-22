@@ -61,7 +61,7 @@ $routes->group('administrators', ['filter' => 'adminAuthFilter:1,2,5'], function
     $routes->add('(:any)/(:any)', 'Administrators::$1/$2');
 });
 $routes->group('objecttypes', ['filter' => 'adminAuthFilter:1,2,5'], function ($routes) {
-    $routes->add('', 'Objecttypes::index');
+    $routes->add('', 'ObjectTypes::index');
     $routes->add('(:any)', 'ObjectTypes::$1');
     $routes->add('(:any)/(:any)', 'ObjectTypes::$1/$2');
 });
