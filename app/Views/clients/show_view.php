@@ -207,7 +207,7 @@
 									<i data-lucide="book" class="stroke-orange-500 text-3xl"></i>
 								</span>
 								<h4 class="my-1 font-semibold text-3xl dark:text-slate-200 reports_count"><?php echo $count_reports; ?></h4>
-								<h6 class="text-gray-800 dark:text-gray-400 text-lg mb-0 font-medium uppercase">Ukupan broj radnih naloga</h6>
+								<h6 class="text-gray-800 dark:text-gray-400 text-lg mb-0 font-medium uppercase">Ukupan broj izveštaja</h6>
 								<!-- <p class="truncate text-gray-700 dark:text-slate-500 text-sm font-normal">
 									<a href="workorders/edit" class="px-2 py-1 lg:px-4 bg-primary text-white text-sm rounded-full transition hover:bg-primary-600 border border-primary font-medium mb-2 inline-block">Dodaj radni nalog</a>
 								</p> -->
@@ -235,7 +235,7 @@
 										<button class="inline-block p-4 rounded-t-lg border-b-2 active " id="orders-tab" data-fc-target="#orders" type="button" role="tab" aria-controls="orders" aria-selected="false">Objekti <span class="text-gray-500 dark:text-slate-400 objects_count">(<?php echo $count_objects; ?>)</span></button>
 									</li>
 									<li class="me-2" role="presentation">
-										<button class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="wishlist-tab" data-fc-target="#wishlist" type="button" role="tab" aria-controls="wishlist" aria-selected="false">Radni nalozi <span class="text-gray-500 dark:text-slate-400 reports_count">(<?php echo $count_reports; ?>)</span></button>
+										<button class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="wishlist-tab" data-fc-target="#wishlist" type="button" role="tab" aria-controls="wishlist" aria-selected="false">Izveštaji <span class="text-gray-500 dark:text-slate-400 reports_count">(<?php echo $count_reports; ?>)</span></button>
 									</li>
 									<li class="me-2" role="presentation">
 										<button class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="ratings-tab" data-fc-target="#ratings" type="button" role="tab" aria-controls="ratings" aria-selected="false">Korisnici <span class="text-gray-500 dark:text-slate-400 users_count_brackets">(<?php echo $count_users; ?>)</span></button>
@@ -313,7 +313,7 @@
 																Objekat
 															</th>
 															<th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
-																Broj radnog naloga
+																Broj izveštaja
 															</th>
 															<th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
 																Datum unosa
@@ -417,7 +417,7 @@ var table = $('#client_objects').DataTable({
             }
         }, 
         {data: 'name', render: function(data,type,row){
-            return '<a href="clients/show/' + row.id + '" class="flex items-center">'+
+            return '<a href="objects/edit/' + row.id + '" class="flex items-center">'+
                         '<div class="self-center">'+
                             '<h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">' + (row.name ?? '') + '</h5>'+
                         '</div>'+
@@ -559,7 +559,7 @@ var table2 = $('#client_reports').DataTable({
 
         search: "",
         searchPlaceholder: "Pretraži...",
-        info: "_TOTAL_ radnih naloga",
+        info: "_TOTAL_ izveštaja",
         infoFiltered: "",
         processing: "<div class='loading-wrap'><span class='loader'></span>&emsp;Loading ...</div>",
         infoEmpty: "0 Rezultata",

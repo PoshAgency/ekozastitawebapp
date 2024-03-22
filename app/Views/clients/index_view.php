@@ -220,7 +220,7 @@ var tablee = $('#clients_table').DataTable({
         }
     },
     columnDefs: [
-        {className: 'text-left', targets: [-2]},
+        {className: 'p-3 text-xs font-medium text-left text-gray-700 dark:text-gray-400 uppercase', targets: [-2]},
         {className: 'p-3 text-xs font-medium text-left text-gray-700 dark:text-gray-400 uppercase', targets: "_all" },
         {orderable: false, targets: [0,-1] } // last column (Actions) not orderable
     ],

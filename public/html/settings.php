@@ -12,7 +12,6 @@
 <link rel="stylesheet" href="assets/libs/vanillajs-datepicker/css/datepicker.min.css">
 <link rel="stylesheet" href="assets/libs/mobius1-selectr/selectr.min.css">
 <link rel="stylesheet" href="assets/css/custom.css" />
-<link rel="stylesheet" href="assets/css/custom.css" />
 </head>
 
 <body data-layout-mode="light" data-sidebar-size="default" data-theme-layout="vertical" class="settings-page bg-[#EEF0FC] dark:bg-gray-900">

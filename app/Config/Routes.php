@@ -45,6 +45,31 @@ $routes->group('workorders', ['filter' => 'adminAuthFilter:1,2,5'], function ($r
     $routes->add('(:any)', 'WorkOrders::$1');
     $routes->add('(:any)/(:any)', 'WorkOrders::$1/$2');
 });
+$routes->group('employees', ['filter' => 'adminAuthFilter:1,2,5'], function ($routes) {
+    $routes->add('', 'Employees::index');
+    $routes->add('(:any)', 'Employees::$1');
+    $routes->add('(:any)/(:any)', 'Employees::$1/$2');
+});
+$routes->group('settings', ['filter' => 'adminAuthFilter:1,2,5'], function ($routes) {
+    $routes->add('', 'Settings::index');
+    $routes->add('(:any)', 'Settings::$1');
+    $routes->add('(:any)/(:any)', 'Settings::$1/$2');
+});
+$routes->group('administrators', ['filter' => 'adminAuthFilter:1,2,5'], function ($routes) {
+    $routes->add('', 'Administrators::index');
+    $routes->add('(:any)', 'Administrators::$1');
+    $routes->add('(:any)/(:any)', 'Administrators::$1/$2');
+});
+$routes->group('objecttypes', ['filter' => 'adminAuthFilter:1,2,5'], function ($routes) {
+    $routes->add('', 'Objecttypes::index');
+    $routes->add('(:any)', 'ObjectTypes::$1');
+    $routes->add('(:any)/(:any)', 'ObjectTypes::$1/$2');
+});
+$routes->group('preparations', ['filter' => 'adminAuthFilter:1,2,5'], function ($routes) {
+    $routes->add('', 'Preparations::index');
+    $routes->add('(:any)', 'Preparations::$1');
+    $routes->add('(:any)/(:any)', 'Preparations::$1/$2');
+});
 $routes->group('reports', ['filter' => 'adminAuthFilter:1,2,5'], function ($routes) {
     $routes->add('', 'Reports::index');
     $routes->add('(:any)', 'Reports::$1');

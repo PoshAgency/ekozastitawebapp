@@ -187,3 +187,23 @@ html {
 .critical {
 	border: 2px solid red !important;
 }
+html body .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+html
+	body
+	.dataTables_wrapper
+	.dataTables_paginate
+	.paginate_button.current:hover {
+	background: rgb(17 156 73 / 1) !important;
+}
+html body .dataTables_wrapper .dataTables_paginate .paginate_button {
+	color: rgb(17 156 73 / 1) !important;
+}
+body .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+body .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+	background: rgb(17 156 73 / 1) !important;
+	border: 1px solid rgb(17 156 73 / 1) !important;
+}
+body .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+	border: 1px solid rgb(17 156 73 / 1) !important;
+	background: rgb(17 156 73 / 1) !important;
+}

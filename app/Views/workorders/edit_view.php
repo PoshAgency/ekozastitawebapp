@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="assets/css/custom.css" />
 </head>
 
-<body data-layout-mode="light" data-sidebar-size="default" data-theme-layout="vertical" class="report-full-edit-page bg-green-50 dark:bg-gray-900">
+<body data-layout-mode="light" data-sidebar-size="default" data-theme-layout="vertical" class="workorder-full-edit-page bg-green-50 dark:bg-gray-900">
 
 <!-- leftbar-tab-menu -->
 <?php echo view('templates/left-bar.php'); ?>		
@@ -130,12 +130,42 @@
                                                                     <label for="mark" class="font-medium text-sm text-slate-600 dark:text-slate-400">Ocena</label>
                                                                 </div>
                                                                 <div class="col-span-12 md:col-span-12 lg:col-span-9 mb-2">
-                                                                    <select id="mark" class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700">
-                                                                        <option>0</option>
-                                                                        <option>1</option>
-                                                                        <option>2</option>
-                                                                        <option>3</option>
-                                                                    </select>
+                                                                    
+
+
+<fieldset>
+    <legend class="sr-only">Countries</legend>
+  
+    <div class="flex items-center mb-3">
+      <input id="country-option-1" type="radio" name="countries" value="USA" class="w-4 h-4 border-gray-300  dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" aria-labelledby="country-option-1" aria-describedby="country-option-1" checked>
+      <label for="country-option-1" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+        United States
+      </label>
+    </div>
+  
+    <div class="flex items-center mb-3">
+      <input id="country-option-2" type="radio" name="countries" value="Germany" class="w-4 h-4 border-gray-300  dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" aria-labelledby="country-option-2" aria-describedby="country-option-2">
+      <label for="country-option-2" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+        Germany
+      </label>
+    </div>
+  
+    <div class="flex items-center mb-3">
+      <input id="country-option-3" type="radio" name="countries" value="Spain" class="w-4 h-4 border-gray-300  dark:bg-gray-700 dark:border-gray-600" aria-labelledby="country-option-3" aria-describedby="country-option-3">
+      <label for="country-option-3" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+        Spain
+      </label>
+    </div>
+  
+    <div class="flex items-center">
+      <input id="option-disabled" type="radio" name="countries" value="China" class="w-4 h-4 border-gray-200  dark:bg-gray-700 dark:border-gray-600" aria-labelledby="option-disabled" aria-describedby="option-disabled" disabled>
+      <label for="option-disabled" class="block ml-2 text-sm font-medium text-gray-300 dark:text-gray-600">
+        China (disabled)
+      </label>
+    </div>
+</fieldset>
+
+
                                                                 </div>
                                                                 <div class="col-span-12 md:col-span-12 lg:col-span-3 self-center text-right mr-2">
                                                                     <label for="message" class="font-medium text-sm text-slate-600 dark:text-slate-400">Komentar</label>

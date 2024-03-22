@@ -27,7 +27,7 @@
 <link href="https://cdn.datatables.net/fixedcolumns/3.3.3/css/fixedColumns.dataTables.min.css" rel="stylesheet">
 </head>
 
-<body data-layout-mode="light" data-sidebar-size="default" data-theme-layout="vertical" class="client-group-page bg-green-50 dark:bg-gray-900">
+<body data-layout-mode="light" data-sidebar-size="default" data-theme-layout="vertical" class="reports-group-page bg-green-50 dark:bg-gray-900">
 
 <?php echo view('templates/left-bar'); ?>		
 <?php echo view('templates/header'); ?>		
@@ -53,7 +53,7 @@
 							</div>
                             <div class="ms-auto">
                                 <a href="reports/show" class="inline-block focus:outline-none bg-brand-500 mt-1 text-white hover:bg-brand-600 hover:text-white  text-md font-medium py-2 px-4 rounded">
-                                    Filter
+                                    Kreiraj filter
                                 </a>
                             </div>
 						</div>
@@ -76,6 +76,7 @@
                             </div>
                             <div class="w-44 ">  
                                 <select id="default" class="form-input w-full rounded-md border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500 dark:hover:border-slate-700">
+                                    <option>Izaberi objekat</option>
                                     <option>Objekti 1</option>
                                     <option>Objekti 2</option>
                                     <option>Objekti 3</option>
@@ -158,7 +159,7 @@
 																</label>
 															</td>
 															<td class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-																<a href="reports/edit" class="flex items-center">
+																<a href="workorders/edit" class="flex items-center">
 																	<div class="self-center">                                                                        
 																		<h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">CMK 708 Makarska</h5>
 																	</div>
@@ -172,7 +173,7 @@
 															</td> 
 															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
 																<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400"  data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																<a class="mr-3" href="reports/show"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
+																<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
 															</td>
 														</tr>
@@ -187,7 +188,7 @@
 																</label>
 															</td>
 															<td class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-																<a href="reports/edit" class="flex items-center">
+																<a href="workorders/edit" class="flex items-center">
 																	<div class="self-center">                                                                        
 																		<h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">CMK 708 Makarska</h5>
 																	</div>
@@ -201,7 +202,7 @@
 															</td>
 															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
 																<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																<a class="mr-3" href="reports/show"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
+																<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
 															</td>
 														</tr>
@@ -216,7 +217,7 @@
 																</label>
 															</td>
 															<td class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-																<a href="reports/edit" class="flex items-center">
+																<a href="workorders/edit" class="flex items-center">
 																	<div class="self-center">                                                                        
 																		<h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">CMK 708 Makarska</h5>
 																	</div>
@@ -230,7 +231,7 @@
 															</td>
 															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
 																<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																<a class="mr-3" href="reports/show"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
+																<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
 															</td>
 														</tr>
@@ -245,7 +246,7 @@
 																</label>
 															</td>
 															<td class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-																<a href="reports/edit" class="flex items-center">
+																<a href="workorders/edit" class="flex items-center">
 																	<div class="self-center">                                                                        
 																		<h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">CMK 708 Makarska</h5>
 																	</div>
@@ -259,7 +260,7 @@
 															</td>
 															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
 																<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																<a class="mr-3" href="reports/show"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
+																<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
 															</td>
 														</tr>
@@ -274,7 +275,7 @@
 																</label>
 															</td>
 															<td class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-																<a href="reports/edit" class="flex items-center">
+																<a href="workorders/edit" class="flex items-center">
 																	<div class="self-center">                                                                        
 																		<h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">CMK 708 Makarska</h5>
 																	</div>
@@ -288,7 +289,7 @@
 															</td>
 															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
 																<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																<a class="mr-3" href="reports/show"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
+																<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
 															</td>
 														</tr>
@@ -303,7 +304,7 @@
 																</label>
 															</td>
 															<td class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-																<a href="reports/edit" class="flex items-center">
+																<a href="workorders/edit" class="flex items-center">
 																	<div class="self-center">                                                                        
 																		<h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">CMK 708 Makarska</h5>
 																	</div>
@@ -317,7 +318,7 @@
 															</td>
 															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
 																<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																<a class="mr-3" href="reports/show"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
+																<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
 															</td>
 														</tr>
@@ -332,7 +333,7 @@
 																</label>
 															</td>
 															<td class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-																<a href="reports/edit" class="flex items-center">
+																<a href="workorders/edit" class="flex items-center">
 																	<div class="self-center">                                                                        
 																		<h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">CMK 708 Makarska</h5>
 																	</div>
@@ -346,7 +347,7 @@
 															</td>
 															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
 																<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																<a class="mr-3" href="reports/show"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
+																<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
 															</td>
 														</tr>
@@ -361,7 +362,7 @@
 																</label>
 															</td>
 															<td class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-																<a href="reports/edit" class="flex items-center">
+																<a href="workorders/edit" class="flex items-center">
 																	<div class="self-center">                                                                        
 																		<h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">CMK 708 Makarska</h5>
 																	</div>
@@ -375,7 +376,7 @@
 															</td>
 															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
 																<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																<a class="mr-3" href="reports/show"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
+																<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
 															</td>
 														</tr>
@@ -390,7 +391,7 @@
 																</label>
 															</td>
 															<td class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-																<a href="reports/edit" class="flex items-center">
+																<a href="workorders/edit" class="flex items-center">
 																	<div class="self-center">                                                                        
 																		<h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">CMK 708 Makarska</h5>
 																	</div>
@@ -404,7 +405,7 @@
 															</td>
 															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
 																<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																<a class="mr-3" href="reports/show"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
+																<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
 															</td>
 														</tr>
@@ -419,7 +420,7 @@
 																</label>
 															</td>
 															<td class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-																<a href="reports/edit" class="flex items-center">
+																<a href="workorders/edit" class="flex items-center">
 																	<div class="self-center">                                                                        
 																		<h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">CMK 708 Makarska</h5>
 																	</div>
@@ -433,7 +434,7 @@
 															</td>
 															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
 																<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																<a class="mr-3" href="reports/show"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
+																<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
 															</td>
 														</tr>

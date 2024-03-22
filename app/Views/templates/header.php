@@ -19,19 +19,20 @@
 			<div class="ltr:me-2 ltr:lg:me-4 rtl:me-0 rtl:ms-2 rtl:lg:me-0 rtl:md:ms-4 dropdown relative">
 				<button type="button" class="dropdown-toggle flex rounded-full md:me-0" id="Notifications" aria-expanded="false" data-fc-autoclose="both" data-fc-type="dropdown">
 					<span data-lucide="bell" class="top-icon w-5 h-5"></span>
+					<span class="absolute -top-1 -right-1 h-4 w-4 leading-4 rounded-full bg-brand text-[10px] font-semibold text-white">6</span>
 				</button>
 
 				<div class="left-auto right-0 z-50 my-1 hidden w-64 list-none divide-y h-52 divide-gray-100 rounded border border-slate-700/10 text-base shadow dark:divide-gray-600 bg-white dark:bg-slate-800" id="navNotifications" data-simplebar>
 					<ul class="py-1" aria-labelledby="navNotifications">
 						<li class="py-2 px-4">
-							<a href="report-full.php" class="dropdown-item">
+							<a href="workorders/edit" class="dropdown-item">
 								<div class="flex">
 									<div class="h-8 w-8 rounded-full bg-primary-500/20 inline-flex me-3">
 										<span data-lucide="book" class="w-4 h-4 inline-block text-primary-500 dark:text-primary-400 self-center mx-auto"></span>
 									</div>
 									<div class="flex-grow flex-1 ms-0.5 overflow-hidden">
 										<p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300">
-											Prioritetan radni nalog za odobrenje
+											Prioritetan radni nalog za verifikaciju
 										</p>
 										<p class="text-gray-500 mb-0 text-xs truncate dark:text-gray-400">
 											22.01.2024. 22:00h
@@ -41,14 +42,14 @@
 							</a>
 						</li>
 						<li class="py-2 px-4">
-							<a href="report-full.php" class="dropdown-item">
+							<a href="workorders/edit" class="dropdown-item">
 								<div class="flex">
 									<div class="h-8 w-8 rounded-full inline-flex me-3">
 										<span data-lucide="book" class="w-4 h-4 inline-block text-primary-500 dark:text-primary-400 self-center mx-auto"></span>
 									</div>
 									<div class="flex-grow flex-1 ms-0.5 overflow-hidden">
 										<p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300">
-											Nov radni nalog za odobrenje
+											Radni nalog za verifikaciju
 										</p>
 										<p class="text-gray-500 mb-0 text-xs truncate dark:text-gray-400">
 											22.01.2024. 20:45h
@@ -58,14 +59,14 @@
 							</a>
 						</li>
 						<li class="py-2 px-4">
-							<a href="report-full.php" class="dropdown-item">
+							<a href="workorders/edit" class="dropdown-item">
 								<div class="flex">
 									<div class="h-8 w-8 rounded-full inline-flex me-3">
 										<span data-lucide="book" class="w-4 h-4 inline-block text-primary-500 dark:text-primary-400 self-center mx-auto"></span>
 									</div>
 									<div class="flex-grow flex-1 ms-0.5 overflow-hidden">
 										<p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300">
-											Nov radni nalog za odobrenje
+											Radni nalog za verifikaciju
 										</p>
 										<p class="text-gray-500 mb-0 text-xs truncate dark:text-gray-400">
 											22.01.2024. 20:46h
@@ -75,14 +76,14 @@
 							</a>
 						</li>
 						<li class="py-2 px-4">
-							<a href="report-full.php" class="dropdown-item">
+							<a href="workorders/edit" class="dropdown-item">
 								<div class="flex">
 									<div class="h-8 w-8 rounded-full inline-flex me-3">
 										<span data-lucide="book" class="w-4 h-4 inline-block text-primary-500 dark:text-primary-400 self-center mx-auto"></span>
 									</div>
 									<div class="flex-grow flex-1 ms-0.5 overflow-hidden">
 										<p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300">
-											Nov radni nalog za odobrenje
+											Radni nalog za verifikaciju
 										</p>
 										<p class="text-gray-500 mb-0 text-xs truncate dark:text-gray-400">
 											22.01.2024. 20:47h
@@ -92,14 +93,14 @@
 							</a>
 						</li>
 						<li class="py-2 px-4">
-							<a href="report-full.php" class="dropdown-item">
+							<a href="workorders/edit" class="dropdown-item">
 								<div class="flex">
 									<div class="h-8 w-8 rounded-full inline-flex me-3">
 										<span data-lucide="book" class="w-4 h-4 inline-block text-primary-500 dark:text-primary-400 self-center mx-auto"></span>
 									</div>
 									<div class="flex-grow flex-1 ms-0.5 overflow-hidden">
 										<p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300">
-											Nov radni nalog za odobrenje
+											Radni nalog za verifikaciju
 										</p>
 										<p class="text-gray-500 mb-0 text-xs truncate dark:text-gray-400">
 											20:48h
@@ -109,7 +110,7 @@
 							</a>
 						</li>
 						<li class="py-2 px-4">
-							<a href="report-full.php" class="dropdown-item">
+							<a href="workorders/edit" class="dropdown-item">
 								<div class="flex">
 									<div class="h-8 w-8 rounded-full inline-flex me-3">
 										<span data-lucide="book" class="w-4 h-4 inline-block text-primary-500 dark:text-primary-400 self-center mx-auto"></span>
@@ -153,12 +154,6 @@
 							<a href="settings" class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-gray-900/20 dark:hover:text-white">
 								<span data-lucide="settings" class="w-4 h-4 inline-block text-slate-800 dark:text-slate-400 me-2"></span>
 								Podešavanja
-							</a>
-						</li>
-						<li>
-							<a href="#" class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-gray-900/20 dark:hover:text-white">
-								<span data-lucide="message-square" class="w-4 h-4 inline-block text-slate-800 dark:text-slate-400 me-2"></span>
-								Poruke
 							</a>
 						</li>
 						<li>

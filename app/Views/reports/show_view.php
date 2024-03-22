@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="assets/css/custom.css" />
 </head>
 
-<body data-layout-mode="light" data-sidebar-size="default" data-theme-layout="vertical" class="report-group-page bg-green-50 dark:bg-gray-900">
+<body data-layout-mode="light" data-sidebar-size="default" data-theme-layout="vertical" class="report-create-page bg-green-50 dark:bg-gray-900">
 
 <?php echo view('templates/left-bar.php'); ?>		
 <?php echo view('templates/header.php'); ?>		
