@@ -31,12 +31,14 @@
 								<h1 class="font-medium text-3xl block dark:text-slate-100"><?php echo (isset($current['id']) AND $current['id'] != '') ? '' : 'Novi '; ?>Klijent</h1>
 								<ol class="list-reset flex text-sm">
 									<li>
-										<a href="#" class="text-gray-500 dark:text-slate-400">Ekozaštita</a>
-									</li>
+                                        <a href="<?php echo base_url(); ?>" class="text-primary-500 hover:text-green-600 dark:text-primary-400">Ekozaštita</a>
+                                    </li>
 									<li>
 										<span class="text-gray-500 dark:text-slate-400 mx-2">/</span>
 									</li>
-									<li class="text-gray-500 dark:text-slate-400">Klijenti</li>
+									<li>
+                                        <a href="clients" class="text-primary-500 hover:text-green-600 dark:text-primary-400">Klijenti</a>
+                                    </li>
 									<li>
 										<span class="text-gray-500 dark:text-slate-400 mx-2">/</span>
 									</li>

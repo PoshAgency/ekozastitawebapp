@@ -25,6 +25,26 @@
 <link href="https://cdn.datatables.net/colreorder/1.5.4/css/colReorder.dataTables.min.css" rel="stylesheet">
 <!-- fixedcolumns datatable -->
 <link href="https://cdn.datatables.net/fixedcolumns/3.3.3/css/fixedColumns.dataTables.min.css" rel="stylesheet">
+<style>
+.clear_dates:hover {
+    color: var(--main-color);
+    opacity: 0.7;
+}
+.clear_dates {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 1111;
+	font-size: 20px;
+	line-height: 39px;
+	display: block;
+	width: 25px;
+	text-align: center;
+	cursor: pointer;
+	user-select: none;
+}
+
+</style>
 </head>
 
 <body data-layout-mode="light" data-sidebar-size="default" data-theme-layout="vertical" class="reports-group-page bg-green-50 dark:bg-gray-900">
@@ -64,36 +84,38 @@
 
         <div class="breadcrumbs-container xl:w-full">
 			<div class="flex flex-wrap">
-				<div class="flex items-center py-4 px-4 w-full">
+				<div class="flex items-center pt-4 px-4 w-full">
 					<div class="w-full p-4 bg-white rounded-md shadow-md">
                         <div class="flex flex-wrap gap-4 items-center">
                             <div class="w-44 ">  
-                                <select id="default" class="form-input w-full rounded-md border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500 dark:hover:border-slate-700">
-                                    <option>Delhaize Serbia d.o.o.</option>
-                                    <option>Klijent 2</option>
-                                    <option>Klijent 3</option>
+                                <select id="clients_list" class="form-input w-full rounded-md border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500 dark:hover:border-slate-700">
+                                    <option value="" selected>Izaberi klijenta</option>
+                                    <?php foreach($all_active_clients as $single){ ?>
+                                    <option value="<?php echo (isset($single['id']) AND $single['id'] != '') ? $single['id'] : ''; ?>"><?php echo (isset($single['name']) AND $single['name'] != '') ? $single['name'] : ''; ?></option>
+                                    <?php } ?>
                                 </select>
                             </div>
                             <div class="w-44 ">  
-                                <select id="default" class="form-input w-full rounded-md border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500 dark:hover:border-slate-700">
-                                    <option>Izaberi objekat</option>
-                                    <option>Objekti 1</option>
-                                    <option>Objekti 2</option>
-                                    <option>Objekti 3</option>
+                                <select id="objects_list" class="form-input w-full rounded-md border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500 dark:hover:border-slate-700">
+                                    <option value="" selected>Izaberi objekat</option>
+                                    <option value="111">Objekti 1</option>
+                                    <option value="144">Objekti 2</option>
+                                    <option value="132">Objekti 3</option>
                                 </select>
                             </div>
-                            <div> 
-                                <input id="date" name="date" class="flatpickr form-input w-full rounded-md border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700" type="text" placeholder="Izveštaj za period" readonly="readonly">
+                            <div style="position: relative;"> 
+                                <input id="date" name="date" class="datepicker_range_table flatpickr form-input w-full rounded-md border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700" type="text" placeholder="Izveštaj za period" readonly="readonly">
+                                <span class="clear_dates" style="display: none;">×</span>
                             </div>
-							<div class="w-44">
+							<div class="">
                                 <label id="select-all" class="flex items-center">
-                                    <input id="all" name="all" type="checkbox" class="accent-primary-500"> 
+                                    <input id="all" name="all" type="checkbox" value="1" class="accent-primary-500"> 
                                     <span for="all" class="ml-1 text-sm font-medium text-slate-600 dark:text-gray-300"> Svi objekti</span>
                                 </label>
                             </div>
-                            <div class="w-44">
+                            <div class="">
                                 <label id="select-critical" class="flex items-center">
-                                    <input id="critical" name="critical" type="checkbox" class="accent-primary-500"> 
+                                    <input id="critical" name="critical" type="checkbox" value="1" class="accent-primary-500"> 
                                     <span for="critical" class="ml-1 text-sm font-medium text-slate-600 dark:text-gray-300"> Kritični objekti</span>
                                 </label> 
                             </div>
@@ -116,16 +138,16 @@
 					<div class="w-full relative mb-4">  
 						<div class="flex-auto p-0">
 							<div id="myTabContent">
-								<div class="active p-4 rounded-lg" id="all" role="tabpanel" aria-labelledby="all-tab">
+								<div class="active pb-4 px-4 rounded-lg" id="all" role="tabpanel" aria-labelledby="all-tab">
 									<div class="grid grid-cols-1 p-0 md:p-4">
 										<div class="sm:-mx-6 lg:-mx-8">
-											<div class="relative overflow-x-auto block w-full sm:px-2 lg:px-4">
+											<div class="relative overflow-x-auto block w-full sm:px-2 lg:px-4 pb-4">
                                                 <div class="bg-white rounded-md shadow-md">
                                                     <div class="py-4">
-                                                        <table class="w-full border-collapse" id="clients_table">
+                                                        <table class="w-full border-collapse" id="reports_table">
                                                             <thead class="bg-gray-50 dark:bg-gray-700/20">
                                                                 <tr>
-                                                                    <th scope="col" class="p-3">
+                                                                    <th scope="col" class="p-3 pr-0" width="20" style="width: 20px !important">
                                                                         <label class="custom-label">
                                                                             <div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
                                                                             <input type="checkbox" class="hidden" onchange="select_all($(this))">
@@ -134,311 +156,23 @@
                                                                         </label>
                                                                     </th>
                                                                     <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
-                                                                        Objekti
+                                                                        Broj izveštaja
+                                                                    </th>
+                                                                    <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
+                                                                        Klijent
+                                                                    </th>
+                                                                    <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
+                                                                        Objekat
                                                                     </th>
                                                                     <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
                                                                         Datum
-                                                                    </th>
-                                                                    <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
-                                                                        Broj izveštaja
                                                                     </th>
                                                                     <th scope="col" style="width: 120px !important" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
                                                                         &nbsp;
                                                                     </th>
                                                                 </tr>
                                                             </thead>
-                                                            <tbody>
-														<!-- 1 -->
-														<tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-															<td class="w-4 p-4">
-																<label class="custom-label">
-																	<div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-																	<input type="checkbox" class="hidden" >
-																	<i class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-																	</div>
-																</label>
-															</td>
-															<td class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-																<a href="workorders/edit" class="flex items-center">
-																	<div class="self-center">                                                                        
-																		<h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">CMK 708 Makarska</h5>
-																	</div>
-																</a>
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																07.06.2023.
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																479
-															</td> 
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-																<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400"  data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
-																<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
-															</td>
-														</tr>
-														<!-- 2 -->
-														<tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-															<td class="w-4 p-4">
-																<label class="custom-label">
-																	<div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-																	<input type="checkbox" class="hidden" >
-																	<i class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-																	</div>
-																</label>
-															</td>
-															<td class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-																<a href="workorders/edit" class="flex items-center">
-																	<div class="self-center">                                                                        
-																		<h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">CMK 708 Makarska</h5>
-																	</div>
-																</a>
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																07.06.2023.
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																479
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-																<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
-																<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
-															</td>
-														</tr>
-														<!-- 3 -->
-														<tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-															<td class="w-4 p-4">
-																<label class="custom-label">
-																	<div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-																	<input type="checkbox" class="hidden" >
-																	<i class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-																	</div>
-																</label>
-															</td>
-															<td class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-																<a href="workorders/edit" class="flex items-center">
-																	<div class="self-center">                                                                        
-																		<h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">CMK 708 Makarska</h5>
-																	</div>
-																</a>
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																07.06.2023.
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																479
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-																<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
-																<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
-															</td>
-														</tr>
-														<!-- 4 -->
-														<tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-															<td class="w-4 p-4">
-																<label class="custom-label">
-																	<div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-																	<input type="checkbox" class="hidden" >
-																	<i class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-																	</div>
-																</label>
-															</td>
-															<td class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-																<a href="workorders/edit" class="flex items-center">
-																	<div class="self-center">                                                                        
-																		<h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">CMK 708 Makarska</h5>
-																	</div>
-																</a>
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																07.06.2023.
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																479
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-																<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
-																<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
-															</td>
-														</tr>
-														<!--5-->
-														<tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-															<td class="w-4 p-4">
-																<label class="custom-label">
-																	<div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-																	<input type="checkbox" class="hidden" >
-																	<i class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-																	</div>
-																</label>
-															</td>
-															<td class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-																<a href="workorders/edit" class="flex items-center">
-																	<div class="self-center">                                                                        
-																		<h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">CMK 708 Makarska</h5>
-																	</div>
-																</a>
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																07.06.2023.
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																479
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-																<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
-																<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
-															</td>
-														</tr>
-														<!--6-->
-														<tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-															<td class="w-4 p-4">
-																<label class="custom-label">
-																	<div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-																	<input type="checkbox" class="hidden" >
-																	<i class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-																	</div>
-																</label>
-															</td>
-															<td class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-																<a href="workorders/edit" class="flex items-center">
-																	<div class="self-center">                                                                        
-																		<h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">CMK 708 Makarska</h5>
-																	</div>
-																</a>
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																07.06.2023.
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																479
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-																<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
-																<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
-															</td>
-														</tr>
-														<!--7-->
-														<tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-															<td class="w-4 p-4">
-																<label class="custom-label">
-																	<div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-																	<input type="checkbox" class="hidden" >
-																	<i class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-																	</div>
-																</label>
-															</td>
-															<td class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-																<a href="workorders/edit" class="flex items-center">
-																	<div class="self-center">                                                                        
-																		<h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">CMK 708 Makarska</h5>
-																	</div>
-																</a>
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																07.06.2023.
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																479
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-																<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
-																<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
-															</td>
-														</tr>
-														<!--8-->
-														<tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-															<td class="w-4 p-4">
-																<label class="custom-label">
-																	<div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-																	<input type="checkbox" class="hidden" >
-																	<i class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-																	</div>
-																</label>
-															</td>
-															<td class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-																<a href="workorders/edit" class="flex items-center">
-																	<div class="self-center">                                                                        
-																		<h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">CMK 708 Makarska</h5>
-																	</div>
-																</a>
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																07.06.2023.
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																479
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-																<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
-																<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
-															</td>
-														</tr>
-														<!--9-->
-														<tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-															<td class="w-4 p-4">
-																<label class="custom-label">
-																	<div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-																	<input type="checkbox" class="hidden" >
-																	<i class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-																	</div>
-																</label>
-															</td>
-															<td class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-																<a href="workorders/edit" class="flex items-center">
-																	<div class="self-center">                                                                        
-																		<h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">CMK 708 Makarska</h5>
-																	</div>
-																</a>
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																07.06.2023.
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																479
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-																<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
-																<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
-															</td>
-														</tr>
-														<!--10-->
-														<tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-															<td class="w-4 p-4">
-																<label class="custom-label">
-																	<div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-																	<input type="checkbox" class="hidden" >
-																	<i class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-																	</div>
-																</label>
-															</td>
-															<td class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-																<a href="workorders/edit" class="flex items-center">
-																	<div class="self-center">                                                                        
-																		<h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">CMK 708 Makarska</h5>
-																	</div>
-																</a>
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																07.06.2023.
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																479
-															</td>
-															<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-																<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
-																<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
-															</td>
-														</tr>
-													</tbody>
+                                                            <tbody></tbody>
                                                         </table>
                                                     </div>
                                                 </div>
@@ -486,10 +220,36 @@
 <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
 <script src="assets/libs/@frostui/tailwindcss/frostui.js"></script>
 <script>
-flatpickr(".flatpickr", {
+var dates = '';
+var filterData = '';
+var flatpic;
+
+// flatpickr(".flatpickr", {
+flatpic = $(".datepicker_range_table").flatpickr({
     mode: "range",
-    minDate: "today",
+    // minDate: "today",
     dateFormat: "d.m.Y.",
+    onClose: function(selectedDates, dateStr, instance) {
+        console.log(selectedDates);
+        // console.log(dateStr);
+        if(selectedDates.length){
+            var dd = String(selectedDates[0].getDate()).padStart(2, '0');
+            var mm = String(selectedDates[0].getMonth() + 1).padStart(2, '0'); //January is 0!
+            var yyyy = selectedDates[0].getFullYear();
+
+            var from  = dd + '.' + mm + '.' + yyyy;
+
+            var dd2 = String(selectedDates[1].getDate()).padStart(2, '0');
+            var mm2 = String(selectedDates[1].getMonth() + 1).padStart(2, '0'); //January is 0!
+            var yyyy2 = selectedDates[1].getFullYear();
+
+            var to = dd2 + '.' + mm2 + '.' + yyyy2;
+            dates = from + ' do ' + to;
+            console.log(instance);
+            tablee.ajax.reload();
+            $('.datepicker_range_table').val(dates);
+        }
+    },
 });
 </script>
 <script src="assets/libs/mobius1-selectr/selectr.min.js"></script>
@@ -507,5 +267,133 @@ flatpickr(".flatpickr", {
 <!-- fixedcolumns datatable -->
 <script src="https://cdn.datatables.net/fixedcolumns/3.3.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="assets/js/app.js"></script>
+<script>
+var svg = '<?php echo svg(); ?>'
+var filterData = {};
+
+var tablee = $('#reports_table').DataTable({
+    processing: true,
+    serverSide: true,
+    serverMethod: 'post',
+    ajax: {
+        url: "<?= base_url() ?>/reports/datatable",
+        type: "POST",
+        data: function(params) {
+            $('#clients_list').val()      != '' ? (filterData['client_id'] = $('#clients_list').val()) : '';
+            $('#objects_list').val()      != '' ? (filterData['object_id'] = $('#objects_list').val()) : '';
+            $('#all').is(':checked')      != '' ? (filterData['all_objects'] = 1) : '';
+            $('#critical').is(':checked') != '' ? (filterData['critical'] = 1) : '';
+            var tableData = $.extend({}, params, {
+                filter: filterData,
+                dates: dates
+            });
+            return tableData;
+        },
+    },
+    rowCallback: function( row, data ) {
+        $(row).addClass('ReportsModel_row').attr('data-id', data.id);
+    },
+    retrieve: true,
+    cache: true,
+    'columns': [
+        {data: 'id', render: function(data,type,row){
+                return '<label class="custom-label"><div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]"><input type="checkbox" class="hidden" data-remove onchange="data_remove($(this))" data-id="' + row.id + '" ><i class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i></div></label>';
+            }
+        }, 
+        {data: 'report_num', render: function(data,type,row){
+            return '<a href="reports/edit/' + row.id + '" class="flex items-center">'+
+                        '<div class="self-center">'+
+                            '<h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">' + (row.report_num ?? '') + '</h5>'+
+                        '</div>'+
+                    '</a>';
+            }
+        },
+        {data: 'client_name', render: function(data,type,row){
+            return '<a href="clients/show/' + row.client_id + '" class="flex items-center">'+
+                        '<div class="self-center">'+
+                            '<h5 class="text-sm font-normal text-slate-700 dark:text-gray-400">' + (row.client_name ?? '') + '</h5>'+
+                        '</div>'+
+                    '</a>';
+            }
+        },
+        {data: 'object_name', render: function(data,type,row){
+            return '<a href="objects/show/' + row.object_id + '" class="flex items-center">'+
+                        '<div class="self-center">'+
+                            '<h5 class="text-sm font-normal text-slate-700 dark:text-gray-400">' + (row.object_name ?? '') + '</h5>'+
+                        '</div>'+
+                    '</a>';
+            }
+        },
+        {data: 'date_done'},
+        {data: null, render: function(data,type,row){
+                if(row.id != 0)
+                    return '<div class="flex gap-5 justify-end">'+
+                                '<a href="reports/edit/' + row.id + '"><i class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"></i></a>'+
+                                '<a href="javascript:;"><i class="icofont-ui-delete text-lg text-red-500 dark:text-red-400 delete_record" data-id="' + row.id + '" data-model="ReportsModel" data-popup="delete-popup" ></i></a>'+
+                            '</div>';
+                else
+                    return "";
+            }
+        },
+    ],
+    language: {
+        lengthMenu: '<select>' +
+                '<option value="10">Per Page: 10</option>' +
+                '<option value="20">Per Page: 20</option>' +
+                '<option value="30">Per Page: 30</option>' +
+                '<option value="40">Per Page: 40</option>' +
+                '<option value="50">Per Page: 50</option>' +
+                '<option value="-1">All</option>' +
+                '</select>',
+
+        search: "",
+        searchPlaceholder: "Pretraži...",
+        info: "_TOTAL_ Izveštaja",
+        infoFiltered: "",
+        processing: "<div class='loading-wrap'><span class='loader'></span>&emsp;Loading ...</div>",
+        infoEmpty: "0 Rezultata",
+        paginate: {
+            previous: " < ",
+            next: " > ",
+        }
+    },
+    columnDefs: [
+        {width: '30px', targets: 0},
+        {width: '10%', targets: 1},
+        {width: '20%', targets: 2},
+        {width: '50%', targets: 3},
+        {width: '20%', targets: 4},
+        {width: '50px', targets: -1},
+        {className: 'p-3 text-xs font-medium text-left text-gray-700 dark:text-gray-400', targets: [-2]},
+        {className: 'p-3 text-xs font-medium text-left text-gray-700 dark:text-gray-400', targets: [1,2,3] },
+        {className: 'text-center pr-0', targets: [0] },
+        {orderable: false, targets: [0,-1] } // last column (Actions) not orderable
+    ],
+    dom: '<"table-filters"iB<"btn-holder"<"date_range">fr>>t<"table-footer"<"bottom-footer-container"pl>>',
+    buttons: [
+        {
+            text: 'Obriši selektovano',
+            attr: {
+                class: 'delete_multiple focus:outline-none bg-red-500 text-white hover:bg-brand-600 hover:text-white  text-md font-medium py-2 px-4 rounded ml-5',
+                style: 'max-height: 32px;display: none;line-height: 13px;',
+                "data-popup": 'delete-popup',
+                "data-model": 'ReportsModel',
+            },
+        }
+    ]
+});
+$(document).on('click', '.clear_dates', function(){
+    $('.datepicker_range_table').val('');
+    flatpic.clear();
+    dates = '';
+    tablee.ajax.reload();
+    $(this).hide();
+});
+
+$(document).on('change', '#clients_list,#objects_list,#all,#critical', function(){
+    tablee.ajax.reload();
+});
+
+</script>
 </body>
 </html>

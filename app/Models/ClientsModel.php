@@ -57,11 +57,13 @@ class ClientsModel extends Model
     }
     public function client_objects($id = NULL, $searchTerm = '', $order = '', $limit = NULL, $offset = NULL){
         if($id != NULL AND $id > 0){
-            $objects = $this->query("SELECT cobjects.*, tobjects.object_type as type
+            $objects = $this->query("SELECT cobjects.*, DATE_FORMAT(ar.date_done, '%d.%m.%Y \u %H:%i') as date_done, IF(ar.report_number IS NULL, CONCAT('00',ar.id, '/', '" . date('Y') . "'), ar.report_number) as report_num
                     FROM cobjects
-                    LEFT JOIN tobjects ON cobjects.tobject_id = tobjects.id
-                    WHERE client_id = " . $id . "
-                    AND deleted_at IS NULL
+                    -- LEFT JOIN tobjects ON cobjects.tobject_id = tobjects.id
+                    LEFT JOIN (SELECT *, MAX(id) as max_id FROM app_reports WHERE approved = 1 GROUP BY id) ar ON (ar.client_id = cobjects.client_id AND ar.cobject_id = cobjects.id)
+                    WHERE cobjects.client_id = " . $id . "
+                    AND cobjects.active = 1
+                    AND cobjects.deleted_at IS NULL
                     AND 
                     (
                         name LIKE '%{$searchTerm}%'
@@ -73,7 +75,8 @@ class ClientsModel extends Model
                         OR square LIKE '%{$searchTerm}%'
                         OR notes LIKE '%{$searchTerm}%'
                     )
-                    " . ($order != NULL ? " ORDER BY ". print_r($order,true) : '') . "
+                    GROUP BY cobjects.id
+                    " . ($order != NULL ? " ORDER BY ". print_r($order, true) : '') . "
                     " . (($limit != NULL AND $limit != -1) ? " LIMIT {$limit} " : '') . "
                     " . (($limit != NULL AND $limit != -1 AND $offset != NULL) ? " OFFSET {$offset} " : '') . "
             ")->getResultArray();
@@ -135,12 +138,14 @@ class ClientsModel extends Model
     }
     public function client_reports($id = NULL, $searchTerm = '', $order = '', $limit = NULL, $offset = NULL){
         if($id != NULL AND $id > 0){
-            $reports = $this->query("SELECT app_reports.*, '' as date_done_srb, cobjects.name as object_name, clients.name as client_name, cobjects.id as object_id, clients.id as client_id
+            $reports = $this->query("SELECT app_reports.*, '' as date_done_srb, cobjects.name as object_name, clients.name as client_name, cobjects.id as object_id, clients.id as client_id, IF(ar.report_number IS NULL, CONCAT('00',ar.id, '/', '" . date('Y') . "'), ar.report_number) as report_num
                     FROM app_reports
                     LEFT JOIN cobjects ON cobjects.id = app_reports.cobject_id
                     LEFT JOIN clients ON clients.id = app_reports.client_id
+                    LEFT JOIN (SELECT *, MAX(id) as max_id FROM app_reports WHERE approved = 1 GROUP BY id) ar ON (ar.client_id = cobjects.client_id AND ar.cobject_id = cobjects.id)
                     WHERE app_reports.client_id = " . $id . "
                     AND app_reports.deleted_at IS NULL
+                    GROUP BY app_reports.id
                     HAVING 
                     (
                         client_name LIKE '%{$searchTerm}%'

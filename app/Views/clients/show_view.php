@@ -250,7 +250,7 @@
 											<div class="relative overflow-x-auto block w-full px-0">
 												<table class="w-full" id="client_objects">
 													<thead class="bg-gray-50 dark:bg-gray-700/20">
-														<tr>
+                                                    <tr>
 															<th scope="col" class="p-3" width="1%">
 																<label class="custom-label">
 																	<div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
@@ -263,22 +263,19 @@
 																Naziv objekta
 															</th>
 															<th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
-																Kontakt
-															</th>
-															<th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
 																Grad
 															</th>
 															<th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
 																Adresa
 															</th>
 															<th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
-																Tip
+																Telefon
 															</th>
 															<th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
-																Kvadratura
+																Poslednji izveštaj
 															</th>
 															<th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
-																Napomena
+																Izveštaj
 															</th>
 															<th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
 																&nbsp;
@@ -417,22 +414,21 @@ var table = $('#client_objects').DataTable({
             }
         }, 
         {data: 'name', render: function(data,type,row){
-            return '<a href="objects/edit/' + row.id + '" class="flex items-center">'+
+            return '<a href="objects/show/' + row.id + '" class="flex items-center">'+
                         '<div class="self-center">'+
                             '<h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">' + (row.name ?? '') + '</h5>'+
                         '</div>'+
                     '</a>';
             }
         },
-        {data: 'telefon', render: function(data,type,row){
-                return ((row.telefon != null && row.telefon != '') ? '<a href="tel:' + row.telefon + '">' + row.telefon + '</a>' : '');
-            }
-        },
         {data: 'city'},
         {data: 'street'},
-        {data: 'type'},
-        {data: 'square'},
-        {data: 'notes'},
+        {data: 'phone', render: function(data,type,row){
+                return ((row.phone != null && row.phone != '') ? '<a href="tel:' + row.phone + '">' + row.phone + '</a>' : '');
+            }
+        },
+        {data: 'date_done'},
+        {data: 'report_num'},
         {data: null, render: function(data,type,row){
                 if(row.id != 0)
                     return '<div class="flex gap-5 justify-end">'+
@@ -466,7 +462,11 @@ var table = $('#client_objects').DataTable({
         }
     },
     columnDefs: [
-        {className: 'p-3 text-xs font-medium text-left text-gray-700 dark:text-gray-400', targets: "_all" },
+        {width: '30px', targets: 0},
+        {width: '50px', targets: -1},
+        {className: 'p-3 text-xs font-medium text-left text-gray-700 dark:text-gray-400', targets: [1,2,3,4,5,6,7] },
+        {className: 'text-end', targets: [0] },
+        {className: 'text-center', targets: [-1] },
         {orderable: false, targets: [0,-1] } // last column (Actions) not orderable
     ],
     dom: '<"table-filters"iB<"btn-holder"<"date_range">fr>>t<"table-footer"<"bottom-footer-container"pl>>',
@@ -531,8 +531,8 @@ var table2 = $('#client_reports').DataTable({
                     '</a>';
             }
         },
-        {data: 'report_number', render: function(data,type,row){
-                return ((row.report_number != null && row.report_number != '') ? '<a href="reports/show/' + row.report_number + '">#' + row.report_number + '</a>' : '');
+        {data: 'report_num', render: function(data,type,row){
+                return ((row.report_num != null && row.report_num != '') ? '<a href="reports/show/' + row.report_num + '">#' + row.report_num + '</a>' : '');
             }
         },
         {data: 'date_done_srb'},
@@ -559,7 +559,7 @@ var table2 = $('#client_reports').DataTable({
 
         search: "",
         searchPlaceholder: "Pretraži...",
-        info: "_TOTAL_ izveštaja",
+        info: "_TOTAL_ radnih naloga",
         infoFiltered: "",
         processing: "<div class='loading-wrap'><span class='loader'></span>&emsp;Loading ...</div>",
         infoEmpty: "0 Rezultata",
@@ -569,7 +569,12 @@ var table2 = $('#client_reports').DataTable({
         }
     },
     columnDefs: [
-        {className: 'p-3 text-xs font-medium text-left text-gray-700 dark:text-gray-400', targets: "_all" },
+        {width: '30px', targets: 0},
+        {width: 230, targets: 1},
+        {width: '50px', targets: -1},
+        {className: 'p-3 text-xs font-medium text-left text-gray-700 dark:text-gray-400 uppercase', targets: [1,2,3,4,5] },
+        {className: 'text-end', targets: [0] },
+        {className: 'text-center', targets: [-1] },
         {orderable: false, targets: [0,-1] } // last column (Actions) not orderable
     ],
     dom: '<"table-filters"iB<"btn-holder"<"date_range">fr>>t<"table-footer"<"bottom-footer-container"pl>>',
@@ -655,7 +660,11 @@ var table3 = $('#client_users').DataTable({
         }
     },
     columnDefs: [
-        {className: 'p-3 text-xs font-medium text-left text-gray-700 dark:text-gray-400', targets: "_all" },
+        {width: '30px', targets: 0},
+        {width: '50px', targets: -1},
+        {className: 'p-3 text-xs font-medium text-left text-gray-700 dark:text-gray-400 uppercase', targets: [1,2,3,4,5] },
+        {className: 'text-end', targets: [0] },
+        {className: 'text-center', targets: [-1] },
         {orderable: false, targets: [0,-1] } // last column (Actions) not orderable
     ],
     dom: '<"table-filters"iB<"btn-holder"<"date_range">fr>>t<"table-footer"<"bottom-footer-container"pl>>',
@@ -711,6 +720,12 @@ function get_user(id){
         }
     });
 }
+flatpickr(".flatpickr", {
+    mode: "range",
+    minDate: "today",
+    dateFormat: "d.m.Y.",
+});
 </script>
+
 </body>
 </html>

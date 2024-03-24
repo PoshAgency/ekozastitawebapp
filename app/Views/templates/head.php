@@ -31,6 +31,19 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 <style>
+input[type="checkbox"]:checked {
+  box-shadow: 0 0 0 5px white inset, 0 0 0 13px green inset;
+}
+input[type="checkbox"] {
+  width: 25px;
+  height: 25px;
+  border: 1px solid #999;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 5px;
+  transition: all 0.25s ease-in-out 0s;
+  box-shadow: 0 0 0 15px white inset, 0 0 0 15px green inset;
+}
 .error_msg {
 	font-size: 10px;
 	position: absolute;
@@ -130,15 +143,18 @@ form > div {
 	border-radius: 50%;
 	border: 5px solid #000 !important;
 	border-top-color: transparent !important;
-	-webkit-animation: spin 1s infinite linear;
-	-moz-animation: spin 1s infinite linear;
-	-o-animation: spin 1s infinite linear;
-	animation: spin 1s infinite linear;
+	-webkit-animation: spinn 1s infinite linear;
+	-moz-animation: spinn 1s infinite linear;
+	-o-animation: spinn 1s infinite linear;
+	animation: spinn 1s infinite linear;
 	visibility: visible !important;
 }
 table.dataTable thead th, table.dataTable thead td {
-	max-width: 200px !important;
+	/* max-width: 200px !important; */
 	white-space: normal !important;
+}
+.pr-0 {
+	padding-right: 0 !important;
 }
 body button.btn.btn--loading,
 body a.btn.btn--loading,
@@ -173,29 +189,29 @@ body .btn--loading::after {
 		border-radius: 50%;
 		border: 3px solid #fff;
 		border-top-color: transparent;
-		-webkit-animation: spin 1s infinite linear;
-		-moz-animation: spin 1s infinite linear;
-		-o-animation: spin 1s infinite linear;
-		animation: spin 1s infinite linear;
+		-webkit-animation: spinn 1s infinite linear;
+		-moz-animation: spinn 1s infinite linear;
+		-o-animation: spinn 1s infinite linear;
+		animation: spinn 1s infinite linear;
 }
-@-webkit-keyframes spin{
+@-webkit-keyframes spinn{
 		0%{-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-ms-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg)}
 		100%{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);-ms-transform:rotate(360deg);-o-transform:rotate(360deg);transform:rotate(360deg)}
 }
-@-moz-keyframes spin{
+@-moz-keyframes spinn{
 		0%{-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-ms-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg)}
 		100%{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);-ms-transform:rotate(360deg);-o-transform:rotate(360deg);transform:rotate(360deg)}
 }
-@-ms-keyframes spin{
+@-ms-keyframes spinn{
 		0%{-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-ms-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg)}
 		100%{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);-ms-transform:rotate(360deg);-o-transform:rotate(360deg);transform:rotate(360deg)}
 }
-@keyframes spin{
+@keyframes spinn{
 		0%{-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-ms-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg)}
 		100%{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);-ms-transform:rotate(360deg);-o-transform:rotate(360deg);transform:rotate(360deg)}
 }
 .spin {
-    animation: spin 1s infinite linear;
+    animation: spinn 1s infinite linear;
 }
 /* Message Box */
 .msg-popup {
@@ -514,6 +530,9 @@ body table tr.removed {
 }
 .bg-green-100\/10 {
 	background: rgba(17, 156, 73, 0.4);
+}
+table.dataTable thead .sorting_asc.sorting_disabled {
+	background-image: none !important;
 }
 /* RESPONSIVE */
 @media(max-width: 767px){

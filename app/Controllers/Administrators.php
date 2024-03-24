@@ -5,6 +5,7 @@ use CodeIgniter\Controller;
 use CodeIgniter\API\ResponseTrait;
 use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\RequestInterface;
+use App\Models\ReportsModel;
 
 class Administrators extends BaseController
 {

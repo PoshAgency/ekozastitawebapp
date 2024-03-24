@@ -45,10 +45,10 @@ $routes->group('workorders', ['filter' => 'adminAuthFilter:1,2,5'], function ($r
     $routes->add('(:any)', 'WorkOrders::$1');
     $routes->add('(:any)/(:any)', 'WorkOrders::$1/$2');
 });
-$routes->group('employees', ['filter' => 'adminAuthFilter:1,2,5'], function ($routes) {
-    $routes->add('', 'Employees::index');
-    $routes->add('(:any)', 'Employees::$1');
-    $routes->add('(:any)/(:any)', 'Employees::$1/$2');
+$routes->group('operators', ['filter' => 'adminAuthFilter:1,2,5'], function ($routes) {
+    $routes->add('', 'Operators::index');
+    $routes->add('(:any)', 'Operators::$1');
+    $routes->add('(:any)/(:any)', 'Operators::$1/$2');
 });
 $routes->group('settings', ['filter' => 'adminAuthFilter:1,2,5'], function ($routes) {
     $routes->add('', 'Settings::index');
