@@ -50,7 +50,7 @@
 			</div>
 		</div>
 
-		<div class="main-content-container xl:w-full  min-h-[calc(100vh-138px)] relative pb-14 mt-5"> 
+		<div class="main-content-container xl:w-full  min-h-[calc(100vh-138px)] relative pb-14 mt-5 px-4"> 
 			<div class="main-content-wrapper grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 justify-between">
 				<div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-6">
 					<div class="w-full relative mb-4">  
@@ -64,8 +64,8 @@
 								<input type="email" id="email" name="email" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700" placeholder="name@example.com" required>
 							</div>
 							<div class="mb-2">
-								<label for="work_order_type" class="font-medium text-sm text-slate-600 dark:text-slate-400">Tip naloga</label>
-								<select id="work_order_type" name="work_order_type" class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700">
+								<label for="role_type" class="font-medium text-sm text-slate-600 dark:text-slate-400">Tip naloga</label>
+								<select id="role_type" name="role_type" class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700">
 									<option selected="true" disabled="disabled">Izaberi...</option>
 									<option>super admin</option>
 									<option>admin</option>

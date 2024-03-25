@@ -56,10 +56,10 @@
 				</div>
 			</div>
 		</div>
-		<div class="main-content-container xl:w-full  min-h-[calc(100vh-138px)] relative pb-14"> 
-			<div class="main-content-wrapper grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 justify-between">
-				<div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-4">
-					<div class="w-full relative p-4"> 
+		<div class="main-content-container xl:w-full  min-h-[calc(100vh-138px)] relative pb-14 px-4"> 
+			<div class="main-content-wrapper grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-5 justify-between">
+				<div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-4 mt-5">
+					<div class="w-full relative"> 
 						<div class="flex-auto p-0 md:p-4 bg-white rounded-md shadow-md"> 
 							<label for="" class="font-medium text-sm text-slate-600 dark:text-slate-400">Ekozaštita logo</label>
 							<div class="w-full h-56 mx-auto mb-4">
@@ -68,7 +68,7 @@
 						</div>                               
 					</div>                               
 				</div>
-				<div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-8">
+				<div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-8 mt-5">
 					<div class="w-full relative mb-4">  
 						<form action="javascript:;" class="flex-auto p-0 md:p-4 bg-white rounded-md shadow-md">
 							<div class="mb-2">

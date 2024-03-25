@@ -207,3 +207,47 @@ body .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
 	border: 1px solid rgb(17 156 73 / 1) !important;
 	background: rgb(17 156 73 / 1) !important;
 }
+.mark-box-item-container {
+	display: flex;
+	gap: 10px;
+}
+.mark-box-item-container .mark-box-item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 30px;
+	height: 30px;
+	border-width: 2px;
+	border-style: solid;
+	cursor: pointer;
+	border-radius: 0.25rem !important;
+	transition: all 0.25s ease-in-out 0s;
+}
+.mark-box-item-container .mark-box-item:nth-child(1n) {
+	border-color: #119c49;
+}
+.mark-box-item-container .mark-box-item:nth-child(2n) {
+	border-color: #0000ff;
+}
+.mark-box-item-container .mark-box-item:nth-child(3n) {
+	border-color: #ffff00;
+}
+.mark-box-item-container .mark-box-item:nth-child(4n) {
+	border-color: #ff0000;
+}
+.mark-box-item-container .selected.mark-box-item:nth-child(1n) {
+	background-color: #119c49;
+	color: #fff;
+}
+.mark-box-item-container .selected.mark-box-item:nth-child(2n) {
+	background-color: #0000ff;
+	color: #fff;
+}
+.mark-box-item-container .selected.mark-box-item:nth-child(3n) {
+	background-color: #ffff00;
+	color: #000;
+}
+.mark-box-item-container .selected.mark-box-item:nth-child(4n) {
+	background-color: #ff0000;
+	color: #fff;
+}

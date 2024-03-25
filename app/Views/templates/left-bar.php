@@ -71,7 +71,7 @@
 									<a href="preparations"
 										class="nav-link hover:text-primary-500 rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200 flex items-center decoration-0 px-3 py-3">
 										<i class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
-										Tipovi mamaca
+										Tipovi preparata
 									</a>
 								</li>
 							</ul>

@@ -197,9 +197,9 @@
 																				0641832190
 																			</td> 
 																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
+																				<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-check text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="approvemodal"></i></a>
 																				<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400"  data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																				<a class="mr-3" href="report-full-edit.php"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
 																			</td>
 																		</tr>
@@ -232,9 +232,9 @@
 																				0641832190
 																			</td> 
 																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
+																				<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-check text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="approvemodal"></i></a>
 																				<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400"  data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																				<a class="mr-3" href="report-full-edit.php"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
 																			</td>
 																		</tr>
@@ -267,9 +267,9 @@
 																				0641832190
 																			</td> 
 																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
+																				<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-check text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="approvemodal"></i></a>
 																				<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400"  data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																				<a class="mr-3" href="report-full-edit.php"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
 																			</td>
 																		</tr>
@@ -302,9 +302,9 @@
 																				0641832190
 																			</td> 
 																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
+																				<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-check text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="approvemodal"></i></a>
 																				<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400"  data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																				<a class="mr-3" href="report-full-edit.php"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
 																			</td>
 																		</tr>
@@ -337,9 +337,9 @@
 																				0641832190
 																			</td> 
 																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
+																				<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-check text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="approvemodal"></i></a>
 																				<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400"  data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																				<a class="mr-3" href="report-full-edit.php"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
 																			</td>
 																		</tr>
@@ -372,9 +372,9 @@
 																				0641832190
 																			</td> 
 																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
+																				<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-check text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="approvemodal"></i></a>
 																				<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400"  data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																				<a class="mr-3" href="report-full-edit.php"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
 																			</td>
 																		</tr>
@@ -407,9 +407,9 @@
 																				0641832190
 																			</td> 
 																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
+																				<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-check text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="approvemodal"></i></a>
 																				<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400"  data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																				<a class="mr-3" href="report-full-edit.php"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
 																			</td>
 																		</tr>
@@ -442,9 +442,9 @@
 																				0641832190
 																			</td> 
 																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
+																				<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-check text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="approvemodal"></i></a>
 																				<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400"  data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																				<a class="mr-3" href="report-full-edit.php"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
 																			</td>
 																		</tr>
@@ -477,9 +477,9 @@
 																				0641832190
 																			</td> 
 																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
+																				<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-check text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="approvemodal"></i></a>
 																				<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400"  data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																				<a class="mr-3" href="report-full-edit.php"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
 																			</td>
 																		</tr>
@@ -512,9 +512,9 @@
 																				0641832190
 																			</td> 
 																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
+																				<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-check text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="approvemodal"></i></a>
 																				<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400"  data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																				<a class="mr-3" href="report-full-edit.php"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
 																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
 																			</td>
 																		</tr>
@@ -537,6 +537,26 @@
 			<?php echo view('templates/footer'); ?>	
 		</div>
 	</div>
+</div>
+
+<!-- Small Modal -->
+<div class="modal animate-ModalSlide hidden" id="smallmodal">
+    <div class="relative w-auto pointer-events-none  sm:my-7 sm:mx-auto z-[99] sm:max-w-xs">
+        <div class="relative flex flex-col w-full pointer-events-auto bg-white dark:bg-slate-800 bg-clip-padding rounded">
+            <div class="flex shrink-0 items-center justify-between py-2 px-4 rounded-t border-b border-solid dark:border-gray-700 bg-slate-800">
+                <h6 class="mb-0 leading-4 text-base font-semibold text-white mt-0" id="staticBackdropLabel1">Brisanje</h6>
+                <button type="button" class="box-content w-4 h-4 p-1 bg-slate-700/60 rounded-full text-white leading-4 text-xl close" aria-label="Close"  data-fc-dismiss>&times;</button>
+            </div>
+            <div class="relative flex-auto p-4 text-slate-600 dark:text-gray-300 leading-relaxed">
+                <p class="font-semibold text-base">Da li ste sigurni da želite da obrišete?</p>
+                <!-- <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, pariatur.</p> -->
+            </div>
+            <div class="flex flex-wrap shrink-0 justify-end p-3 rounded-b border-t border-dashed dark:border-gray-700">
+                <button class="inline-block focus:outline-none text-red-500 hover:bg-red-500 hover:text-white bg-transparent border border-gray-200 dark:bg-transparent dark:text-red-500 dark:hover:text-white dark:border-gray-700 dark:hover:bg-red-500 text-sm font-medium py-1 px-3 rounded mr-1 close" data-fc-dismiss>Da</button>
+                <button class="inline-block focus:outline-none text-primary-500 hover:bg-primary-500 hover:text-white bg-transparent border border-gray-200 dark:bg-transparent dark:text-primary-500 dark:hover:text-white dark:border-gray-700 dark:hover:bg-primary-500 text-sm font-medium py-1 px-3 rounded" data-fc-dismiss>Ne</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 <?php echo view('templates/popups'); ?>	

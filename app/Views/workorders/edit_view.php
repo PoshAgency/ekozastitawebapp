@@ -126,52 +126,133 @@
                                                     <div class="flex items-center space-x-2 w-full">                                                    
                                                         <div class="w-full"> 
                                                             <div class="grid md:grid-cols-12 lg:grid-cols-12">
+                                                                <h3 class="font-medium text-xl text-slate-600 dark:text-slate-400 col-span-12 md:col-span-12 lg:col-span-12 self-center mb-5">Kutija 1</h3>
                                                                 <div class="col-span-12 md:col-span-12 lg:col-span-3 self-center text-right mr-2">
-                                                                    <label for="mark" class="font-medium text-sm text-slate-600 dark:text-slate-400">Ocena</label>
+                                                                    <label for="mark" class="font-medium text-sm text-slate-600 dark:text-slate-400">Ocene</label>
                                                                 </div>
-                                                                <div class="col-span-12 md:col-span-12 lg:col-span-9 mb-2">
-                                                                    
-
-
-<fieldset>
-    <legend class="sr-only">Countries</legend>
-  
-    <div class="flex items-center mb-3">
-      <input id="country-option-1" type="radio" name="countries" value="USA" class="w-4 h-4 border-gray-300  dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" aria-labelledby="country-option-1" aria-describedby="country-option-1" checked>
-      <label for="country-option-1" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-        United States
-      </label>
-    </div>
-  
-    <div class="flex items-center mb-3">
-      <input id="country-option-2" type="radio" name="countries" value="Germany" class="w-4 h-4 border-gray-300  dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" aria-labelledby="country-option-2" aria-describedby="country-option-2">
-      <label for="country-option-2" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-        Germany
-      </label>
-    </div>
-  
-    <div class="flex items-center mb-3">
-      <input id="country-option-3" type="radio" name="countries" value="Spain" class="w-4 h-4 border-gray-300  dark:bg-gray-700 dark:border-gray-600" aria-labelledby="country-option-3" aria-describedby="country-option-3">
-      <label for="country-option-3" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-        Spain
-      </label>
-    </div>
-  
-    <div class="flex items-center">
-      <input id="option-disabled" type="radio" name="countries" value="China" class="w-4 h-4 border-gray-200  dark:bg-gray-700 dark:border-gray-600" aria-labelledby="option-disabled" aria-describedby="option-disabled" disabled>
-      <label for="option-disabled" class="block ml-2 text-sm font-medium text-gray-300 dark:text-gray-600">
-        China (disabled)
-      </label>
-    </div>
-</fieldset>
-
-
+                                                                <div class="mark-box-item-container col-span-12 md:col-span-12 lg:col-span-9 mb-2">
+                                                                    <div class="mark-box-item">0</div>
+                                                                    <div class="mark-box-item">1</div>
+                                                                    <div class="mark-box-item">2</div>
+                                                                    <div class="selected mark-box-item">3</div>
+                                                                    <input class="mark-box-item-input hidden" name="deratizacija_kutija_1" type="text" value="3">
                                                                 </div>
                                                                 <div class="col-span-12 md:col-span-12 lg:col-span-3 self-center text-right mr-2">
                                                                     <label for="message" class="font-medium text-sm text-slate-600 dark:text-slate-400">Komentar</label>
                                                                 </div>
                                                                 <div class="col-span-12 md:col-span-12 lg:col-span-9  mb-2">
-                                                                    <textarea id="message" rows="2" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700" placeholder="Write a comment and press enter"></textarea>
+                                                                    <textarea id="message" rows="2" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700" placeholder="Napiši komentar"></textarea>
+                                                                </div>
+                                                                <div class="col-span-12 md:col-span-12 lg:col-span-3 self-center text-right mr-2">
+                                                                    <label for="photo" class="font-medium text-sm text-slate-600 dark:text-slate-400">Fotografija</label>
+                                                                </div>
+                                                                <div class="col-span-12 md:col-span-12 lg:col-span-9  mb-2">
+                                                                    <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-4">
+                                                                        <div class="w-full relative"> 
+                                                                            <div class="w-full h-56 mx-auto mb-4">
+                                                                                <input type="file" class="filepond h-56" name="filepond" accept="image/png, image/jpeg, image/gif" />                                    
+                                                                            </div>
+                                                                            <div id="uploads-container" class="grid grid-cols-2 gap-2">
+                                                                                <input type="file" class="filepond"/>
+                                                                                <input type="file" class="filepond"/>
+                                                                            </div>
+                                                                            <div class="btn-holder col-span-12 text-center mt-5">
+                                                                                <button id="add-more-uploads" type="button" class="px-2 py-1 lg:px-4 bg-primary text-white text-sm  rounded-full transition hover:bg-primary-600 border border-primary font-medium">Dodaj još fotografija</button>
+                                                                            </div>
+                                                                        </div>                               
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-span-12 border-b border-dashed dark:border-slate-700/40 my-3 group-data-[sidebar=dark]:border-slate-700/40 group-data-[sidebar=brand]:border-slate-700/40 my-5"></div>
+                                                                <h3 class="font-medium text-xl text-slate-600 dark:text-slate-400 col-span-12 md:col-span-12 lg:col-span-12 self-center mb-5">Kutija 2</h3>
+                                                                <div class="col-span-12 md:col-span-12 lg:col-span-3 self-center text-right mr-2">
+                                                                    <label for="mark" class="font-medium text-sm text-slate-600 dark:text-slate-400">Ocene</label>
+                                                                </div>
+                                                                <div class="mark-box-item-container col-span-12 md:col-span-12 lg:col-span-9 mb-2">
+                                                                    <div class="selected mark-box-item">0</div>
+                                                                    <div class="mark-box-item">1</div>
+                                                                    <div class="mark-box-item">2</div>
+                                                                    <div class="mark-box-item">3</div>
+                                                                    <input class="mark-box-item-input hidden" name="deratizacija_kutija_2" type="text" value="0">
+                                                                </div>
+                                                                <div class="col-span-12 md:col-span-12 lg:col-span-3 self-center text-right mr-2">
+                                                                    <label for="message" class="font-medium text-sm text-slate-600 dark:text-slate-400">Komentar</label>
+                                                                </div>
+                                                                <div class="col-span-12 md:col-span-12 lg:col-span-9  mb-2">
+                                                                    <textarea id="message" rows="2" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700" placeholder="Napiši komentar"></textarea>
+                                                                </div>
+                                                                <div class="col-span-12 md:col-span-12 lg:col-span-3 self-center text-right mr-2">
+                                                                    <label for="photo" class="font-medium text-sm text-slate-600 dark:text-slate-400">Fotografija</label>
+                                                                </div>
+                                                                <div class="col-span-12 md:col-span-12 lg:col-span-9  mb-2">
+                                                                    <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-4">
+                                                                        <div class="w-full relative"> 
+                                                                            <div class="w-full h-56 mx-auto mb-4">
+                                                                                <input type="file" class="filepond h-56" name="filepond" accept="image/png, image/jpeg, image/gif" />                                    
+                                                                            </div>
+                                                                            <div id="uploads-container" class="grid grid-cols-2 gap-2">
+                                                                                <input type="file" class="filepond"/>
+                                                                                <input type="file" class="filepond"/>
+                                                                            </div>
+                                                                            <div class="btn-holder col-span-12 text-center mt-5">
+                                                                                <button id="add-more-uploads" type="button" class="px-2 py-1 lg:px-4 bg-primary text-white text-sm  rounded-full transition hover:bg-primary-600 border border-primary font-medium">Dodaj još fotografija</button>
+                                                                            </div>
+                                                                        </div>                               
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-span-12 border-b border-dashed dark:border-slate-700/40 my-3 group-data-[sidebar=dark]:border-slate-700/40 group-data-[sidebar=brand]:border-slate-700/40 my-5"></div>
+                                                                <h3 class="font-medium text-xl text-slate-600 dark:text-slate-400 col-span-12 md:col-span-12 lg:col-span-12 self-center mb-5">Kutija 3</h3>
+                                                                <div class="col-span-12 md:col-span-12 lg:col-span-3 self-center text-right mr-2">
+                                                                    <label for="mark" class="font-medium text-sm text-slate-600 dark:text-slate-400">Ocene</label>
+                                                                </div>
+                                                                <div class="mark-box-item-container col-span-12 md:col-span-12 lg:col-span-9 mb-2">
+                                                                    <div class="mark-box-item">0</div>
+                                                                    <div class="selected mark-box-item">1</div>
+                                                                    <div class="mark-box-item">2</div>
+                                                                    <div class="mark-box-item">3</div>
+                                                                    <input class="mark-box-item-input hidden" name="deratizacija_kutija_3" type="text" value="1">
+                                                                </div>
+                                                                <div class="col-span-12 md:col-span-12 lg:col-span-3 self-center text-right mr-2">
+                                                                    <label for="message" class="font-medium text-sm text-slate-600 dark:text-slate-400">Komentar</label>
+                                                                </div>
+                                                                <div class="col-span-12 md:col-span-12 lg:col-span-9  mb-2">
+                                                                    <textarea id="message" rows="2" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700" placeholder="Napiši komentar"></textarea>
+                                                                </div>
+                                                                <div class="col-span-12 md:col-span-12 lg:col-span-3 self-center text-right mr-2">
+                                                                    <label for="photo" class="font-medium text-sm text-slate-600 dark:text-slate-400">Fotografija</label>
+                                                                </div>
+                                                                <div class="col-span-12 md:col-span-12 lg:col-span-9  mb-2">
+                                                                    <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-4">
+                                                                        <div class="w-full relative"> 
+                                                                            <div class="w-full h-56 mx-auto mb-4">
+                                                                                <input type="file" class="filepond h-56" name="filepond" accept="image/png, image/jpeg, image/gif" />                                    
+                                                                            </div>
+                                                                            <div id="uploads-container" class="grid grid-cols-2 gap-2">
+                                                                                <input type="file" class="filepond"/>
+                                                                                <input type="file" class="filepond"/>
+                                                                            </div>
+                                                                            <div class="btn-holder col-span-12 text-center mt-5">
+                                                                                <button id="add-more-uploads" type="button" class="px-2 py-1 lg:px-4 bg-primary text-white text-sm  rounded-full transition hover:bg-primary-600 border border-primary font-medium">Dodaj još fotografija</button>
+                                                                            </div>
+                                                                        </div>                               
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-span-12 border-b border-dashed dark:border-slate-700/40 my-3 group-data-[sidebar=dark]:border-slate-700/40 group-data-[sidebar=brand]:border-slate-700/40 my-5"></div>
+                                                                <h3 class="font-medium text-xl text-slate-600 dark:text-slate-400 col-span-12 md:col-span-12 lg:col-span-12 self-center mb-5">Kutija 4</h3>
+                                                                <div class="col-span-12 md:col-span-12 lg:col-span-3 self-center text-right mr-2">
+                                                                    <label for="mark" class="font-medium text-sm text-slate-600 dark:text-slate-400">Ocene</label>
+                                                                </div>
+                                                                <div class="mark-box-item-container col-span-12 md:col-span-12 lg:col-span-9 mb-2">
+                                                                    <div class="mark-box-item">0</div>
+                                                                    <div class="mark-box-item">1</div>
+                                                                    <div class="selected mark-box-item">2</div>
+                                                                    <div class="mark-box-item">3</div>
+                                                                    <input class="mark-box-item-input hidden" name="deratizacija_kutija_4" type="text" value="2">
+                                                                </div>                                                               
+                                                                <div class="col-span-12 md:col-span-12 lg:col-span-3 self-center text-right mr-2">
+                                                                    <label for="message" class="font-medium text-sm text-slate-600 dark:text-slate-400">Komentar</label>
+                                                                </div>
+                                                                <div class="col-span-12 md:col-span-12 lg:col-span-9  mb-2">
+                                                                    <textarea id="message" rows="2" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700" placeholder="Napiši komentar"></textarea>
                                                                 </div>
                                                                 <div class="col-span-12 md:col-span-12 lg:col-span-3 self-center text-right mr-2">
                                                                     <label for="photo" class="font-medium text-sm text-slate-600 dark:text-slate-400">Fotografija</label>
@@ -206,23 +287,32 @@
                                                 <div class="flex sm:items-center justify-between">
                                                     <div class="flex items-center space-x-2 w-full">                                                    
                                                         <div class="w-full"> 
-                                                            <div class="grid md:grid-cols-12 lg:grid-cols-12">
+                                                            <div class="grid md:grid-cols-12 lg:grid-cols-12">                                                               
                                                                 <div class="col-span-12 md:col-span-12 lg:col-span-3 self-center text-right mr-2">
-                                                                    <label for="mark" class="font-medium text-sm text-slate-600 dark:text-slate-400">Ocena</label>
+                                                                    <label for="mark" class="font-medium text-sm text-slate-600 dark:text-slate-400">Ocene</label>
                                                                 </div>
-                                                                <div class="col-span-12 md:col-span-12 lg:col-span-9  mb-2">
-                                                                    <select id="mark" class=" w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700">
-                                                                        <option>0</option>
-                                                                        <option>1</option>
-                                                                        <option>2</option>
-                                                                        <option>3</option>
-                                                                    </select>
+                                                                <div class="mark-box-item-container col-span-12 md:col-span-12 lg:col-span-9 mb-2">
+                                                                    <div class="mark-box-item">0</div>
+                                                                    <div class="mark-box-item">1</div>
+                                                                    <div class="mark-box-item">2</div>
+                                                                    <div class="selected mark-box-item">3</div>
+                                                                    <input class="mark-box-item-input hidden" name="dezinfekcija-kutija_1" type="text" value="3">
+                                                                </div>
+                                                                <div class="col-span-12 md:col-span-12 lg:col-span-3 self-center text-right mr-2">
+                                                                    <label for="mark" class="font-medium text-sm text-slate-600 dark:text-slate-400">Kutija 2</label>
+                                                                </div>
+                                                                <div class="mark-box-item-container col-span-12 md:col-span-12 lg:col-span-9 mb-2">
+                                                                    <div class="selected mark-box-item">0</div>
+                                                                    <div class="mark-box-item">1</div>
+                                                                    <div class="mark-box-item">2</div>
+                                                                    <div class="mark-box-item">3</div>
+                                                                    <input class="mark-box-item-input hidden" name="dezinfekcija-kutija_2" type="text" value="0">
                                                                 </div>
                                                                 <div class="col-span-12 md:col-span-12 lg:col-span-3 self-center text-right mr-2">
                                                                     <label for="message" class="font-medium text-sm text-slate-600 dark:text-slate-400">Komentar</label>
                                                                 </div>
                                                                 <div class="col-span-12 md:col-span-12 lg:col-span-9  mb-2">
-                                                                    <textarea id="message" rows="2" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700" placeholder="Write a comment and press enter"></textarea>
+                                                                    <textarea id="message" rows="2" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700" placeholder="Napiši komentar"></textarea>
                                                                 </div>
                                                                 <div class="col-span-12 md:col-span-12 lg:col-span-3 self-center text-right mr-2">
                                                                     <label for="photo" class="font-medium text-sm text-slate-600 dark:text-slate-400">Fotografija</label>
@@ -259,21 +349,20 @@
                                                         <div class="w-full"> 
                                                             <div class="grid md:grid-cols-12 lg:grid-cols-12">
                                                                 <div class="col-span-12 md:col-span-12 lg:col-span-3 self-center text-right mr-2">
-                                                                    <label for="countries" class="font-medium text-sm text-slate-600 dark:text-slate-400">Ocena</label>
+                                                                    <label for="mark" class="font-medium text-sm text-slate-600 dark:text-slate-400">Kutija 1</label>
                                                                 </div>
-                                                                <div class="col-span-12 md:col-span-12 lg:col-span-9  mb-2">
-                                                                    <select id="countries" class=" w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700">
-                                                                        <option>0</option>
-                                                                        <option>1</option>
-                                                                        <option>2</option>
-                                                                        <option>3</option>
-                                                                    </select>
-                                                                </div>
+                                                                <div class="mark-box-item-container col-span-12 md:col-span-12 lg:col-span-9 mb-2">
+                                                                    <div class="mark-box-item">0</div>
+                                                                    <div class="mark-box-item">1</div>
+                                                                    <div class="mark-box-item">2</div>
+                                                                    <div class="selected mark-box-item">3</div>
+                                                                    <input class="mark-box-item-input hidden" name="dezinsekcija_kutija_1" type="text" value="3">
+                                                                </div>                                                               
                                                                 <div class="col-span-12 md:col-span-12 lg:col-span-3 self-center text-right mr-2">
                                                                     <label for="message" class="font-medium text-sm text-slate-600 dark:text-slate-400">Komentar</label>
                                                                 </div>
                                                                 <div class="col-span-12 md:col-span-12 lg:col-span-9  mb-2">
-                                                                    <textarea id="message" rows="2" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700" placeholder="Write a comment and press enter"></textarea>
+                                                                    <textarea id="message" rows="2" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700" placeholder="Napiši komentar"></textarea>
                                                                 </div>
                                                                 <div class="col-span-12 md:col-span-12 lg:col-span-3 self-center text-right mr-2">
                                                                     <label for="photo" class="font-medium text-sm text-slate-600 dark:text-slate-400">Fotografija</label>
@@ -310,25 +399,44 @@
                                                         <div class="w-full"> 
                                                             <div class="grid md:grid-cols-12 lg:grid-cols-12">
                                                                 <div class="col-span-12 md:col-span-12 lg:col-span-3 self-center text-right mr-2">
-                                                                    <label for="countries" class="font-medium text-sm text-slate-600 dark:text-slate-400">Ocena</label>
+                                                                    <label for="mark" class="font-medium text-sm text-slate-600 dark:text-slate-400">Kutija 1</label>
                                                                 </div>
-                                                                <div class="col-span-12 md:col-span-12 lg:col-span-9  mb-2">
-                                                                    <select id="countries" class=" w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700">
-                                                                        <option>0</option>
-                                                                        <option>1</option>
-                                                                        <option>2</option>
-                                                                        <option>3</option>
-                                                                    </select>
+                                                                <div class="mark-box-item-container col-span-12 md:col-span-12 lg:col-span-9 mb-2">
+                                                                    <div class="mark-box-item">0</div>
+                                                                    <div class="mark-box-item">1</div>
+                                                                    <div class="mark-box-item">2</div>
+                                                                    <div class="selected mark-box-item">3</div>
+                                                                    <input class="mark-box-item-input hidden" name="other_kutija_1" type="text" value="3">
+                                                                </div>
+                                                                <div class="col-span-12 md:col-span-12 lg:col-span-3 self-center text-right mr-2">
+                                                                    <label for="mark" class="font-medium text-sm text-slate-600 dark:text-slate-400">Kutija 2</label>
+                                                                </div>
+                                                                <div class="mark-box-item-container col-span-12 md:col-span-12 lg:col-span-9 mb-2">
+                                                                    <div class="selected mark-box-item">0</div>
+                                                                    <div class="mark-box-item">1</div>
+                                                                    <div class="mark-box-item">2</div>
+                                                                    <div class="mark-box-item">3</div>
+                                                                    <input class="mark-box-item-input hidden" name="other_kutija_2" type="text" value="0">
+                                                                </div>
+                                                                <div class="col-span-12 md:col-span-12 lg:col-span-3 self-center text-right mr-2">
+                                                                    <label for="mark" class="font-medium text-sm text-slate-600 dark:text-slate-400">Kutija 3</label>
+                                                                </div>
+                                                                <div class="mark-box-item-container col-span-12 md:col-span-12 lg:col-span-9 mb-2">
+                                                                    <div class="mark-box-item">0</div>
+                                                                    <div class="selected mark-box-item">1</div>
+                                                                    <div class="mark-box-item">2</div>
+                                                                    <div class="mark-box-item">3</div>
+                                                                    <input class="mark-box-item-input hidden" name="other_kutija_3" type="text" value="1">
                                                                 </div>
                                                                 <div class="col-span-12 md:col-span-12 lg:col-span-3 self-center text-right mr-2">
                                                                     <label for="message" class="font-medium text-sm text-slate-600 dark:text-slate-400">Komentar</label>
-                                                                </div><!--end col-->
+                                                                </div>
                                                                 <div class="col-span-12 md:col-span-12 lg:col-span-9  mb-2">
-                                                                    <textarea id="message" rows="2" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700" placeholder="Write a comment and press enter"></textarea>
-                                                                </div><!--end col-->
+                                                                    <textarea id="message" rows="2" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700" placeholder="Napiši komentar"></textarea>
+                                                                </div>
                                                                 <div class="col-span-12 md:col-span-12 lg:col-span-3 self-center text-right mr-2">
                                                                     <label for="photo" class="font-medium text-sm text-slate-600 dark:text-slate-400">Fotografija</label>
-                                                                </div><!--end col-->
+                                                                </div>
                                                                 <div class="col-span-12 md:col-span-12 lg:col-span-9  mb-2">
                                                                     <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-4">
                                                                         <div class="w-full relative"> 
@@ -359,31 +467,89 @@
                                                 <div class="flex sm:items-center justify-between">
                                                     <div class="flex items-center space-x-2 w-full">                                                    
                                                         <div class="w-full"> 
-                                                            <div class="grid md:grid-cols-12 lg:grid-cols-12">
-                                                                <div class="col-span-12 md:col-span-12 lg:col-span-3 self-center text-right mr-2">
-                                                                    <label for="countries" class="font-medium text-sm text-slate-600 dark:text-slate-400">Preparati</label>
-                                                                </div>
-                                                                <div class="col-span-12 md:col-span-12 lg:col-span-9  mb-2">
-                                                                    <select id="multiSelect" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700">
-                                                                        <option>Prepartat 1</option>
-                                                                        <option>Prepartat 2</option>
-                                                                        <option>Prepartat 3</option>
-                                                                        <option>Prepartat 4</option>
-                                                                        <option>Prepartat 5</option>
-                                                                        <option>Prepartat 6</option>
-                                                                        <option>Prepartat 7</option>
-                                                                        <option>Prepartat 8</option>
-                                                                        <option>Prepartat 9</option>
-                                                                        <option>Prepartat 10</option>
+                                                            <div class="border-b border-dashed border-slate-200 dark:border-slate-700 py-3 px-4 dark:text-slate-300/70">
+                                                <div class="bg-white dark:bg-slate-800 shadow  rounded-md w-full relative mb-4">
+                                                    <div class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12">
+                                                        <div class="sm:col-span-12  md:col-span-12 lg:col-span-4 xl:col-span-4 self-center">
+                                                            <img src="assets/images/products/logos/lam.png" alt="" class="inline-block ">
+                                                        </div>
+                                                        <div class="sm:col-span-12  md:col-span-12 lg:col-span-8 xl:col-span-8">
+                                                            <div class="border-b border-dashed border-slate-200 dark:border-slate-700 py-3 px-4 dark:text-slate-300/70">
+                                                                <h4 class="font-medium text-green">
+                                                                    <select id="location" name="location" class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700">
+                                                                        <option>Preparat 1</option>
+                                                                        <option>Preparat 2</option>
+                                                                        <option>Preparat 3</option>
                                                                     </select>
-                                                                </div>
+                                                                </h4>
+                                                            </div>
+                                                            <div class="flex-auto p-4">
+                                                                <a href="javascript:;" class="block mb-3 text-[16px] font-semibold underline hover:text-green-800 dark:hover:text-green-900">Dokument 1</a>
+                                                                <a href="javascript:;" class="block mb-3 text-[16px] font-semibold underline hover:text-green-800 dark:hover:text-green-900">Dokument 2</a>
+                                                                <a href="javascript:;" class="block mb-3 text-[16px] font-semibold underline hover:text-green-800 dark:hover:text-green-900">Dokument 3</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>                                
+                                                </div>
+                                                 <div class="bg-white dark:bg-slate-800 shadow  rounded-md w-full relative mb-4">
+                                                    <div class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12">
+                                                        <div class="sm:col-span-12  md:col-span-12 lg:col-span-4 xl:col-span-4 self-center">
+                                                            <img src="assets/images/products/logos/lam.png" alt="" class="inline-block ">
+                                                        </div>
+                                                        <div class="sm:col-span-12  md:col-span-12 lg:col-span-8 xl:col-span-8">
+                                                            <div class="border-b border-dashed border-slate-200 dark:border-slate-700 py-3 px-4 dark:text-slate-300/70">
+                                                                <h4 class="font-medium text-green">
+                                                                    <select id="location" name="location" class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700">
+                                                                        <option>Preparat 2</option>
+                                                                        <option>Preparat 1</option>
+                                                                        <option>Preparat 3</option>
+                                                                    </select>
+                                                                </h4>
+                                                            </div>
+                                                            <div class="flex-auto p-4">
+                                                                <a href="javascript:;" class="block mb-3 font-semibold underline hover:text-green-800 dark:hover:text-green-900">Dokument 1</a>
+                                                                <a href="javascript:;" class="block mb-3 font-semibold underline hover:text-green-800 dark:hover:text-green-900">Dokument 5</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>                                
+                                                </div>
+                                                 <div class="bg-white dark:bg-slate-800 shadow  rounded-md w-full relative mb-4">
+                                                    <div class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12">
+                                                        <div class="sm:col-span-12  md:col-span-12 lg:col-span-4 xl:col-span-4 self-center">
+                                                            <img src="assets/images/products/logos/lam.png" alt="" class="inline-block ">
+                                                        </div>
+                                                        <div class="sm:col-span-12  md:col-span-12 lg:col-span-8 xl:col-span-8">
+                                                            <div class="border-b border-dashed border-slate-200 dark:border-slate-700 py-3 px-4 dark:text-slate-300/70">
+                                                                <h4 class="font-medium text-green">
+                                                                    <select id="location" name="location" class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700">
+                                                                        <option>Preparat 3</option>
+                                                                        <option>Preparat 1</option>
+                                                                        <option>Preparat 2</option>
+                                                                    </select>
+                                                                </h4>
+                                                            </div>
+                                                            <div class="flex-auto p-4">
+                                                                <a href="javascript:;" class="block mb-3 font-semibold underline hover:text-green-800 dark:hover:text-green-900">Dokument 7</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>                                
+                                                </div>
+                                                <div class="flex sm:items-center justify-between">
+                                                    <div class="flex items-center space-x-2 w-full">                                                    
+                                                        <div class="w-full"> 
+                                                            <div class="grid md:grid-cols-12 lg:grid-cols-12">
+                                                                
                                                                 <div class="col-span-12 md:col-span-12 lg:col-span-3 self-center text-right mr-2">
                                                                     <label for="message" class="font-medium text-sm text-slate-600 dark:text-slate-400">Komentar</label>
                                                                 </div>
                                                                 <div class="col-span-12 md:col-span-12 lg:col-span-9  mb-2">
-                                                                    <textarea id="message" rows="2" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700" placeholder="Write a comment and press enter"></textarea>
+                                                                    <textarea id="message" rows="2" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700" placeholder="Napiši komentar"></textarea>
                                                                 </div>
                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                </div>                                  
+                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>                                  
@@ -397,7 +563,7 @@
                     <div class="sm:col-span-12  md:col-span-12 lg:col-span-3 xl:col-span-3 sticky top-70 mh-100vh">
                         <div class="bg-white dark:bg-slate-800 shadow  rounded-md w-full relative mb-4">
                             <div class="border-b border-dashed border-slate-200 dark:border-slate-700 py-3 px-4 dark:text-slate-300/70">
-                                <h4 class="font-medium">Opšte informacije</h4>
+                                <h4 class="font-medium">Mamci</h4>
                                 <div class="flex-auto p-0 md:p-4">                              
                                     <div class="mb-2">
                                         <label for="pest-control-boxes" class="font-medium text-sm text-slate-600 dark:text-slate-400">Deratizacione kutije</label>
@@ -423,7 +589,13 @@
                                 <h4 class="font-medium">Akcije</h4>
                                 <div class="flex-auto p-0 md:p-4">                            			
                                     <div class="mb-2">
-                                        <button class="px-2 w-full py-2 lg:px-4 bg-transparent  text-brand text-sm rounded transition hover:bg-brand-500 hover:text-white border border-brand font-medium">Odobri radni nalog</button>
+                                        <button class="px-2 w-full py-2 lg:px-4 bg-transparent  text-brand text-sm rounded transition hover:bg-brand-500 hover:text-white border border-brand font-medium">Snimi PDF</button>
+                                    </div>                            			
+                                    <div class="mb-2">
+                                        <button class="px-2 w-full py-2 lg:px-4 bg-transparent  text-brand text-sm rounded transition hover:bg-brand-500 hover:text-white border border-brand font-medium">Pošalji</button>
+                                    </div>                            			
+                                    <div class="mb-2">
+                                        <button class="px-2 w-full py-2 lg:px-4 bg-transparent  text-brand text-sm rounded transition hover:bg-brand-500 hover:text-white border border-brand font-medium">Odobri</button>
                                     </div>
                                     <div>
                                         <button class="px-2 py-2 w-full lg:px-4 bg-brand text-white text-sm rounded hover:bg-brand-600 border border-brand-500">Snimi izmene</button>
@@ -488,6 +660,21 @@ document.getElementById("add-more-uploads").addEventListener("click", function()
 
     // Inicijalizacija FilePond-a
     FilePond.parse(document.body);
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const markBoxItems = document.querySelectorAll('.mark-box-item');
+    markBoxItems.forEach(item => {
+        item.addEventListener('click', function () {
+            const container = this.closest('.mark-box-item-container');
+            const selected = container.querySelector('.selected');
+            if (selected) {
+                selected.classList.remove('selected');
+            }
+            this.classList.add('selected'); 
+        });
+    });
 });
 </script>
 </body>
