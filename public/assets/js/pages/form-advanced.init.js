@@ -4,14 +4,14 @@
  * File: Advanced Js
  */
 
- new Selectr('#default');
- new Selectr('#multiSelect',{
-     multiple: true
- });
- new Selectr('#taggableSelect',{
-     taggable: true,
-     tagSeperators: [",", "|"]
- });
+//  new Selectr('#default');
+//  new Selectr('#multiSelect',{
+//      multiple: true
+//  });
+//  new Selectr('#taggableSelect',{
+//      taggable: true,
+//      tagSeperators: [",", "|"]
+//  });
 
  // color
 

@@ -56,8 +56,8 @@
 			    <div class="main-content-wrapper grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 justify-between">
                     <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-4">
                         <div class="w-full relative p-4 "> 
-                            <label for="" class="flex font-medium text-md mb-4 text-slate-600 dark:text-slate-400">Logo kompanije</label>
                             <div class="upload-image p-4 bg-white rounded-md shadow-md">
+                                <label for="" class="flex font-medium text-md mb-4 text-slate-600 dark:text-slate-400">Logo</label>
                                 <div class="w-full mx-auto">
                                     <div class="upload_image"></div>
                                     <input type="hidden" class="image_exists" name="image_exists" value="<?php echo (isset($current['image']) AND $current['image'] != '') ? $current['image'] : 0; ?>">

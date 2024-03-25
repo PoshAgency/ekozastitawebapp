@@ -105,18 +105,4 @@ class Objects extends BaseController
 		//echo json_encode($response);
 		return $this->respond($response);
     }
-    
-    // Ajax delete
-    public function delete()
-    {
-      $id = $this->request->getPost('id');
-      if( $id ) {
-        $ObjectModel = new ObjectsModel();
-        $response['success'] = $ObjectModel->delete($id);
-      }
-      else {
-        $response['success'] = false;
-      }
-      return $this->respond($response);
-    }
 }

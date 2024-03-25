@@ -103,7 +103,7 @@
                                     <option value="132">Objekti 3</option>
                                 </select>
                             </div>
-                            <div style="position: relative;"> 
+                            <div style="position: relative;width: 190px;"> 
                                 <input id="date" name="date" class="datepicker_range_table flatpickr form-input w-full rounded-md border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700" type="text" placeholder="Izveštaj za period" readonly="readonly">
                                 <span class="clear_dates" style="display: none;">×</span>
                             </div>
@@ -256,7 +256,6 @@ flatpic = $(".datepicker_range_table").flatpickr({
 <script src="assets/js/pages/form-advanced.init.js"></script>
 
 <script src="assets/libs/prismjs/prism.js"></script> 
-<!-- <script src="assets/libs/simple-datatables/umd/simple-datatables.js"></script> -->
 <!-- datatable -->
 <script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>
 <!-- export datatable -->
@@ -270,6 +269,13 @@ flatpic = $(".datepicker_range_table").flatpickr({
 <script>
 var svg = '<?php echo svg(); ?>'
 var filterData = {};
+
+new Selectr('#clients_list');
+
+$('#clients_list').on('change', function(){
+    var val = $(this).val();
+
+});
 
 var tablee = $('#reports_table').DataTable({
     processing: true,
@@ -357,6 +363,7 @@ var tablee = $('#reports_table').DataTable({
             next: " > ",
         }
     },
+    autoWidth: false,
     columnDefs: [
         {width: '30px', targets: 0},
         {width: '10%', targets: 1},
