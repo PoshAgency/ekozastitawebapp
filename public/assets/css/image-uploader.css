@@ -86,8 +86,8 @@
 .image-uploader .uploaded .uploaded-image {
     display: inline-block;
     width: 100%;
-    padding-bottom: 100%;
-    height: 0;
+    padding-bottom: 0;
+    height: auto;
     position: relative;
     margin: 0;
     background: #fff;
@@ -96,9 +96,10 @@
 .image-uploader .uploaded .uploaded-image img {
 	width: 90%;
 	height: 90%;
-	object-fit: cover;
-	position: absolute;
+	object-fit: contain;
+	position: relative;
 	margin: 5%;
+	max-height: 200px;
 }
 /* Delete image button */
 .image-uploader .uploaded .uploaded-image .delete-image {

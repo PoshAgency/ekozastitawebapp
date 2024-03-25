@@ -303,7 +303,7 @@
 																	</div>
 																</label>
 															</th>
-															<th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
+															<th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase" width="230">
 																Klijent
 															</th>
 															<th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
@@ -316,7 +316,7 @@
 																Datum unosa
 															</th>
 															<th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
-																Akcija
+																&nbsp;
 															</th>
 														</tr>
 													</thead>
@@ -354,7 +354,7 @@
 																Username
 															</th>
 															<th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
-																Akcija
+																&nbsp;
 															</th>
 														</tr>
 													</thead>
@@ -392,7 +392,8 @@
 <script src="https://cdn.datatables.net/datetime/1.1.1/js/dataTables.dateTime.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/2.0.0/js/dataTables.buttons.min.js"></script>
 <!-- fixedcolumns datatable -->
-<script src="https://cdn.datatables.net/fixedcolumns/3.3.3/js/dataTables.fixedColumns.min.js"></script>
+<script src="https://cdn.datatables.net/fixedcolumns/5.0.0/js/dataTables.fixedColumns.js"></script>
+<script src="https://cdn.datatables.net/fixedcolumns/5.0.0/js/fixedColumns.dataTables.js"></script>
 <script src="assets/js/app.js"></script>
 <script>
 var svg = '<?php echo svg(); ?>'
@@ -408,7 +409,7 @@ var table = $('#client_objects').DataTable({
     },
     retrieve: true,
     cache: true,
-    'columns': [
+    columns: [
         {data: 'id', render: function(data,type,row){
                 return '<label class="custom-label"><div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]"><input type="checkbox" class="hidden" data-remove onchange="data_remove($(this))" data-id="' + row.id + '" ><i class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i></div></label>';
             }
@@ -461,29 +462,30 @@ var table = $('#client_objects').DataTable({
             next: " > ",
         }
     },
+    autoWidth: false,
     columnDefs: [
-        {width: '30px', targets: 0},
+        {width: '60px', targets: 0},
         {width: '50px', targets: -1},
         {className: 'p-3 text-xs font-medium text-left text-gray-700 dark:text-gray-400', targets: [1,2,3,4,5,6,7] },
-        {className: 'text-end', targets: [0] },
+        {className: 'text-center', targets: [0] },
         {className: 'text-center', targets: [-1] },
         {orderable: false, targets: [0,-1] } // last column (Actions) not orderable
     ],
     dom: '<"table-filters"iB<"btn-holder"<"date_range">fr>>t<"table-footer"<"bottom-footer-container"pl>>',
     buttons: [
-        {
-            extend: 'excel',
-            text: 'Export',
-            attr: {
-                class: 'flex items-center focus:outline-none bg-brand-500 text-white hover:bg-brand-600 hover:text-white  text-md font-medium py-2 px-4 rounded',
-                style: 'max-height: 32px;'
-            },
-            title: "<?php echo $_ENV['company_name']; ?>",
-            messageBottom: null,
-            exportOptions: {
-                columns: ':visible'
-            }
-        },
+        // {
+        //     extend: 'excel',
+        //     text: 'Export',
+        //     attr: {
+        //         class: 'flex items-center focus:outline-none bg-brand-500 text-white hover:bg-brand-600 hover:text-white  text-md font-medium py-2 px-4 rounded',
+        //         style: 'max-height: 32px;'
+        //     },
+        //     title: "<?php // echo $_ENV['company_name']; ?>",
+        //     messageBottom: null,
+        //     exportOptions: {
+        //         columns: ':visible'
+        //     }
+        // },
         {
             text: 'Obriši selektovano',
             attr: {
@@ -510,7 +512,7 @@ var table2 = $('#client_reports').DataTable({
     },
     retrieve: true,
     cache: true,
-    'columns': [
+    columns: [
         {data: 'id', render: function(data,type,row){
                 return '<label class="custom-label"><div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]"><input type="checkbox" class="hidden" data-remove onchange="data_remove($(this))" data-id="' + row.id + '" ><i class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i></div></label>';
             }
@@ -568,12 +570,13 @@ var table2 = $('#client_reports').DataTable({
             next: " > ",
         }
     },
+    autoWidth: false,
     columnDefs: [
-        {width: '30px', targets: 0},
-        {width: 230, targets: 1},
-        {width: '50px', targets: -1},
-        {className: 'p-3 text-xs font-medium text-left text-gray-700 dark:text-gray-400 uppercase', targets: [1,2,3,4,5] },
-        {className: 'text-end', targets: [0] },
+        {width: "60px", targets: 0},
+        {width: "500px", targets: 1},
+        {width: "50px", targets: -1},
+        {className: 'p-3 text-xs font-medium text-left text-gray-700 dark:text-gray-400', targets: [1,2,3,4,5] },
+        {className: 'text-center', targets: [0] },
         {className: 'text-center', targets: [-1] },
         {orderable: false, targets: [0,-1] } // last column (Actions) not orderable
     ],
@@ -586,7 +589,7 @@ var table2 = $('#client_reports').DataTable({
         //         class: 'flex items-center focus:outline-none bg-brand-500 text-white hover:bg-brand-600 hover:text-white  text-md font-medium py-2 px-4 rounded',
         //         style: 'max-height: 32px;'
         //     },
-        //     title: "<?php echo $_ENV['company_name']; ?>",
+        //     title: "<?php // echo $_ENV['company_name']; ?>",
         //     messageBottom: null,
         //     exportOptions: {
         //         columns: ':visible'
@@ -618,13 +621,19 @@ var table3 = $('#client_users').DataTable({
     },
     retrieve: true,
     cache: true,
-    'columns': [
+    columns: [
         {data: 'id', render: function(data,type,row){
                 return '<label class="custom-label"><div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]"><input type="checkbox" class="hidden" data-remove onchange="data_remove($(this))" data-id="' + row.id + '" ><i class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i></div></label>';
             }
         }, 
-        {data: 'firstname'},
-        {data: 'lastname'},
+        {data: 'firstname', render: function(data,type,row){
+                return '<h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">' + (row.firstname ?? '') + '</h5>';
+            }
+        },
+        {data: 'lastname', render: function(data,type,row){
+                return '<h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">' + (row.lastname ?? '') + '</h5>';
+            }
+        },
         {data: 'email'},
         {data: 'username'},
         {data: null, render: function(data,type,row){
@@ -659,11 +668,12 @@ var table3 = $('#client_users').DataTable({
             next: " > ",
         }
     },
+    autoWidth: false,
     columnDefs: [
-        {width: '30px', targets: 0},
+        {width: '60px', targets: 0},
         {width: '50px', targets: -1},
-        {className: 'p-3 text-xs font-medium text-left text-gray-700 dark:text-gray-400 uppercase', targets: [1,2,3,4,5] },
-        {className: 'text-end', targets: [0] },
+        {className: 'p-3 text-xs font-normal text-left text-gray-700 dark:text-gray-400', targets: [1,2,3,4,5] },
+        {className: 'text-center', targets: [0] },
         {className: 'text-center', targets: [-1] },
         {orderable: false, targets: [0,-1] } // last column (Actions) not orderable
     ],
@@ -676,7 +686,7 @@ var table3 = $('#client_users').DataTable({
         //         class: 'flex items-center focus:outline-none bg-brand-500 text-white hover:bg-brand-600 hover:text-white  text-md font-medium py-2 px-4 rounded',
         //         style: 'max-height: 32px;'
         //     },
-        //     title: "<?php echo $_ENV['company_name']; ?>",
+        //     title: "<?php // echo $_ENV['company_name']; ?>",
         //     messageBottom: null,
         //     exportOptions: {
         //         columns: ':visible'

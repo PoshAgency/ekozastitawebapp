@@ -534,6 +534,13 @@ body table tr.removed {
 table.dataTable thead .sorting_asc.sorting_disabled {
 	background-image: none !important;
 }
+table.dataTable th:first-child, 
+table.dataTable td:first-child {
+    max-width: 60px !important;
+    min-width: 60px !important;
+    width: 60px !important;
+    padding-right: 0 !important;
+}
 /* RESPONSIVE */
 @media(max-width: 767px){
     .popup-header p {
