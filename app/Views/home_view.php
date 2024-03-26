@@ -144,33 +144,33 @@
 														<div class="bg-white rounded-md shadow-md">
 															<div class="py-4">																			
 																<table class="w-full border-collapse" id="all_workorders">
-                                                                    <thead class="bg-gray-50 dark:bg-gray-700/20">
-                                                                        <tr>
-                                                                            <th scope="col" class="p-3" width="1%">
-                                                                                <label class="custom-label">
-                                                                                    <div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-                                                                                    <input type="checkbox" class="hidden" onchange="select_all($(this))">
-                                                                                    <i title="Izaberi sve" class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-                                                                                    </div>
-                                                                                </label>
-                                                                            </th>
-                                                                            <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase" width="230">
-                                                                                Objekat
-                                                                            </th>
-                                                                            <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
-                                                                                Datum
-                                                                            </th>
-                                                                            <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
-                                                                                Potvrda
-                                                                            </th>
-                                                                            <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
-                                                                                Ocena
-                                                                            </th>
-                                                                            <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
-                                                                                &nbsp;
-                                                                            </th>
-                                                                        </tr>
-                                                                    </thead>
+                                  <thead class="bg-gray-50 dark:bg-gray-700/20">
+                                      <tr>
+                                          <th scope="col" class="p-3" width="1%">
+                                              <label class="custom-label">
+                                                  <div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
+                                                  <input type="checkbox" class="hidden" onchange="select_all($(this))">
+                                                  <i title="Izaberi sve" class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
+                                                  </div>
+                                              </label>
+                                          </th>
+                                          <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase" width="230">
+                                              Objekat
+                                          </th>
+                                          <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
+                                              Datum
+                                          </th>
+                                          <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
+                                              Potvrda
+                                          </th>
+                                          <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
+                                              Ocena
+                                          </th>
+                                          <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
+                                              &nbsp;
+                                          </th>
+                                      </tr>
+                                  </thead>
 																	<tbody></tbody>
 																</table>
 															</div>
@@ -190,6 +190,26 @@
 			<?php echo view('templates/footer'); ?>	
 		</div>
 	</div>
+</div>
+
+<!-- Small Modal -->
+<div class="modal animate-ModalSlide hidden" id="smallmodal">
+    <div class="relative w-auto pointer-events-none  sm:my-7 sm:mx-auto z-[99] sm:max-w-xs">
+        <div class="relative flex flex-col w-full pointer-events-auto bg-white dark:bg-slate-800 bg-clip-padding rounded">
+            <div class="flex shrink-0 items-center justify-between py-2 px-4 rounded-t border-b border-solid dark:border-gray-700 bg-slate-800">
+                <h6 class="mb-0 leading-4 text-base font-semibold text-white mt-0" id="staticBackdropLabel1">Brisanje</h6>
+                <button type="button" class="box-content w-4 h-4 p-1 bg-slate-700/60 rounded-full text-white leading-4 text-xl close" aria-label="Close"  data-fc-dismiss>&times;</button>
+            </div>
+            <div class="relative flex-auto p-4 text-slate-600 dark:text-gray-300 leading-relaxed">
+                <p class="font-semibold text-base">Da li ste sigurni da želite da obrišete?</p>
+                <!-- <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, pariatur.</p> -->
+            </div>
+            <div class="flex flex-wrap shrink-0 justify-end p-3 rounded-b border-t border-dashed dark:border-gray-700">
+                <button class="inline-block focus:outline-none text-red-500 hover:bg-red-500 hover:text-white bg-transparent border border-gray-200 dark:bg-transparent dark:text-red-500 dark:hover:text-white dark:border-gray-700 dark:hover:bg-red-500 text-sm font-medium py-1 px-3 rounded mr-1 close" data-fc-dismiss>Da</button>
+                <button class="inline-block focus:outline-none text-primary-500 hover:bg-primary-500 hover:text-white bg-transparent border border-gray-200 dark:bg-transparent dark:text-primary-500 dark:hover:text-white dark:border-gray-700 dark:hover:bg-primary-500 text-sm font-medium py-1 px-3 rounded" data-fc-dismiss>Ne</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 <?php echo view('templates/popups'); ?>	
