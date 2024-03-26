@@ -22,26 +22,11 @@ class Login extends BaseController
 
     public function index()
     {
-        // $collections_model = model('CollectionsModel');
-        // $teachers_model = model('TeachersModel');
-        // $classes_model = model('ClassesModel');
-        // $PlaylistsModel = model('PlaylistsModel');
-        // $data['logged_user'] = $this->user;
 		$data['settings'] = $this->settings;
-        // $data['controller'] = $this->controller;
-        // if(!isset($data['logged_user'])){
-        //     return redirect()->to('/login');
-        // }
 		session()->remove('user');
+		session()->remove('isLogged');
 
         $data['current'] = array();
-        // $data['current'] = $this->model->where(['template' => 'homepage'])->first();
-        // $data['new_micro_classes'] = $classes_model->all_micro_classes_home(0, 6, NULL, 'classes.created_at desc');
-        // $data['new_mega_classes'] = $classes_model->all_mega_classes_home(0, 6, NULL, 'classes.created_at desc');
-        // $data['micro_collection'] = $collections_model->single_collection('slug', 'micro-for-beginners');
-        // $data['mega_collection'] = $collections_model->single_collection('slug', 'lagree-101');
-        // $data['all_sliders'] = $this->model->query("SELECT * FROM slider WHERE deleted_at IS NULL AND status = 0 ORDER BY sort")->getResultArray();
-        // $data['four_playlists'] = $PlaylistsModel->all_playlists(0, 4);
 
 		echo view('login_view', $data);
     }
@@ -51,6 +36,7 @@ class Login extends BaseController
 		$request = service('request');
 		$data = $request->getPost();
 		session()->remove('user');
+		session()->remove('isLogged');
 
 		$response = $this->model->login_user($data);
 		if($response['success']){
@@ -60,7 +46,7 @@ class Login extends BaseController
 		}
 		$response['method'] = $request->getMethod();
 		$response['request'] = $request;
-        if(isset($data['return_url']) && $data['return_url'] != ''){
+        if(isset($data['return_url']) AND $data['return_url'] != ''){
             $response['returl_url'] = $data['return_url'];
         }
 
@@ -71,10 +57,9 @@ class Login extends BaseController
     public function logout()
     {
 		session()->remove('user');
-		// session()->remove('teacher');
-		// session()->remove('subscription');
-		// session()->remove('subscription_info');
-		$response['success'] = TRUE;
+		session()->remove('isLogged');
+
+        $response['success'] = TRUE;
 		return redirect('/');
     }
 

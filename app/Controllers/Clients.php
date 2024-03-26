@@ -61,6 +61,20 @@ class Clients extends BaseController
 		);
 		echo json_encode($response, JSON_PRETTY_PRINT);
     }
+    public function get_objects($id = 0)
+    {         
+        $clientsModel = new ClientsModel();
+
+        $response['success'] = FALSE;
+        if($id > 0) {
+            $response['objects'] = $clientsModel->client_objects($id);
+            if(count($response['objects']) > 0){
+                $response['success'] = TRUE;
+            }
+        }
+
+		return $this->respond($response);
+    }
     public function client_objects_datatable($id = 0)
     {
         $response = [];
@@ -128,6 +142,39 @@ class Clients extends BaseController
             "aaData" => $data_final
             );
         }
+
+        echo json_encode($response, JSON_PRETTY_PRINT);
+    }
+    public function client_workorders_datatable($id = 0)
+    {
+        $response = [];
+        $post = $this->request->getPost();
+        
+        $draw = $post['draw'];
+        $row = $post['start'];
+        
+        $rowperpage = $post['length']; // Rows display per page
+        $columnIndex = $post['order'][0]['column']; // Column index
+        $columnName = $post['columns'][$columnIndex]['data']; // Column name
+        $columnSortOrder = $post['order'][0]['dir']; // asc or desc
+        $searchValue = $post['search']['value']; // Search value
+
+        $clientsModel = new ClientsModel();
+        $data = $clientsModel->client_workorders($id);        
+        
+        $totalRecords = is_array($data) ? count($data) : 0;
+
+        $data = $clientsModel->client_workorders($id, $searchValue);
+        $totalRecordwithFilter = is_array($data) ? count($data) : 0;
+
+        $data_final = $clientsModel->client_workorders($id, $searchValue, $columnName." ".$columnSortOrder, $rowperpage, $row);
+        $response = array(
+        //"mrnj" => $sql,
+        "draw" => intval($draw),
+        "iTotalRecords" => $totalRecords,
+        "iTotalDisplayRecords" => $totalRecordwithFilter,
+        "aaData" => $data_final
+        );
 
         echo json_encode($response, JSON_PRETTY_PRINT);
     }
