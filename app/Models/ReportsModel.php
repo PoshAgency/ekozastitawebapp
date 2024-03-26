@@ -38,8 +38,8 @@ class ReportsModel extends Model
         $client_id = ''; 
         $object_id = ''; 
         if($filter != NULL){
-            if(isset($filter['client_id'])){ $client_id = ' AND app_reports.client_id  = ' . $filter['client_id'] . ' '; }
-            if(isset($filter['object_id'])){ $object_id = ' AND app_reports.cobject_id = ' . $filter['object_id'] . ' '; }
+            if(isset($filter['client_id']) AND $filter['client_id'] != ''){ $client_id = ' AND app_reports.client_id  = ' . $filter['client_id'] . ' '; }
+            if(isset($filter['object_id']) AND $filter['object_id'] != ''){ $object_id = ' AND app_reports.cobject_id = ' . $filter['object_id'] . ' '; }
             // if(isset($filter['client_id'])){ $client_id = ' AND client_id = ' . $filter['client_id'] . ' '; }
             // if(isset($filter['client_id'])){ $client_id = ' AND client_id = ' . $filter['client_id'] . ' '; }
         }
@@ -62,6 +62,30 @@ class ReportsModel extends Model
         ")->getResultArray();
         
         return $reports;
+    }
+
+    public function all_workorders($searchTerm = '', $order = '', $limit = NULL, $offset = NULL)
+    {
+        $workorders = $this->query("SELECT app_reports.*, cobjects.name as object_name, clients.name as client_name, cobjects.id as object_id, clients.id as client_id, IF(app_reports.report_number IS NULL, CONCAT('00',app_reports.id, '/', '" . date('Y') . "'), app_reports.report_number) as report_num
+                FROM app_reports
+                LEFT JOIN (SELECT * FROM cobjects WHERE deleted_at IS NULL) cobjects ON cobjects.id = app_reports.cobject_id
+                LEFT JOIN (SELECT * FROM clients WHERE deleted_at IS NULL) clients ON clients.id = app_reports.client_id
+                WHERE app_reports.approved = 0
+                AND app_reports.deleted_at IS NULL
+                HAVING 
+                    object_name LIKE '%{$searchTerm}%'
+                    OR client_name LIKE '%{$searchTerm}%' 
+                    OR report_num LIKE '%{$searchTerm}%' 
+                    OR date_done LIKE '%{$searchTerm}%'
+                " . ($order != NULL ? " ORDER BY ". print_r($order,true) : '') . "
+                " . (($limit != NULL AND $limit != -1) ? " LIMIT {$limit} " : '') . "
+                " . (($limit != NULL AND $limit != -1 AND $offset != NULL) ? " OFFSET {$offset} " : '') . "
+        ")->getResultArray();
+        foreach ($workorders as $key => $row) {
+            $workorders[$key]['date_done_srb'] = datetime_srb($row['date_done']);
+        }
+
+        return $workorders;
     }
 
     public function single_report($id = NULL){

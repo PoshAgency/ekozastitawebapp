@@ -270,12 +270,57 @@ flatpic = $(".datepicker_range_table").flatpickr({
 var svg = '<?php echo svg(); ?>'
 var filterData = {};
 
-new Selectr('#clients_list');
+clients_list = new Selectr('#clients_list');
+objects_list = new Selectr('#objects_list', {
+    placeholder: 'Select objects'
+});
 
 $('#clients_list').on('change', function(){
-    var val = $(this).val();
+    var val = $(this).val();    
+    console.log('client ID:', val);
+    if(val != ''){
+        get_objects(val);
+    }else{
+        $('#clients_list').val('');
+    }
 
 });
+function get_objects(xx){
+    $.ajax({
+        type: 'POST',
+        url: 'clients/get_objects/' + xx,
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+            console.log('Success');
+            var new_data = [];
+            if(data.success){
+                if(data.objects.length > 0){
+                    data.objects.forEach(function(el, i){
+                        console.log(el);
+                        console.log(i);
+                        new_data[i] = {};
+                        new_data[i]['value'] = el.id;
+                        new_data[i]['text'] = el.name;
+                    })
+                }else{
+                    new_data[0] = {};
+                    new_data[0]['value'] = "";
+                    new_data[0]['text'] = "Nema objekata";
+                };
+            }else{
+                new_data[0] = {};
+                new_data[0]['value'] = "";
+                new_data[0]['text'] = "Nema objekata";
+            };
+            objects_list.removeAll();
+            objects_list.add(new_data);
+        },
+        error: function (request, status, error) {
+            console.log('PHP Error');
+        }
+    });
+}
 
 var tablee = $('#reports_table').DataTable({
     processing: true,

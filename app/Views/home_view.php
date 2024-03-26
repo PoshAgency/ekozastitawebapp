@@ -6,6 +6,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
 <?php echo view('templates/head'); ?>
+<!-- export datatable -->
+<link href="https://cdn.datatables.net/1.11.0/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="https://editor.datatables.net/extensions/Editor/css/editor.dataTables.min.css" rel="stylesheet">
+<link href="https://cdn.datatables.net/select/1.3.3/css/select.dataTables.min.css" rel="stylesheet">
+<link href="https://cdn.datatables.net/buttons/2.0.0/css/buttons.dataTables.min.css" rel="stylesheet">
+<link href="https://cdn.datatables.net/datetime/1.1.1/css/dataTables.dateTime.min.css" rel="stylesheet">
+<link href="https://cdn.datatables.net/colreorder/1.5.4/css/colReorder.dataTables.min.css" rel="stylesheet">
+<!-- fixedcolumns datatable -->
+<link href="https://cdn.datatables.net/fixedcolumns/3.3.3/css/fixedColumns.dataTables.min.css" rel="stylesheet">
 
 </head>
 
@@ -134,391 +143,35 @@
 													<div class="relative overflow-x-auto block w-full sm:px-2 lg:px-4">
 														<div class="bg-white rounded-md shadow-md">
 															<div class="py-4">																			
-																<table class="w-full border-collapse" id="clients_table">
-																	<thead class="bg-gray-50 dark:bg-gray-700/20">
-																		<tr>
-																			<th scope="col" class="p-3">
-																				<label class="custom-label">
-																					<div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-																					<input type="checkbox" class="hidden" onchange="select_all($(this))">
-																					<i title="Izaberi sve" class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-																					</div>
-																				</label>
-																			</th>
-																			<th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
-																				Datum
-																			</th>	<th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
-																				Klijent
-																			</th>
-																			<th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
-																				Grad
-																			</th>
-																			<th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
-																				Objekat
-																			</th>
-																			<th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
-																				Adresa
-																			</th>
-																			<th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
-																				Kontakt
-																			</th>
-																			<th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
-																				&nbsp;
-																			</th>
-																		</tr>
-																	</thead>
-																	<tbody>
-																		<!-- 1 -->
-																		<tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-																			<td class="w-4 p-4">
-																				<label class="custom-label">
-																					<div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-																					<input type="checkbox" class="hidden" >
-																					<i class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-																					</div>
-																				</label>
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				07.06.2023.
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				Maksi
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				Smederevo
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				CMK 708
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				Makarska
-																			</td> 
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				0641832190
-																			</td> 
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-																				<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
-																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-check text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="approvemodal"></i></a>
-																				<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400"  data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
-																			</td>
-																		</tr>
-																		<!-- 2 -->
-																		<tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-																			<td class="w-4 p-4">
-																				<label class="custom-label">
-																					<div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-																					<input type="checkbox" class="hidden" >
-																					<i class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-																					</div>
-																				</label>
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				07.06.2023.
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				Maksi
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				Smederevo
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				CMK 708
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				Makarska
-																			</td> 
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				0641832190
-																			</td> 
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-																				<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
-																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-check text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="approvemodal"></i></a>
-																				<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400"  data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
-																			</td>
-																		</tr>
-																		<!-- 3 -->
-																		<tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-																			<td class="w-4 p-4">
-																				<label class="custom-label">
-																					<div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-																					<input type="checkbox" class="hidden" >
-																					<i class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-																					</div>
-																				</label>
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				07.06.2023.
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				Maksi
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				Smederevo
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				CMK 708
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				Makarska
-																			</td> 
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				0641832190
-																			</td> 
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-																				<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
-																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-check text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="approvemodal"></i></a>
-																				<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400"  data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
-																			</td>
-																		</tr>
-																		<!-- 4 -->
-																		<tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-																			<td class="w-4 p-4">
-																				<label class="custom-label">
-																					<div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-																					<input type="checkbox" class="hidden" >
-																					<i class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-																					</div>
-																				</label>
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				07.06.2023.
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				Maksi
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				Smederevo
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				CMK 708
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				Makarska
-																			</td> 
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				0641832190
-																			</td> 
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-																				<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
-																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-check text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="approvemodal"></i></a>
-																				<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400"  data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
-																			</td>
-																		</tr>
-																		<!--5-->
-																		<tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-																			<td class="w-4 p-4">
-																				<label class="custom-label">
-																					<div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-																					<input type="checkbox" class="hidden" >
-																					<i class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-																					</div>
-																				</label>
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				07.06.2023.
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				Maksi
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				Smederevo
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				CMK 708
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				Makarska
-																			</td> 
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				0641832190
-																			</td> 
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-																				<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
-																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-check text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="approvemodal"></i></a>
-																				<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400"  data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
-																			</td>
-																		</tr>
-																		<!--6-->
-																		<tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-																			<td class="w-4 p-4">
-																				<label class="custom-label">
-																					<div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-																					<input type="checkbox" class="hidden" >
-																					<i class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-																					</div>
-																				</label>
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				07.06.2023.
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				Maksi
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				Smederevo
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				CMK 708
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				Makarska
-																			</td> 
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				0641832190
-																			</td> 
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-																				<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
-																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-check text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="approvemodal"></i></a>
-																				<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400"  data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
-																			</td>
-																		</tr>
-																		<!--7-->
-																		<tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-																			<td class="w-4 p-4">
-																				<label class="custom-label">
-																					<div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-																					<input type="checkbox" class="hidden" >
-																					<i class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-																					</div>
-																				</label>
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				07.06.2023.
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				Maksi
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				Smederevo
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				CMK 708
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				Makarska
-																			</td> 
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				0641832190
-																			</td> 
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-																				<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
-																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-check text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="approvemodal"></i></a>
-																				<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400"  data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
-																			</td>
-																		</tr>
-																		<!--8-->
-																		<tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-																			<td class="w-4 p-4">
-																				<label class="custom-label">
-																					<div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-																					<input type="checkbox" class="hidden" >
-																					<i class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-																					</div>
-																				</label>
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				07.06.2023.
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				Maksi
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				Smederevo
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				CMK 708
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				Makarska
-																			</td> 
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				0641832190
-																			</td> 
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-																				<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
-																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-check text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="approvemodal"></i></a>
-																				<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400"  data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
-																			</td>
-																		</tr>
-																		<!--9-->
-																		<tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-																			<td class="w-4 p-4">
-																				<label class="custom-label">
-																					<div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-																					<input type="checkbox" class="hidden" >
-																					<i class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-																					</div>
-																				</label>
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				07.06.2023.
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				Maksi
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				Smederevo
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				CMK 708
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				Makarska
-																			</td> 
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				0641832190
-																			</td> 
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-																				<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
-																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-check text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="approvemodal"></i></a>
-																				<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400"  data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
-																			</td>
-																		</tr>
-																		<!--10-->
-																		<tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-																			<td class="w-4 p-4">
-																				<label class="custom-label">
-																					<div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-																					<input type="checkbox" class="hidden" >
-																					<i class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-																					</div>
-																				</label>
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				07.06.2023.
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				Maksi
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				Smederevo
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				CMK 708
-																			</td>
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				Makarska
-																			</td> 
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-																				0641832190
-																			</td> 
-																			<td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-																				<a class="mr-3" href="workorders/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
-																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-check text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="approvemodal"></i></a>
-																				<a class="mr-3" href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400"  data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>
-																				<a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
-																			</td>
-																		</tr>
-																	</tbody>
+																<table class="w-full border-collapse" id="all_workorders">
+                                  <thead class="bg-gray-50 dark:bg-gray-700/20">
+                                      <tr>
+                                          <th scope="col" class="p-3" width="1%">
+                                              <label class="custom-label">
+                                                  <div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
+                                                  <input type="checkbox" class="hidden" onchange="select_all($(this))">
+                                                  <i title="Izaberi sve" class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
+                                                  </div>
+                                              </label>
+                                          </th>
+                                          <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase" width="230">
+                                              Objekat
+                                          </th>
+                                          <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
+                                              Datum
+                                          </th>
+                                          <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
+                                              Potvrda
+                                          </th>
+                                          <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
+                                              Ocena
+                                          </th>
+                                          <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
+                                              &nbsp;
+                                          </th>
+                                      </tr>
+                                  </thead>
+																	<tbody></tbody>
 																</table>
 															</div>
 														</div>
@@ -569,11 +222,130 @@
 
 <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
 <script src="assets/js/pages/analytics-index.init.js"></script>
+<!-- datatable -->
+<script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>
+<!-- export datatable -->
+<script src="https://editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js"></script>
+<script src="https://cdn.datatables.net/select/1.3.3/js/dataTables.select.min.js"></script>
+<script src="https://cdn.datatables.net/datetime/1.1.1/js/dataTables.dateTime.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.0.0/js/dataTables.buttons.min.js"></script>
+<!-- fixedcolumns datatable -->
+<script src="https://cdn.datatables.net/fixedcolumns/5.0.0/js/dataTables.fixedColumns.js"></script>
+<script src="https://cdn.datatables.net/fixedcolumns/5.0.0/js/fixedColumns.dataTables.js"></script>
 <script src="assets/js/app.js"></script>
 <?php if (session()->getFlashdata('msg') !== NULL){ ?>
 <script>
     app_msg('<?php echo session()->getFlashdata('msg'); ?>');
 </script>
 <?php } ?>
+<script>
+var table2 = $('#all_workorders').DataTable({
+    processing: true,
+    serverSide: true,
+    serverMethod: 'post',
+    ajax: {
+        url: "<?php echo (session('user') != NULL AND in_array(session('user')['group_id'], [1,2])) ? "reports/all_workorders_datatable" : ((session('user') != NULL AND in_array(session('user')['group_id'], [5])) ? 'clients/client_workorders_datatable' : ''); ?>",        
+    },
+    rowCallback: function( row, data ) {
+        $(row).addClass('ReportsModel_row').attr('data-id', data.id);
+    },
+    retrieve: true,
+    cache: true,
+    columns: [
+        {data: 'id', render: function(data,type,row){
+                return '<label class="custom-label"><div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]"><input type="checkbox" class="hidden" data-remove onchange="data_remove($(this))" data-id="' + row.id + '" ><i class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i></div></label>';
+            }
+        }, 
+        {data: 'object_name', render: function(data,type,row){
+            return '<a href="objects/show/' + row.object_id + '" class="flex items-center">'+
+                        '<div class="self-center">'+
+                            '<h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">' + (row.object_name ?? '') + '</h5>'+
+                        '</div>'+
+                    '</a>';
+            }
+        },
+        {data: 'date_done_srb'},
+        {data: 'report_num', render: function(data,type,row){
+                return ((row.report_num != null && row.report_num != '') ? '<a href="reports/show/' + row.report_num + '">#' + row.report_num + '</a>' : '');
+            }
+        },
+        {data: null, render: function(data,type,row){
+            return '0';
+            }
+        },
+        {data: null, render: function(data,type,row){
+                if(row.id != 0)
+                    return '<div class="flex gap-5 justify-end">'+
+                                '<a href="javascript:;"><i class="icofont-ui-check text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal"  data-fc-target="approvemodal"></i></a>'+
+                                '<a href="javascript:;"><i class="icofont-paper-plane text-xxl text-gray-500 dark:text-gray-400" data-fc-type="modal" data-fc-target="sendmailmodal"></i></a>'+
+                                '<a href="workorders/edit/' + row.id + '"><i class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"></i></a>'+
+                                '<a href="javascript:;" class="delete_record" data-popup="delete-popup" data-id="' + row.id + '" data-model="ReportsModel"><i class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"></i></a>'+
+                            '</div>';
+                else
+                    return "";
+            }
+        },
+    ],
+    language: {
+        lengthMenu: '<select>' +
+                '<option value="10">Po strani: 10</option>' +
+                '<option value="20">Po strani: 20</option>' +
+                '<option value="30">Po strani: 30</option>' +
+                '<option value="40">Po strani: 40</option>' +
+                '<option value="50">Po strani: 50</option>' +
+                '<option value="-1">All</option>' +
+                '</select>',
+
+        search: "",
+        searchPlaceholder: "Pretraži...",
+        info: "_TOTAL_ radnih naloga",
+        infoFiltered: "",
+        processing: "<div class='loading-wrap'><span class='loader'></span>&emsp;Loading ...</div>",
+        infoEmpty: "0 Rezultata",
+        paginate: {
+            previous: " < ",
+            next: " > ",
+        }
+    },
+    autoWidth: false,
+    columnDefs: [
+        {width: "60px", targets: 0},
+        {width: "500px", targets: 1},
+        {width: "50px", targets: -1},
+        {className: 'p-3 text-xs font-medium text-left text-gray-700 dark:text-gray-400', targets: [1,2,3,4,5] },
+        {className: 'text-center', targets: [0] },
+        {className: 'text-center', targets: [-1] },
+        {orderable: false, targets: [0,-1] } // last column (Actions) not orderable
+    ],
+    dom: '<"table-filters"iB<"btn-holder"<"date_range">fr>>t<"table-footer"<"bottom-footer-container"pl>>',
+    buttons: [
+        // {
+        //     extend: 'excel',
+        //     text: 'Export',
+        //     attr: {
+        //         class: 'flex items-center focus:outline-none bg-brand-500 text-white hover:bg-brand-600 hover:text-white  text-md font-medium py-2 px-4 rounded',
+        //         style: 'max-height: 32px;'
+        //     },
+        //     title: "<?php // echo $_ENV['company_name']; ?>",
+        //     messageBottom: null,
+        //     exportOptions: {
+        //         columns: ':visible'
+        //     }
+        // }
+        {
+            text: 'Obriši selektovano',
+            attr: {
+                class: 'delete_multiple focus:outline-none bg-red-500 text-white hover:bg-brand-600 hover:text-white  text-md font-medium py-2 px-4 rounded ml-5',
+                style: 'max-height: 32px;display: none;line-height: 13px;',
+                "data-popup": 'delete-popup',
+                "data-model": 'ObjectsModel',
+            },
+            // action: function ( e, dt, node, config ) {
+            //     dt.ajax.reload();
+            // }
+        }
+    ]
+});
+</script>
 </body>
 </html>

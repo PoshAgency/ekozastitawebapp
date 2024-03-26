@@ -145,6 +145,7 @@ class ClientsModel extends Model
                     LEFT JOIN (SELECT *, MAX(id) as max_id FROM app_reports WHERE approved = 1 GROUP BY id) ar ON (ar.client_id = cobjects.client_id AND ar.cobject_id = cobjects.id)
                     WHERE app_reports.client_id = " . $id . "
                     AND app_reports.deleted_at IS NULL
+                    AND app_reports.approved = 1
                     GROUP BY app_reports.id
                     HAVING 
                     (
@@ -165,6 +166,39 @@ class ClientsModel extends Model
             $reports = [];
         }
         
+        return $reports;
+    }
+    public function client_workorders($id = NULL, $searchTerm = '', $order = '', $limit = NULL, $offset = NULL){
+        if($id != NULL AND $id > 0){
+            $client_id = "AND app_reports.client_id = " . $id . "";
+        }else{
+            $client_id = "";
+        }
+        $reports = $this->query("SELECT app_reports.*, '' as date_done_srb, cobjects.name as object_name, clients.name as client_name, cobjects.id as object_id, clients.id as client_id, IF(ar.report_number IS NULL, CONCAT('00',ar.id, '/', '" . date('Y') . "'), ar.report_number) as report_num
+                    FROM app_reports
+                    LEFT JOIN cobjects ON cobjects.id = app_reports.cobject_id
+                    LEFT JOIN clients ON clients.id = app_reports.client_id
+                    LEFT JOIN (SELECT *, MAX(id) as max_id FROM app_reports WHERE approved = 1 GROUP BY id) ar ON (ar.client_id = cobjects.client_id AND ar.cobject_id = cobjects.id)
+                    WHERE app_reports.deleted_at IS NULL
+                    " . $client_id . "
+                    AND app_reports.approved = 0
+                    GROUP BY app_reports.id
+                    HAVING 
+                    (
+                        client_name LIKE '%{$searchTerm}%'
+                        OR report_number LIKE '%{$searchTerm}%' 
+                        OR object_name LIKE '%{$searchTerm}%' 
+                        OR date_done LIKE '%{$searchTerm}%'
+                    )
+                    " . ($order != NULL ? " ORDER BY ". print_r($order,true) : '') . "
+                    " . (($limit != NULL AND $limit != -1) ? " LIMIT {$limit} " : '') . "
+                    " . (($limit != NULL AND $limit != -1 AND $offset != NULL) ? " OFFSET {$offset} " : '') . "
+        ")->getResultArray();
+        foreach ($reports as $key => $row) {
+            $reports[$key]['date_done_srb'] = datetime_srb($row['date_done']);
+        }
+        $reports = [];
+
         return $reports;
     }
     public function client_reports_count($id = NULL){

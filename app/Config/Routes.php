@@ -13,7 +13,7 @@ $routes->set404Override(function(){
 $routes->get('/', 'Home::index');
 
 /**
-    1 => "God"
+    1 => "Super Admin"
     2 => "Admin"
     3 => "commercialist"
     4 => "operator"

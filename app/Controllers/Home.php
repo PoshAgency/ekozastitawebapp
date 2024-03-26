@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use CodeIgniter\API\ResponseTrait;
 use CodeIgniter\Controller;
+use App\Models\ReportsModel;
 
 class Home extends BaseController
 {
@@ -11,12 +12,7 @@ class Home extends BaseController
 
     public function index()
     {
-        if(NULL === session("user")){
-            return redirect()->to('/login');
-        }
-
         $data = [];
-
 		echo view('home_view', $data);
     }
 }

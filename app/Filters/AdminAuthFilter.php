@@ -22,6 +22,8 @@ class AdminAuthFilter implements FilterInterface
 
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
-        // Do something here
+        if ( ! session()->has('isLogged')){
+            return redirect()->to('login?return_url=' . current_url());
+        }
     }
 }
