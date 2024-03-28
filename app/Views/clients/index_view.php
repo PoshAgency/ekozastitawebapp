@@ -65,14 +65,26 @@
 				<div class="main-content-item sm:col-span-12 md:col-span-12 lg:col-span-12 xl:col-span-12">
 					<div class="w-full relative mb-4">  
 						<div class="flex-auto p-0">
+							<div class="px-4">
+                                <div class="mb-0 mt-4 p-0 bg-white dark:bg-gray-700/20 rounded-md shadow-md border-b border-gray-200 dark:border-slate-700" data-fc-type="tab">
+                                    <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" aria-label="Tabs">
+                                        <li class="me-2" role="presentation">
+                                            <button class="flex items-center p-4 rounded-t-lg border-b-2 active " id="orders-tab" data-fc-target="#permanent" type="button" role="tab" aria-controls="permanent" aria-selected="false"><i class="far fa-address-book self-center me-2" style="font-size: 18px;"></i> Stalni klijenti</button>
+                                        </li>
+                                        <li class="me-2" role="presentation">
+                                            <button class="flex items-center p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="onetime-tab" data-fc-target="#onetime" type="button" role="tab" aria-controls="onetime" aria-selected="false"><i class="far fa-circle-user self-center me-2" style="font-size: 18px;"></i> Jednokratni klijenti</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
 							<div id="myTabContent">
-								<div class="active p-4 rounded-lg" id="all" role="tabpanel" aria-labelledby="all-tab">
+								<div class="active px-4 rounded-lg" id="permanent" role="tabpanel" aria-labelledby="permanent-tab">
 									<div class="grid grid-cols-1 p-0 md:p-4">
 										<div class="sm:-mx-6 lg:-mx-8">
 											<div class="relative overflow-x-auto block w-full sm:px-2 lg:px-4">
                                                 <div class="bg-white rounded-md shadow-md">
                                                     <div class="py-4">
-                                                        <table class="w-full border-collapse" id="clients_table">
+                                                        <table class="w-full border-collapse" id="permanent_clients_table">
                                                             <thead class="bg-gray-50 dark:bg-gray-700/20">
                                                                 <tr>
                                                                     <th scope="col" class="p-3">
@@ -113,7 +125,55 @@
 											</div>
 										</div>
 									</div>
-								</div>                                      
+								</div>   
+                                <div class="px-4 rounded-lg" id="onetime" role="tabpanel" aria-labelledby="onetime-tab">                                   
+                                    <div class="grid grid-cols-1 p-0 md:p-4">
+										<div class="sm:-mx-6 lg:-mx-8">
+											<div class="relative overflow-x-auto block w-full sm:px-2 lg:px-4">
+                                                <div class="bg-white rounded-md shadow-md">
+                                                    <div class="py-4">
+                                                        <table class="w-full border-collapse" id="onetime_clients_table">
+                                                            <thead class="bg-gray-50 dark:bg-gray-700/20">
+                                                                <tr>
+                                                                    <th scope="col" class="p-3">
+                                                                        <label class="custom-label">
+                                                                            <div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
+                                                                            <input type="checkbox" class="hidden" onchange="select_all($(this))">
+                                                                            <i title="Izaberi sve" class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
+                                                                            </div>
+                                                                        </label>
+                                                                    </th>
+                                                                    <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
+                                                                        Klijent
+                                                                    </th>
+                                                                    <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
+                                                                        Telefon
+                                                                    </th>
+                                                                    <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
+                                                                        Email
+                                                                    </th>
+                                                                    <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
+                                                                        Grad
+                                                                    </th>
+                                                                    <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
+                                                                        Adresa
+                                                                    </th>
+                                                                    <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
+                                                                        Kontakt osoba
+                                                                    </th>
+                                                                    <th scope="col" style="width: 120px !important" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
+                                                                        &nbsp;
+                                                                    </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody></tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+											</div>
+										</div>
+									</div>
+                                </div>  
 							</div>
 						</div>
 					</div>  
@@ -150,12 +210,12 @@
 <script>
 var svg = '<?php echo svg(); ?>'
 
-var tablee = $('#clients_table').DataTable({
+var tablee = $('#permanent_clients_table').DataTable({
     processing: true,
     serverSide: true,
     serverMethod: 'post',
     ajax: {
-        url: "<?= base_url() ?>/clients/datatable",
+        url: "<?= base_url() ?>/clients/permanent_datatable",
     },
     rowCallback: function( row, data ) {
         $(row).addClass('ClientsModel_row').attr('data-id', data.id);
@@ -186,7 +246,7 @@ var tablee = $('#clients_table').DataTable({
         },
         {data: 'city'},
         {data: 'address'},
-        {data: 'contract' }, // Total sum in column Notes
+        {data: 'contract' },
         {data: null, render: function(data,type,row){
                 if(row.id != 0)
                     return '<div class="flex gap-5 justify-end">'+
@@ -226,19 +286,6 @@ var tablee = $('#clients_table').DataTable({
     ],
     dom: '<"table-filters"iB<"btn-holder"<"date_range">fr>>t<"table-footer"<"bottom-footer-container"pl>>',
     buttons: [
-        // {
-        //     extend: 'excel',
-        //     text: 'Export',
-        //     attr: {
-        //         class: 'flex items-center focus:outline-none bg-brand-500 text-white hover:bg-brand-600 hover:text-white  text-md font-medium py-2 px-4 rounded',
-        //         style: 'max-height: 32px;'
-        //     },
-        //     title: "<?php // echo $_ENV['company_name']; ?>",
-        //     messageBottom: null,
-        //     exportOptions: {
-        //         columns: ':visible'
-        //     }
-        // },
         {
             text: 'Obriši selektovano',
             attr: {
@@ -247,35 +294,96 @@ var tablee = $('#clients_table').DataTable({
                 "data-popup": 'delete-popup',
                 "data-model": 'ClientsModel',
             },
-            // action: function ( e, dt, node, config ) {
-            //     dt.ajax.reload();
-            // }
         }
     ]
 });
+var tablee2 = $('#onetime_clients_table').DataTable({
+    processing: true,
+    serverSide: true,
+    serverMethod: 'post',
+    ajax: {
+        url: "<?= base_url() ?>/clients/onetime_datatable",
+    },
+    rowCallback: function( row, data ) {
+        $(row).addClass('ClientsModel_row').attr('data-id', data.id);
+    },
+    retrieve: true,
+    cache: true,
+    'columns': [
+        {data: 'id', render: function(data,type,row){
+                return '<label class="custom-label"><div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]"><input type="checkbox" class="hidden" data-remove onchange="data_remove($(this))" data-id="' + row.id + '" ><i class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i></div></label>';
+            }
+        }, 
+        {data: 'name', render: function(data,type,row){
+            return '<a href="clients/show/' + row.id + '" class="flex items-center">'+
+                        (row.image != '' ? '<img src="' + row.image + '" alt="" class="me-2 h-8 inline-block" style="width: 32px;height: 32px !important;object-fit: cover;">'  : svg) +
+                        '<div class="self-center">'+
+                            '<h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">' + (row.name ?? '') + '</h5>'+
+                        '</div>'+
+                    '</a>';
+            }
+        },
+        {data: 'telefon', render: function(data,type,row){
+                return ((row.telefon != null && row.telefon != '') ? '<a href="tel:' + row.telefon + '">' + row.telefon + '</a>' : '');
+            }
+        },
+        {data: 'mail', render: function(data,type,row){
+                return (row.mail != null && row.mail != '') ? '<a href="mailto:' + row.mail + '"><span class="py-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">' + row.mail + '</span></a>' : '';
+            }
+        },
+        {data: 'city'},
+        {data: 'address'},
+        {data: 'contract' },
+        {data: null, render: function(data,type,row){
+                if(row.id != 0)
+                    return '<div class="flex gap-5 justify-end">'+
+                                '<a href="clients/edit/' + row.id + '"><i class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"></i></a>'+
+                                '<a href="javascript:;"><i class="icofont-ui-delete text-lg text-red-500 dark:text-red-400 delete_record" data-id="' + row.id + '" data-model="ClientsModel" data-popup="delete-popup" ></i></a>'+
+                            '</div>';
+                else
+                    return "";
+            }
+        },
+    ],
+    language: {
+        lengthMenu: '<select>' +
+                '<option value="10">Per Page: 10</option>' +
+                '<option value="20">Per Page: 20</option>' +
+                '<option value="30">Per Page: 30</option>' +
+                '<option value="40">Per Page: 40</option>' +
+                '<option value="50">Per Page: 50</option>' +
+                '<option value="-1">All</option>' +
+                '</select>',
 
-//   ide u buttons
-//          {
-//             extend: 'colvis',
-//             columns: ':not(.noVis)',
-//             collectionLayout: 'fixed columns',
-//             collectionTitle: 'Edit Columns',
-//             text: 'Edit Columns'
-//         },
-//         {
-//             extend: 'columnsToggle',
-//             columns: '.show'
-//         }
-
-// document.querySelector("button.csv").addEventListener("click", () => {
-//     dataTable.export({
-//         type:"csv",
-//         download: true,
-//         lineDelimiter: "\n\n",
-//         columnDelimiter: ";"
-//     })
-// })
-
+        search: "",
+        searchPlaceholder: "Pretraži...",
+        info: "_TOTAL_ Klijenata",
+        infoFiltered: "",
+        processing: "<div class='loading-wrap'><span class='loader'></span>&emsp;Loading ...</div>",
+        infoEmpty: "0 Rezultata",
+        paginate: {
+            previous: " < ",
+            next: " > ",
+        }
+    },
+    columnDefs: [
+        {className: 'p-3 text-xs font-medium text-left text-gray-700 dark:text-gray-400 uppercase', targets: [-2]},
+        {className: 'p-3 text-xs font-medium text-left text-gray-700 dark:text-gray-400 uppercase', targets: "_all" },
+        {orderable: false, targets: [0,-1] } // last column (Actions) not orderable
+    ],
+    dom: '<"table-filters"iB<"btn-holder"<"date_range">fr>>t<"table-footer"<"bottom-footer-container"pl>>',
+    buttons: [
+        {
+            text: 'Obriši selektovano',
+            attr: {
+                class: 'delete_multiple focus:outline-none bg-red-500 text-white hover:bg-brand-600 hover:text-white  text-md font-medium py-2 px-4 rounded ml-5',
+                style: 'max-height: 32px;display: none;line-height: 13px;',
+                "data-popup": 'delete-popup',
+                "data-model": 'ClientsModel',
+            },
+        }
+    ]
+});
 </script>
 </body>
 </html>

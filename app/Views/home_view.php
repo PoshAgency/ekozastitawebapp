@@ -64,7 +64,7 @@
 										<div class="active p-4 rounded-lg" id="all" role="tabpanel" aria-labelledby="all-tab">
 											<div class="grid grid-cols-1 p-0 md:p-4">
 												<div class="sm:-mx-6 lg:-mx-8">
-													<div class="relative overflow-x-auto block w-full sm:px-2 lg:px-4">
+													<div class="relative block w-full sm:px-2 lg:px-4">
 														<div class="bg-white rounded-md shadow-md">
 															<div class="flex-auto p-0 md:p-4">
 															<div class="w-full relative mb-4">
@@ -113,7 +113,7 @@
 
 							<div class="breadcrumbs-container xl:w-full">
 								<div class="flex flex-wrap">
-									<div class="flex items-center py-4 px-4 w-full">
+									<div class="flex items-center pt-4 px-4 w-full">
 										<div class="w-full p-4 bg-white rounded-md shadow-md">
 											<div class="flex flex-wrap justify-between items-center">
 												<div class="items-center">
@@ -137,7 +137,7 @@
 							<div class="w-full relative mb-4">  
 								<div class="flex-auto p-0">
 									<div id="myTabContent">
-										<div class="active p-4 rounded-lg" id="all" role="tabpanel" aria-labelledby="all-tab">
+										<div class="active p-4 pt-0 rounded-lg" id="all" role="tabpanel" aria-labelledby="all-tab">
 											<div class="grid grid-cols-1 p-0 md:p-4">
 												<div class="sm:-mx-6 lg:-mx-8">
 													<div class="relative overflow-x-auto block w-full sm:px-2 lg:px-4">
