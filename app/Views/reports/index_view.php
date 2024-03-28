@@ -252,8 +252,6 @@ flatpic = $(".datepicker_range_table").flatpickr({
 </script>
 <script src="assets/libs/mobius1-selectr/selectr.min.js"></script>
 <script src="assets/js/pages/form-advanced.init.js"></script>
-
-<script src="assets/libs/prismjs/prism.js"></script> 
 <!-- datatable -->
 <script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>
 <!-- export datatable -->

@@ -2,7 +2,7 @@
 	<div class="text-center border-b bg-[#603dc3] border-r h-[64px] flex justify-center items-center brand-logo dark:bg-[#603dc3] dark:border-slate-700/40 group-data-[sidebar=dark]:bg-[#603dc3] group-data-[sidebar=dark]:border-slate-700/40 group-data-[sidebar=brand]:bg-brand group-[.dark]:group-data-[sidebar=brand]:bg-[#603dc3] group-data-[sidebar=brand]:border-slate-700/40">
 		<a href="<?php echo base_url(); ?>" class="logo">
 			<span>
-				<img src="assets/images/logo.png" alt="logo-small" class="logo-sm h-8 align-middle inline-block" />
+				<img src="<?php echo settings()['logo']; ?> " alt="logo-small" class="logo-sm h-8 align-middle inline-block" />
 			</span>
 		</a>
 	</div>
@@ -68,7 +68,7 @@
 									</a>
 								</li>
 								<li class="nav-item relative block">
-									<a href="preparations"
+									<a href="products"
 										class="nav-link hover:text-primary-500 rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200 flex items-center decoration-0 px-3 py-3">
 										<i class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
 										Tipovi preparata

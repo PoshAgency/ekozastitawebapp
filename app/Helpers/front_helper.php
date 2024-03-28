@@ -42,6 +42,14 @@ if (!function_exists("svg")) {
         return $svg;
     }
 }
+if (!function_exists("settings")) {
+    function settings()
+    {
+        $SettingsModel = model('SettingsModel');
+        return $SettingsModel->where(['id' => 1])->first();
+    }
+}
+
 if (!function_exists("duration_standard")) {
     function duration_standard($time = 0)
     {
