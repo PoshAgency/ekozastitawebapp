@@ -76,7 +76,7 @@
 							</div>
                             <div class="ms-auto">
                                 <a href="reports/show" class="inline-block focus:outline-none bg-brand-500 mt-1 text-white hover:bg-brand-600 hover:text-white  text-md font-medium py-2 px-4 rounded">
-                                    Kreiraj filter
+                                    Analitika
                                 </a>
                             </div>
 						</div>

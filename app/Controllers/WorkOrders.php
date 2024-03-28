@@ -24,4 +24,9 @@ class WorkOrders extends BaseController
     {         
         echo view('workorders/edit_view');
     }
+
+    public function edit2()    // ekozastita_app.site/reports/edit
+    {         
+        echo view('workorders/edit2_view');
+    }
 }

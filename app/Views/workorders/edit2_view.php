@@ -96,22 +96,22 @@
                             <div class="mb-4 border-b border-dashed border-gray-200 dark:border-gray-700 flex flex-wrap justify-start lg:justify-between" data-fc-type="tab">                            
                                 <ul class="flex flex-wrap mb-5 lg:-mb-px" aria-label="Tabs">
                                     <li class="mr-2" role="presentation">
-                                        <a href="workorders/edit#tab1" class="inline-block py-4 px-4 text-sm font-medium text-center text-gray-500 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300 border-gray-100 dark:border-gray-700 active" id="deratizacija-tab">Deratizacija</a>
+                                        <a href="workorders/edit2#tab1" class="inline-block py-4 px-4 text-sm font-medium text-center text-gray-500 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300 border-gray-100 dark:border-gray-700 active" id="deratizacija-tab">Deratizacija</a>
                                     </li>
                                     <li class="mr-2" role="presentation">
-                                        <a href="workorders/edit#tab2" class="inline-block py-4 px-4 text-sm font-medium text-center text-gray-500 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300 border-gray-100 dark:border-gray-700" id="dezinfekcija-tab">Dezinfekcija</a>
+                                        <a href="workorders/edit2#tab2" class="inline-block py-4 px-4 text-sm font-medium text-center text-gray-500 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300 border-gray-100 dark:border-gray-700" id="dezinfekcija-tab">Dezinfekcija</a>
                                     </li>
                                     <li class="mr-2" role="presentation">
-                                        <a href="workorders/edit#tab3" class="inline-block py-4 px-4 text-sm font-medium text-center text-gray-500 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300 border-gray-100 dark:border-gray-700" id="dezinsekcija-tab">Dezinsekcija</a>
+                                        <a href="workorders/edit2#tab3" class="inline-block py-4 px-4 text-sm font-medium text-center text-gray-500 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300 border-gray-100 dark:border-gray-700" id="dezinsekcija-tab">Dezinfekcija</a>
                                     </li>
                                     <li class="mr-2" role="presentation">
-                                        <a href="workorders/edit#tab4" class="inline-block py-4 px-4 text-sm font-medium text-center text-gray-500 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300 border-gray-100 dark:border-gray-700" id="ostale-usluge-tab">Ostale usluge</a>
+                                        <a href="workorders/edit2#tab4" class="inline-block py-4 px-4 text-sm font-medium text-center text-gray-500 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300 border-gray-100 dark:border-gray-700" id="ostale-usluge-tab">Ostale usluge</a>
                                     </li>
                                     <li class="mr-2" role="presentation">
-                                        <a href="workorders/edit#tab5" class="inline-block py-4 px-4 text-sm font-medium text-center text-gray-500 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300 border-gray-100 dark:border-gray-700" id="opsti-utisak-tab">Opšti utisak</a>
+                                        <a href="workorders/edit2#tab5" class="inline-block py-4 px-4 text-sm font-medium text-center text-gray-500 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300 border-gray-100 dark:border-gray-700" id="opsti-utisak-tab">Opšti utisak</a>
                                     </li>
                                     <li class="mr-2" role="presentation">
-                                        <a href="workorders/edit#tab6" class="inline-block py-4 px-4 text-sm font-medium text-center text-gray-500 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300 border-gray-100 dark:border-gray-700" id="korisceni-preprati-tab">Koriščeni preprati</a>
+                                        <a href="workorders/edit2#tab6" class="inline-block py-4 px-4 text-sm font-medium text-center text-gray-500 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300 border-gray-100 dark:border-gray-700" id="korisceni-preprati-tab">Koriščeni preprati</a>
                                     </li>
                                 </ul>                         
                             </div>
@@ -122,7 +122,7 @@
                                     <div id="tab-2">
                                         <div id="tab1" class="bg-white dark:bg-slate-800 shadow rounded-md w-full relative mb-4" anchor="">
                                             <div class="border-b border-dashed border-slate-200 dark:border-slate-700 py-3 px-4 dark:text-slate-300/70">
-                                                <h4 class="font-medium">Deratizacija</h4>
+                                                <h4 class="font-medium">Prisustvo glodara - Deratizacija</h4>
                                             </div>
                                             <div class="border-b border-dashed border-slate-200 dark:border-slate-700 py-3 px-4 dark:text-slate-300/70">
                                                 <div class="flex sm:items-center justify-between">
@@ -130,9 +130,9 @@
                                                         <div class="w-full">                                                             
                                                             <div class="box-container" id="accordion-flush" data-accordion="collapse" data-active-classes="box-container bg-white dark:bg-gray-900 text-gray-900 dark:text-white w-full" data-inactive-classes="text-gray-500 dark:text-gray-400">
                                                                 <div class="box-item-container">
-                                                                    <h2 id="accordion-flush-heading-1"  data-fc-type="collapse">
+                                                                    <h2 id="accordion-flush-heading-1" class="fc-collapse open" data-fc-type="collapse">
                                                                         <button type="button" class="fc-collapse-open:text-primary flex justify-between items-center p-5 w-full font-medium text-left text-brand border-b border-dashed border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
-                                                                            <span class="text-brand">Kutija 1</span>
+                                                                            <span class="text-brand">Kutije</span>
                                                                             <div class="box-item-mark-container ml-auto rounded-md border border-slate-300/60">
                                                                                 <h5 class="text-brand">Ocena</h5>
                                                                                 <select disabled id="mark-1" name="mark[1]" class="edit-mark-input text-brand rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700">
@@ -146,7 +146,7 @@
                                                                             <i class="fas fa-angle-down  fc-collapse-open:rotate-180 transition-transform duration-300" data-accordion-icon></i>
                                                                         </button>                                                                       
                                                                     </h2>                                                                    
-                                                                    <div id="accordion-flush-body-1" class="hidden overflow-hidden transition-[height] duration-300" aria-labelledby="accordion-flush-heading-1">
+                                                                    <div id="accordion-flush-body-1" class="overflow-hidden transition-[height] duration-300" aria-labelledby="accordion-flush-heading-1">
                                                                         <div class="p-5 border-b border-dashed border-gray-200 dark:border-gray-700">
                                                                             <textarea id="message" rows="2" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700 mb-5" placeholder="Napiši komentar"></textarea>
                                                                             <div class="gallery-upload-container">
@@ -178,107 +178,6 @@
                                                                         </div>                                                                         
                                                                     </div>
                                                                 </div>
-                                                                <div class="box-item-container">
-                                                                    <h2 id="accordion-flush-heading-1"  data-fc-type="collapse">
-                                                                        <button type="button" class="fc-collapse-open:text-primary flex justify-between items-center p-5 w-full font-medium text-left text-brand border-b border-dashed border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
-                                                                            <span class="text-brand">Kutija 2</span>
-                                                                            <div class="box-item-mark-container ml-auto rounded-md border border-slate-300/60">
-                                                                                <h5 class="text-brand">Ocena</h5>
-                                                                                <select disabled id="mark-1" name="mark[1]" class="edit-mark-input text-brand rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700">
-                                                                                    <option>0</option>
-                                                                                    <option>1</option>
-                                                                                    <option>2</option>
-                                                                                    <option>3</option>
-                                                                                </select>
-                                                                                <a class="edit-mark text-brand " href="javascript:;"><i class="icofont-ui-edit text-lg text-brand dark:text-gray-400"></i></a>
-                                                                            </div>
-                                                                            <i class="fas fa-angle-down  fc-collapse-open:rotate-180 transition-transform duration-300" data-accordion-icon></i>
-                                                                        </button>                                                                       
-                                                                    </h2>                                                                    
-                                                                    <div id="accordion-flush-body-1" class="hidden overflow-hidden transition-[height] duration-300" aria-labelledby="accordion-flush-heading-1">
-                                                                        <div class="p-5 border-b border-dashed border-gray-200 dark:border-gray-700">
-                                                                            <textarea id="message" rows="2" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700 mb-5" placeholder="Napiši komentar"></textarea>
-                                                                            <div class="gallery-upload-container">
-                                                                                <a class="gallery-upload-item" href="./uploads/plan-mamaca-01.jpg" data-fancybox="mamci" data-caption="Plan mamaca #1">
-                                                                                    <img src="./uploads/plan-mamaca-01.jpg" />
-                                                                                    <div class="icon-container">
-                                                                                        <span class="preview-img-icon" href="javascript:;"><i class="icofont-eye-open text-lg text-brand-500 dark:text-gray-400"></i></span>
-                                                                                        <span class="remove-img-icon" href="javascript:;"><i class="icofont-ui-delete text-lg text-red-500 dark:text-gray-400"></i></span>
-                                                                                    </div>
-                                                                                </a>
-                                                                                <a class="gallery-upload-item" href="./uploads/plan-mamaca-02.jpg" data-fancybox="mamci" data-caption="Plan mamaca #1">
-                                                                                    <img src="./uploads/plan-mamaca-02.jpg" />
-                                                                                    <div class="icon-container">
-                                                                                        <span class="preview-img-icon" href="javascript:;"><i class="icofont-eye-open text-lg text-brand-500 dark:text-gray-400"></i></span>
-                                                                                        <span class="remove-img-icon" href="javascript:;"><i class="icofont-ui-delete text-lg text-red-500 dark:text-gray-400"></i></span>
-                                                                                    </div>
-                                                                                </a> 
-                                                                                <a class="gallery-upload-item">
-                                                                                    <div class="upload-image">
-                                                                                        <div class="upload_image"></div>
-                                                                                    </div>
-                                                                                </a>
-                                                                                <a class="gallery-upload-item uploads-content">
-                                                                                    <div class="uploads-content-add-item btn-holder col-span-12 text-center">
-                                                                                        <span>+</span>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </div>                                                                        
-                                                                        </div>                                                                         
-                                                                    </div>
-                                                                </div>
-                                                                <div class="box-item-container">
-                                                                    <h2 id="accordion-flush-heading-1"  data-fc-type="collapse">
-                                                                        <button type="button" class="fc-collapse-open:text-primary flex justify-between items-center p-5 w-full font-medium text-left text-brand border-b border-dashed border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
-                                                                            <span class="text-brand">Kutija 3</span>
-                                                                            <div class="box-item-mark-container ml-auto rounded-md border border-slate-300/60">
-                                                                                <h5 class="text-brand">Ocena</h5>
-                                                                                <select disabled id="mark-1" name="mark[1]" class="edit-mark-input text-brand rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700">
-                                                                                    <option>0</option>
-                                                                                    <option>1</option>
-                                                                                    <option>2</option>
-                                                                                    <option>3</option>
-                                                                                </select>
-                                                                                <a class="edit-mark text-brand " href="javascript:;"><i class="icofont-ui-edit text-lg text-brand dark:text-gray-400"></i></a>
-                                                                            </div>
-                                                                            <i class="fas fa-angle-down  fc-collapse-open:rotate-180 transition-transform duration-300" data-accordion-icon></i>
-                                                                        </button>                                                                       
-                                                                    </h2>                                                                    
-                                                                    <div id="accordion-flush-body-1" class="hidden overflow-hidden transition-[height] duration-300" aria-labelledby="accordion-flush-heading-1">
-                                                                        <div class="p-5 border-b border-dashed border-gray-200 dark:border-gray-700">
-                                                                            <textarea id="message" rows="2" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700 mb-5" placeholder="Napiši komentar"></textarea>
-                                                                            <div class="gallery-upload-container">
-                                                                                <a class="gallery-upload-item" href="./uploads/plan-mamaca-01.jpg" data-fancybox="mamci" data-caption="Plan mamaca #1">
-                                                                                    <img src="./uploads/plan-mamaca-01.jpg" />
-                                                                                    <div class="icon-container">
-                                                                                        <span class="preview-img-icon" href="javascript:;"><i class="icofont-eye-open text-lg text-brand-500 dark:text-gray-400"></i></span>
-                                                                                        <span class="remove-img-icon" href="javascript:;"><i class="icofont-ui-delete text-lg text-red-500 dark:text-gray-400"></i></span>
-                                                                                    </div>
-                                                                                </a>
-                                                                                <a class="gallery-upload-item" href="./uploads/plan-mamaca-02.jpg" data-fancybox="mamci" data-caption="Plan mamaca #1">
-                                                                                    <img src="./uploads/plan-mamaca-02.jpg" />
-                                                                                    <div class="icon-container">
-                                                                                        <span class="preview-img-icon" href="javascript:;"><i class="icofont-eye-open text-lg text-brand-500 dark:text-gray-400"></i></span>
-                                                                                        <span class="remove-img-icon" href="javascript:;"><i class="icofont-ui-delete text-lg text-red-500 dark:text-gray-400"></i></span>
-                                                                                    </div>
-                                                                                </a> 
-                                                                                <a class="gallery-upload-item">
-                                                                                    <div class="upload-image">
-                                                                                        <div class="upload_image"></div>
-                                                                                    </div>
-                                                                                </a>
-                                                                                <a class="gallery-upload-item uploads-content">
-                                                                                    <div class="uploads-content-add-item btn-holder col-span-12 text-center">
-                                                                                        <span>+</span>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </div>                                                                        
-                                                                        </div>                                                                         
-                                                                    </div>
-                                                                </div>
-                                                                <a href="javascript:;" class="box-item-container add-box">
-                                                                    <p>+ Dodaj kutiju</p>
-                                                                </a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -286,6 +185,70 @@
                                             </div>
                                         </div>
                                         <div id="tab2" class="bg-white dark:bg-slate-800 shadow  rounded-md w-full relative mb-4" anchor="">
+                                            <div class="border-b border-dashed border-slate-200 dark:border-slate-700 py-3 px-4 dark:text-slate-300/70">
+                                                <h4 class="font-medium">Prisustvo insekata - Dezinfekcija</h4>
+                                            </div>
+                                            <div class="border-b border-dashed border-slate-200 dark:border-slate-700 py-3 px-4 dark:text-slate-300/70">
+                                                <div class="flex sm:items-center justify-between">
+                                                    <div class="flex items-center space-x-2 w-full">                                                    
+                                                        <div class="w-full">                                                             
+                                                            <div class="box-container" id="accordion-flush" data-accordion="collapse" data-active-classes="box-container bg-white dark:bg-gray-900 text-gray-900 dark:text-white w-full" data-inactive-classes="text-gray-500 dark:text-gray-400">
+                                                                <div class="box-item-container">
+                                                                    <h2 id="accordion-flush-heading-1" class="fc-collapse open" data-fc-type="collapse">
+                                                                        <button type="button" class="fc-collapse-open:text-primary flex justify-between items-center p-5 w-full font-medium text-left text-brand border-b border-dashed border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
+                                                                            <span class="text-brand">Kutije</span>
+                                                                            <div class="box-item-mark-container ml-auto rounded-md border border-slate-300/60">
+                                                                                <h5 class="text-brand">Ocena</h5>
+                                                                                <select disabled id="mark-1" name="mark[1]" class="edit-mark-input text-brand rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700">
+                                                                                    <option>0</option>
+                                                                                    <option>1</option>
+                                                                                    <option>2</option>
+                                                                                    <option>3</option>
+                                                                                </select>
+                                                                                <a class="edit-mark text-brand " href="javascript:;"><i class="icofont-ui-edit text-lg text-brand dark:text-gray-400"></i></a>
+                                                                            </div>
+                                                                            <i class="fas fa-angle-down  fc-collapse-open:rotate-180 transition-transform duration-300" data-accordion-icon></i>
+                                                                        </button>                                                                       
+                                                                    </h2>                                                                    
+                                                                    <div id="accordion-flush-body-1" class="overflow-hidden transition-[height] duration-300" aria-labelledby="accordion-flush-heading-1">
+                                                                        <div class="p-5 border-b border-dashed border-gray-200 dark:border-gray-700">
+                                                                            <textarea id="message" rows="2" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700 mb-5" placeholder="Napiši komentar"></textarea>
+                                                                            <div class="gallery-upload-container">
+                                                                                <a class="gallery-upload-item" href="./uploads/plan-mamaca-01.jpg" data-fancybox="mamci" data-caption="Plan mamaca #1">
+                                                                                    <img src="./uploads/plan-mamaca-01.jpg" />
+                                                                                    <div class="icon-container">
+                                                                                        <span class="preview-img-icon" href="javascript:;"><i class="icofont-eye-open text-lg text-brand-500 dark:text-gray-400"></i></span>
+                                                                                        <span class="remove-img-icon" href="javascript:;"><i class="icofont-ui-delete text-lg text-red-500 dark:text-gray-400"></i></span>
+                                                                                    </div>
+                                                                                </a>
+                                                                                <a class="gallery-upload-item" href="./uploads/plan-mamaca-02.jpg" data-fancybox="mamci" data-caption="Plan mamaca #1">
+                                                                                    <img src="./uploads/plan-mamaca-02.jpg" />
+                                                                                    <div class="icon-container">
+                                                                                        <span class="preview-img-icon" href="javascript:;"><i class="icofont-eye-open text-lg text-brand-500 dark:text-gray-400"></i></span>
+                                                                                        <span class="remove-img-icon" href="javascript:;"><i class="icofont-ui-delete text-lg text-red-500 dark:text-gray-400"></i></span>
+                                                                                    </div>
+                                                                                </a> 
+                                                                                <a class="gallery-upload-item">
+                                                                                    <div class="upload-image">
+                                                                                        <div class="upload_image"></div>
+                                                                                    </div>
+                                                                                </a>
+                                                                                <a class="gallery-upload-item uploads-content">
+                                                                                    <div class="uploads-content-add-item btn-holder col-span-12 text-center">
+                                                                                        <span>+</span>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </div>                                                                        
+                                                                        </div>                                                                         
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>                                  
+                                            </div>
+                                        </div> 
+                                        <div id="tab3" class="bg-white dark:bg-slate-800 shadow  rounded-md w-full relative mb-4" anchor="">
                                             <div class="border-b border-dashed border-slate-200 dark:border-slate-700 py-3 px-4 dark:text-slate-300/70">
                                                 <h4 class="font-medium">Dezinfekcija</h4>
                                             </div>
@@ -295,23 +258,21 @@
                                                         <div class="w-full">                                                             
                                                             <div class="box-container" id="accordion-flush" data-accordion="collapse" data-active-classes="box-container bg-white dark:bg-gray-900 text-gray-900 dark:text-white w-full" data-inactive-classes="text-gray-500 dark:text-gray-400">
                                                                 <div class="box-item-container">
-                                                                    <h2 id="accordion-flush-heading-1"  data-fc-type="collapse">
+                                                                    <h2 id="accordion-flush-heading-1" class="fc-collapse open" data-fc-type="collapse">
                                                                         <button type="button" class="fc-collapse-open:text-primary flex justify-between items-center p-5 w-full font-medium text-left text-brand border-b border-dashed border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
-                                                                            <span class="text-brand">Kutija 1</span>
+                                                                            <span class="text-brand">Kutije</span>
                                                                             <div class="box-item-mark-container ml-auto rounded-md border border-slate-300/60">
                                                                                 <h5 class="text-brand">Ocena</h5>
                                                                                 <select disabled id="mark-1" name="mark[1]" class="edit-mark-input text-brand rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700">
-                                                                                    <option>0</option>
-                                                                                    <option>1</option>
-                                                                                    <option>2</option>
-                                                                                    <option>3</option>
+                                                                                    <option>Da</option>
+                                                                                    <option>Ne</option>
                                                                                 </select>
                                                                                 <a class="edit-mark text-brand " href="javascript:;"><i class="icofont-ui-edit text-lg text-brand dark:text-gray-400"></i></a>
                                                                             </div>
                                                                             <i class="fas fa-angle-down  fc-collapse-open:rotate-180 transition-transform duration-300" data-accordion-icon></i>
                                                                         </button>                                                                       
                                                                     </h2>                                                                    
-                                                                    <div id="accordion-flush-body-1" class="hidden overflow-hidden transition-[height] duration-300" aria-labelledby="accordion-flush-heading-1">
+                                                                    <div id="accordion-flush-body-1" class="overflow-hidden transition-[height] duration-300" aria-labelledby="accordion-flush-heading-1">
                                                                         <div class="p-5 border-b border-dashed border-gray-200 dark:border-gray-700">
                                                                             <textarea id="message" rows="2" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700 mb-5" placeholder="Napiši komentar"></textarea>
                                                                             <div class="gallery-upload-container">
@@ -343,272 +304,6 @@
                                                                         </div>                                                                         
                                                                     </div>
                                                                 </div>
-                                                                <div class="box-item-container">
-                                                                    <h2 id="accordion-flush-heading-1"  data-fc-type="collapse">
-                                                                        <button type="button" class="fc-collapse-open:text-primary flex justify-between items-center p-5 w-full font-medium text-left text-brand border-b border-dashed border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
-                                                                            <span class="text-brand">Kutija 2</span>
-                                                                            <div class="box-item-mark-container ml-auto rounded-md border border-slate-300/60">
-                                                                                <h5 class="text-brand">Ocena</h5>
-                                                                                <select disabled id="mark-1" name="mark[1]" class="edit-mark-input text-brand rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700">
-                                                                                    <option>0</option>
-                                                                                    <option>1</option>
-                                                                                    <option>2</option>
-                                                                                    <option>3</option>
-                                                                                </select>
-                                                                                <a class="edit-mark text-brand " href="javascript:;"><i class="icofont-ui-edit text-lg text-brand dark:text-gray-400"></i></a>
-                                                                            </div>
-                                                                            <i class="fas fa-angle-down  fc-collapse-open:rotate-180 transition-transform duration-300" data-accordion-icon></i>
-                                                                        </button>                                                                       
-                                                                    </h2>                                                                    
-                                                                    <div id="accordion-flush-body-1" class="hidden overflow-hidden transition-[height] duration-300" aria-labelledby="accordion-flush-heading-1">
-                                                                        <div class="p-5 border-b border-dashed border-gray-200 dark:border-gray-700">
-                                                                            <textarea id="message" rows="2" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700 mb-5" placeholder="Napiši komentar"></textarea>
-                                                                            <div class="gallery-upload-container">
-                                                                                <a class="gallery-upload-item" href="./uploads/plan-mamaca-01.jpg" data-fancybox="mamci" data-caption="Plan mamaca #1">
-                                                                                    <img src="./uploads/plan-mamaca-01.jpg" />
-                                                                                    <div class="icon-container">
-                                                                                        <span class="preview-img-icon" href="javascript:;"><i class="icofont-eye-open text-lg text-brand-500 dark:text-gray-400"></i></span>
-                                                                                        <span class="remove-img-icon" href="javascript:;"><i class="icofont-ui-delete text-lg text-red-500 dark:text-gray-400"></i></span>
-                                                                                    </div>
-                                                                                </a>
-                                                                                <a class="gallery-upload-item" href="./uploads/plan-mamaca-02.jpg" data-fancybox="mamci" data-caption="Plan mamaca #1">
-                                                                                    <img src="./uploads/plan-mamaca-02.jpg" />
-                                                                                    <div class="icon-container">
-                                                                                        <span class="preview-img-icon" href="javascript:;"><i class="icofont-eye-open text-lg text-brand-500 dark:text-gray-400"></i></span>
-                                                                                        <span class="remove-img-icon" href="javascript:;"><i class="icofont-ui-delete text-lg text-red-500 dark:text-gray-400"></i></span>
-                                                                                    </div>
-                                                                                </a> 
-                                                                                <a class="gallery-upload-item">
-                                                                                    <div class="upload-image">
-                                                                                        <div class="upload_image"></div>
-                                                                                    </div>
-                                                                                </a>
-                                                                                <a class="gallery-upload-item uploads-content">
-                                                                                    <div class="uploads-content-add-item btn-holder col-span-12 text-center">
-                                                                                        <span>+</span>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </div>                                                                        
-                                                                        </div>                                                                         
-                                                                    </div>
-                                                                </div>
-                                                                <div class="box-item-container">
-                                                                    <h2 id="accordion-flush-heading-1"  data-fc-type="collapse">
-                                                                        <button type="button" class="fc-collapse-open:text-primary flex justify-between items-center p-5 w-full font-medium text-left text-brand border-b border-dashed border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
-                                                                            <span class="text-brand">Kutija 3</span>
-                                                                            <div class="box-item-mark-container ml-auto rounded-md border border-slate-300/60">
-                                                                                <h5 class="text-brand">Ocena</h5>
-                                                                                <select disabled id="mark-1" name="mark[1]" class="edit-mark-input text-brand rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700">
-                                                                                    <option>0</option>
-                                                                                    <option>1</option>
-                                                                                    <option>2</option>
-                                                                                    <option>3</option>
-                                                                                </select>
-                                                                                <a class="edit-mark text-brand " href="javascript:;"><i class="icofont-ui-edit text-lg text-brand dark:text-gray-400"></i></a>
-                                                                            </div>
-                                                                            <i class="fas fa-angle-down  fc-collapse-open:rotate-180 transition-transform duration-300" data-accordion-icon></i>
-                                                                        </button>                                                                       
-                                                                    </h2>                                                                    
-                                                                    <div id="accordion-flush-body-1" class="hidden overflow-hidden transition-[height] duration-300" aria-labelledby="accordion-flush-heading-1">
-                                                                        <div class="p-5 border-b border-dashed border-gray-200 dark:border-gray-700">
-                                                                            <textarea id="message" rows="2" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700 mb-5" placeholder="Napiši komentar"></textarea>
-                                                                            <div class="gallery-upload-container">
-                                                                                <a class="gallery-upload-item" href="./uploads/plan-mamaca-01.jpg" data-fancybox="mamci" data-caption="Plan mamaca #1">
-                                                                                    <img src="./uploads/plan-mamaca-01.jpg" />
-                                                                                    <div class="icon-container">
-                                                                                        <span class="preview-img-icon" href="javascript:;"><i class="icofont-eye-open text-lg text-brand-500 dark:text-gray-400"></i></span>
-                                                                                        <span class="remove-img-icon" href="javascript:;"><i class="icofont-ui-delete text-lg text-red-500 dark:text-gray-400"></i></span>
-                                                                                    </div>
-                                                                                </a>
-                                                                                <a class="gallery-upload-item" href="./uploads/plan-mamaca-02.jpg" data-fancybox="mamci" data-caption="Plan mamaca #1">
-                                                                                    <img src="./uploads/plan-mamaca-02.jpg" />
-                                                                                    <div class="icon-container">
-                                                                                        <span class="preview-img-icon" href="javascript:;"><i class="icofont-eye-open text-lg text-brand-500 dark:text-gray-400"></i></span>
-                                                                                        <span class="remove-img-icon" href="javascript:;"><i class="icofont-ui-delete text-lg text-red-500 dark:text-gray-400"></i></span>
-                                                                                    </div>
-                                                                                </a> 
-                                                                                <a class="gallery-upload-item">
-                                                                                    <div class="upload-image">
-                                                                                        <div class="upload_image"></div>
-                                                                                    </div>
-                                                                                </a>
-                                                                                <a class="gallery-upload-item uploads-content">
-                                                                                    <div class="uploads-content-add-item btn-holder col-span-12 text-center">
-                                                                                        <span>+</span>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </div>                                                                        
-                                                                        </div>                                                                         
-                                                                    </div>
-                                                                </div>
-                                                                <a href="javascript:;" class="box-item-container add-box">
-                                                                    <p>+ Dodaj kutiju</p>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>                                  
-                                            </div>
-                                        </div> 
-                                        <div id="tab3" class="bg-white dark:bg-slate-800 shadow  rounded-md w-full relative mb-4" anchor="">
-                                            <div class="border-b border-dashed border-slate-200 dark:border-slate-700 py-3 px-4 dark:text-slate-300/70">
-                                                <h4 class="font-medium">Dezinsekcija</h4>
-                                            </div>
-                                            <div class="border-b border-dashed border-slate-200 dark:border-slate-700 py-3 px-4 dark:text-slate-300/70">
-                                                <div class="flex sm:items-center justify-between">
-                                                    <div class="flex items-center space-x-2 w-full">                                                    
-                                                        <div class="w-full">                                                             
-                                                            <div class="box-container" id="accordion-flush" data-accordion="collapse" data-active-classes="box-container bg-white dark:bg-gray-900 text-gray-900 dark:text-white w-full" data-inactive-classes="text-gray-500 dark:text-gray-400">
-                                                                <div class="box-item-container">
-                                                                    <h2 id="accordion-flush-heading-1"  data-fc-type="collapse">
-                                                                        <button type="button" class="fc-collapse-open:text-primary flex justify-between items-center p-5 w-full font-medium text-left text-brand border-b border-dashed border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
-                                                                            <span class="text-brand">Kutija 1</span>
-                                                                            <div class="box-item-mark-container ml-auto rounded-md border border-slate-300/60">
-                                                                                <h5 class="text-brand">Ocena</h5>
-                                                                                <select disabled id="mark-1" name="mark[1]" class="edit-mark-input text-brand rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700">
-                                                                                    <option>0</option>
-                                                                                    <option>1</option>
-                                                                                    <option>2</option>
-                                                                                    <option>3</option>
-                                                                                </select>
-                                                                                <a class="edit-mark text-brand " href="javascript:;"><i class="icofont-ui-edit text-lg text-brand dark:text-gray-400"></i></a>
-                                                                            </div>
-                                                                            <i class="fas fa-angle-down  fc-collapse-open:rotate-180 transition-transform duration-300" data-accordion-icon></i>
-                                                                        </button>                                                                       
-                                                                    </h2>                                                                    
-                                                                    <div id="accordion-flush-body-1" class="hidden overflow-hidden transition-[height] duration-300" aria-labelledby="accordion-flush-heading-1">
-                                                                        <div class="p-5 border-b border-dashed border-gray-200 dark:border-gray-700">
-                                                                            <textarea id="message" rows="2" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700 mb-5" placeholder="Napiši komentar"></textarea>
-                                                                            <div class="gallery-upload-container">
-                                                                                <a class="gallery-upload-item" href="./uploads/plan-mamaca-01.jpg" data-fancybox="mamci" data-caption="Plan mamaca #1">
-                                                                                    <img src="./uploads/plan-mamaca-01.jpg" />
-                                                                                    <div class="icon-container">
-                                                                                        <span class="preview-img-icon" href="javascript:;"><i class="icofont-eye-open text-lg text-brand-500 dark:text-gray-400"></i></span>
-                                                                                        <span class="remove-img-icon" href="javascript:;"><i class="icofont-ui-delete text-lg text-red-500 dark:text-gray-400"></i></span>
-                                                                                    </div>
-                                                                                </a>
-                                                                                <a class="gallery-upload-item" href="./uploads/plan-mamaca-02.jpg" data-fancybox="mamci" data-caption="Plan mamaca #1">
-                                                                                    <img src="./uploads/plan-mamaca-02.jpg" />
-                                                                                    <div class="icon-container">
-                                                                                        <span class="preview-img-icon" href="javascript:;"><i class="icofont-eye-open text-lg text-brand-500 dark:text-gray-400"></i></span>
-                                                                                        <span class="remove-img-icon" href="javascript:;"><i class="icofont-ui-delete text-lg text-red-500 dark:text-gray-400"></i></span>
-                                                                                    </div>
-                                                                                </a> 
-                                                                                <a class="gallery-upload-item">
-                                                                                    <div class="upload-image">
-                                                                                        <div class="upload_image"></div>
-                                                                                    </div>
-                                                                                </a>
-                                                                                <a class="gallery-upload-item uploads-content">
-                                                                                    <div class="uploads-content-add-item btn-holder col-span-12 text-center">
-                                                                                        <span>+</span>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </div>                                                                        
-                                                                        </div>                                                                         
-                                                                    </div>
-                                                                </div>
-                                                                <div class="box-item-container">
-                                                                    <h2 id="accordion-flush-heading-1"  data-fc-type="collapse">
-                                                                        <button type="button" class="fc-collapse-open:text-primary flex justify-between items-center p-5 w-full font-medium text-left text-brand border-b border-dashed border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
-                                                                            <span class="text-brand">Kutija 2</span>
-                                                                            <div class="box-item-mark-container ml-auto rounded-md border border-slate-300/60">
-                                                                                <h5 class="text-brand">Ocena</h5>
-                                                                                <select disabled id="mark-1" name="mark[1]" class="edit-mark-input text-brand rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700">
-                                                                                    <option>0</option>
-                                                                                    <option>1</option>
-                                                                                    <option>2</option>
-                                                                                    <option>3</option>
-                                                                                </select>
-                                                                                <a class="edit-mark text-brand " href="javascript:;"><i class="icofont-ui-edit text-lg text-brand dark:text-gray-400"></i></a>
-                                                                            </div>
-                                                                            <i class="fas fa-angle-down  fc-collapse-open:rotate-180 transition-transform duration-300" data-accordion-icon></i>
-                                                                        </button>                                                                       
-                                                                    </h2>                                                                    
-                                                                    <div id="accordion-flush-body-1" class="hidden overflow-hidden transition-[height] duration-300" aria-labelledby="accordion-flush-heading-1">
-                                                                        <div class="p-5 border-b border-dashed border-gray-200 dark:border-gray-700">
-                                                                            <textarea id="message" rows="2" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700 mb-5" placeholder="Napiši komentar"></textarea>
-                                                                            <div class="gallery-upload-container">
-                                                                                <a class="gallery-upload-item" href="./uploads/plan-mamaca-01.jpg" data-fancybox="mamci" data-caption="Plan mamaca #1">
-                                                                                    <img src="./uploads/plan-mamaca-01.jpg" />
-                                                                                    <div class="icon-container">
-                                                                                        <span class="preview-img-icon" href="javascript:;"><i class="icofont-eye-open text-lg text-brand-500 dark:text-gray-400"></i></span>
-                                                                                        <span class="remove-img-icon" href="javascript:;"><i class="icofont-ui-delete text-lg text-red-500 dark:text-gray-400"></i></span>
-                                                                                    </div>
-                                                                                </a>
-                                                                                <a class="gallery-upload-item" href="./uploads/plan-mamaca-02.jpg" data-fancybox="mamci" data-caption="Plan mamaca #1">
-                                                                                    <img src="./uploads/plan-mamaca-02.jpg" />
-                                                                                    <div class="icon-container">
-                                                                                        <span class="preview-img-icon" href="javascript:;"><i class="icofont-eye-open text-lg text-brand-500 dark:text-gray-400"></i></span>
-                                                                                        <span class="remove-img-icon" href="javascript:;"><i class="icofont-ui-delete text-lg text-red-500 dark:text-gray-400"></i></span>
-                                                                                    </div>
-                                                                                </a> 
-                                                                                <a class="gallery-upload-item">
-                                                                                    <div class="upload-image">
-                                                                                        <div class="upload_image"></div>
-                                                                                    </div>
-                                                                                </a>
-                                                                                <a class="gallery-upload-item uploads-content">
-                                                                                    <div class="uploads-content-add-item btn-holder col-span-12 text-center">
-                                                                                        <span>+</span>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </div>                                                                        
-                                                                        </div>                                                                         
-                                                                    </div>
-                                                                </div>
-                                                                <div class="box-item-container">
-                                                                    <h2 id="accordion-flush-heading-1"  data-fc-type="collapse">
-                                                                        <button type="button" class="fc-collapse-open:text-primary flex justify-between items-center p-5 w-full font-medium text-left text-brand border-b border-dashed border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
-                                                                            <span class="text-brand">Kutija 3</span>
-                                                                            <div class="box-item-mark-container ml-auto rounded-md border border-slate-300/60">
-                                                                                <h5 class="text-brand">Ocena</h5>
-                                                                                <select disabled id="mark-1" name="mark[1]" class="edit-mark-input text-brand rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700">
-                                                                                    <option>0</option>
-                                                                                    <option>1</option>
-                                                                                    <option>2</option>
-                                                                                    <option>3</option>
-                                                                                </select>
-                                                                                <a class="edit-mark text-brand " href="javascript:;"><i class="icofont-ui-edit text-lg text-brand dark:text-gray-400"></i></a>
-                                                                            </div>
-                                                                            <i class="fas fa-angle-down  fc-collapse-open:rotate-180 transition-transform duration-300" data-accordion-icon></i>
-                                                                        </button>                                                                       
-                                                                    </h2>                                                                    
-                                                                    <div id="accordion-flush-body-1" class="hidden overflow-hidden transition-[height] duration-300" aria-labelledby="accordion-flush-heading-1">
-                                                                        <div class="p-5 border-b border-dashed border-gray-200 dark:border-gray-700">
-                                                                            <textarea id="message" rows="2" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700 mb-5" placeholder="Napiši komentar"></textarea>
-                                                                            <div class="gallery-upload-container">
-                                                                                <a class="gallery-upload-item" href="./uploads/plan-mamaca-01.jpg" data-fancybox="mamci" data-caption="Plan mamaca #1">
-                                                                                    <img src="./uploads/plan-mamaca-01.jpg" />
-                                                                                    <div class="icon-container">
-                                                                                        <span class="preview-img-icon" href="javascript:;"><i class="icofont-eye-open text-lg text-brand-500 dark:text-gray-400"></i></span>
-                                                                                        <span class="remove-img-icon" href="javascript:;"><i class="icofont-ui-delete text-lg text-red-500 dark:text-gray-400"></i></span>
-                                                                                    </div>
-                                                                                </a>
-                                                                                <a class="gallery-upload-item" href="./uploads/plan-mamaca-02.jpg" data-fancybox="mamci" data-caption="Plan mamaca #1">
-                                                                                    <img src="./uploads/plan-mamaca-02.jpg" />
-                                                                                    <div class="icon-container">
-                                                                                        <span class="preview-img-icon" href="javascript:;"><i class="icofont-eye-open text-lg text-brand-500 dark:text-gray-400"></i></span>
-                                                                                        <span class="remove-img-icon" href="javascript:;"><i class="icofont-ui-delete text-lg text-red-500 dark:text-gray-400"></i></span>
-                                                                                    </div>
-                                                                                </a> 
-                                                                                <a class="gallery-upload-item">
-                                                                                    <div class="upload-image">
-                                                                                        <div class="upload_image"></div>
-                                                                                    </div>
-                                                                                </a>
-                                                                                <a class="gallery-upload-item uploads-content">
-                                                                                    <div class="uploads-content-add-item btn-holder col-span-12 text-center">
-                                                                                        <span>+</span>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </div>                                                                        
-                                                                        </div>                                                                         
-                                                                    </div>
-                                                                </div>
-                                                                <a href="javascript:;" class="box-item-container add-box">
-                                                                    <p>+ Dodaj kutiju</p>
-                                                                </a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -625,23 +320,21 @@
                                                         <div class="w-full">                                                             
                                                             <div class="box-container" id="accordion-flush" data-accordion="collapse" data-active-classes="box-container bg-white dark:bg-gray-900 text-gray-900 dark:text-white w-full" data-inactive-classes="text-gray-500 dark:text-gray-400">
                                                                 <div class="box-item-container">
-                                                                    <h2 id="accordion-flush-heading-1"  data-fc-type="collapse">
+                                                                    <h2 id="accordion-flush-heading-1" class="fc-collapse open" data-fc-type="collapse">
                                                                         <button type="button" class="fc-collapse-open:text-primary flex justify-between items-center p-5 w-full font-medium text-left text-brand border-b border-dashed border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
-                                                                            <span class="text-brand">Kutija 1</span>
+                                                                            <span class="text-brand">Kutije</span>
                                                                             <div class="box-item-mark-container ml-auto rounded-md border border-slate-300/60">
                                                                                 <h5 class="text-brand">Ocena</h5>
                                                                                 <select disabled id="mark-1" name="mark[1]" class="edit-mark-input text-brand rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700">
-                                                                                    <option>0</option>
-                                                                                    <option>1</option>
-                                                                                    <option>2</option>
-                                                                                    <option>3</option>
+                                                                                    <option>Da</option>
+                                                                                    <option>Ne</option>
                                                                                 </select>
                                                                                 <a class="edit-mark text-brand " href="javascript:;"><i class="icofont-ui-edit text-lg text-brand dark:text-gray-400"></i></a>
                                                                             </div>
                                                                             <i class="fas fa-angle-down  fc-collapse-open:rotate-180 transition-transform duration-300" data-accordion-icon></i>
                                                                         </button>                                                                       
                                                                     </h2>                                                                    
-                                                                    <div id="accordion-flush-body-1" class="hidden overflow-hidden transition-[height] duration-300" aria-labelledby="accordion-flush-heading-1">
+                                                                    <div id="accordion-flush-body-1" class="overflow-hidden transition-[height] duration-300" aria-labelledby="accordion-flush-heading-1">
                                                                         <div class="p-5 border-b border-dashed border-gray-200 dark:border-gray-700">
                                                                             <textarea id="message" rows="2" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700 mb-5" placeholder="Napiši komentar"></textarea>
                                                                             <div class="gallery-upload-container">
@@ -673,107 +366,6 @@
                                                                         </div>                                                                         
                                                                     </div>
                                                                 </div>
-                                                                <div class="box-item-container">
-                                                                    <h2 id="accordion-flush-heading-1"  data-fc-type="collapse">
-                                                                        <button type="button" class="fc-collapse-open:text-primary flex justify-between items-center p-5 w-full font-medium text-left text-brand border-b border-dashed border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
-                                                                            <span class="text-brand">Kutija 2</span>
-                                                                            <div class="box-item-mark-container ml-auto rounded-md border border-slate-300/60">
-                                                                                <h5 class="text-brand">Ocena</h5>
-                                                                                <select disabled id="mark-1" name="mark[1]" class="edit-mark-input text-brand rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700">
-                                                                                    <option>0</option>
-                                                                                    <option>1</option>
-                                                                                    <option>2</option>
-                                                                                    <option>3</option>
-                                                                                </select>
-                                                                                <a class="edit-mark text-brand " href="javascript:;"><i class="icofont-ui-edit text-lg text-brand dark:text-gray-400"></i></a>
-                                                                            </div>
-                                                                            <i class="fas fa-angle-down  fc-collapse-open:rotate-180 transition-transform duration-300" data-accordion-icon></i>
-                                                                        </button>                                                                       
-                                                                    </h2>                                                                    
-                                                                    <div id="accordion-flush-body-1" class="hidden overflow-hidden transition-[height] duration-300" aria-labelledby="accordion-flush-heading-1">
-                                                                        <div class="p-5 border-b border-dashed border-gray-200 dark:border-gray-700">
-                                                                            <textarea id="message" rows="2" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700 mb-5" placeholder="Napiši komentar"></textarea>
-                                                                            <div class="gallery-upload-container">
-                                                                                <a class="gallery-upload-item" href="./uploads/plan-mamaca-01.jpg" data-fancybox="mamci" data-caption="Plan mamaca #1">
-                                                                                    <img src="./uploads/plan-mamaca-01.jpg" />
-                                                                                    <div class="icon-container">
-                                                                                        <span class="preview-img-icon" href="javascript:;"><i class="icofont-eye-open text-lg text-brand-500 dark:text-gray-400"></i></span>
-                                                                                        <span class="remove-img-icon" href="javascript:;"><i class="icofont-ui-delete text-lg text-red-500 dark:text-gray-400"></i></span>
-                                                                                    </div>
-                                                                                </a>
-                                                                                <a class="gallery-upload-item" href="./uploads/plan-mamaca-02.jpg" data-fancybox="mamci" data-caption="Plan mamaca #1">
-                                                                                    <img src="./uploads/plan-mamaca-02.jpg" />
-                                                                                    <div class="icon-container">
-                                                                                        <span class="preview-img-icon" href="javascript:;"><i class="icofont-eye-open text-lg text-brand-500 dark:text-gray-400"></i></span>
-                                                                                        <span class="remove-img-icon" href="javascript:;"><i class="icofont-ui-delete text-lg text-red-500 dark:text-gray-400"></i></span>
-                                                                                    </div>
-                                                                                </a> 
-                                                                                <a class="gallery-upload-item">
-                                                                                    <div class="upload-image">
-                                                                                        <div class="upload_image"></div>
-                                                                                    </div>
-                                                                                </a>
-                                                                                <a class="gallery-upload-item uploads-content">
-                                                                                    <div class="uploads-content-add-item btn-holder col-span-12 text-center">
-                                                                                        <span>+</span>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </div>                                                                        
-                                                                        </div>                                                                         
-                                                                    </div>
-                                                                </div>
-                                                                <div class="box-item-container">
-                                                                    <h2 id="accordion-flush-heading-1"  data-fc-type="collapse">
-                                                                        <button type="button" class="fc-collapse-open:text-primary flex justify-between items-center p-5 w-full font-medium text-left text-brand border-b border-dashed border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
-                                                                            <span class="text-brand">Kutija 3</span>
-                                                                            <div class="box-item-mark-container ml-auto rounded-md border border-slate-300/60">
-                                                                                <h5 class="text-brand">Ocena</h5>
-                                                                                <select disabled id="mark-1" name="mark[1]" class="edit-mark-input text-brand rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700">
-                                                                                    <option>0</option>
-                                                                                    <option>1</option>
-                                                                                    <option>2</option>
-                                                                                    <option>3</option>
-                                                                                </select>
-                                                                                <a class="edit-mark text-brand " href="javascript:;"><i class="icofont-ui-edit text-lg text-brand dark:text-gray-400"></i></a>
-                                                                            </div>
-                                                                            <i class="fas fa-angle-down  fc-collapse-open:rotate-180 transition-transform duration-300" data-accordion-icon></i>
-                                                                        </button>                                                                       
-                                                                    </h2>                                                                    
-                                                                    <div id="accordion-flush-body-1" class="hidden overflow-hidden transition-[height] duration-300" aria-labelledby="accordion-flush-heading-1">
-                                                                        <div class="p-5 border-b border-dashed border-gray-200 dark:border-gray-700">
-                                                                            <textarea id="message" rows="2" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700 mb-5" placeholder="Napiši komentar"></textarea>
-                                                                            <div class="gallery-upload-container">
-                                                                                <a class="gallery-upload-item" href="./uploads/plan-mamaca-01.jpg" data-fancybox="mamci" data-caption="Plan mamaca #1">
-                                                                                    <img src="./uploads/plan-mamaca-01.jpg" />
-                                                                                    <div class="icon-container">
-                                                                                        <span class="preview-img-icon" href="javascript:;"><i class="icofont-eye-open text-lg text-brand-500 dark:text-gray-400"></i></span>
-                                                                                        <span class="remove-img-icon" href="javascript:;"><i class="icofont-ui-delete text-lg text-red-500 dark:text-gray-400"></i></span>
-                                                                                    </div>
-                                                                                </a>
-                                                                                <a class="gallery-upload-item" href="./uploads/plan-mamaca-02.jpg" data-fancybox="mamci" data-caption="Plan mamaca #1">
-                                                                                    <img src="./uploads/plan-mamaca-02.jpg" />
-                                                                                    <div class="icon-container">
-                                                                                        <span class="preview-img-icon" href="javascript:;"><i class="icofont-eye-open text-lg text-brand-500 dark:text-gray-400"></i></span>
-                                                                                        <span class="remove-img-icon" href="javascript:;"><i class="icofont-ui-delete text-lg text-red-500 dark:text-gray-400"></i></span>
-                                                                                    </div>
-                                                                                </a> 
-                                                                                <a class="gallery-upload-item">
-                                                                                    <div class="upload-image">
-                                                                                        <div class="upload_image"></div>
-                                                                                    </div>
-                                                                                </a>
-                                                                                <a class="gallery-upload-item uploads-content">
-                                                                                    <div class="uploads-content-add-item btn-holder col-span-12 text-center">
-                                                                                        <span>+</span>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </div>                                                                        
-                                                                        </div>                                                                         
-                                                                    </div>
-                                                                </div>
-                                                                <a href="javascript:;" class="box-item-container add-box">
-                                                                    <p>+ Dodaj kutiju</p>
-                                                                </a>
                                                             </div>
                                                         </div>
                                                     </div>

@@ -24,7 +24,7 @@
 					<div class="w-full p-4 bg-white rounded-md shadow-md">
 						<div class="flex flex-wrap justify-between items-center">
 							<div class="items-center">
-								<h1 class="font-medium text-3xl block dark:text-slate-100">Kreiraj Izveštaj</h1>
+								<h1 class="font-medium text-3xl block dark:text-slate-100">Analitika</h1>
 								<ol class="list-reset flex text-sm">
 									<li>
 										<a href="<?php echo base_url(); ?>" class="text-gray-500 dark:text-slate-400">Ekozaštita</a>
@@ -32,12 +32,12 @@
 									<li>
 										<span class="text-gray-500 dark:text-slate-400 mx-2">/</span>
 									</li>
-									<li class="text-green-500 dark:text-gray-400">Izveštaji</li>
+									<li class="text-green-500 dark:text-gray-400">Analitika</li>
 								</ol>
 							</div>
                             <div class="ms-auto">
                                 <a href="reports/edit" class="inline-block focus:outline-none bg-brand-500 mt-1 text-white hover:bg-brand-600 hover:text-white  text-md font-medium py-2 px-4 rounded">
-                                    Kreiraj filter
+                                    Kreiraj analitiku
                                 </a>
                             </div>
 						</div>
