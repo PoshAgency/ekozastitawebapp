@@ -664,7 +664,7 @@ $('.user-form').on('submit', function (e) {
     var form = $(this);
     console.log(form.attr('id') + ' submit');
     var url = form.attr('action');
-    var formData = form.serialize();
+	var formData = new FormData(this);
     var button = form.find('button[type="submit"]');
 
     button.addClass('btn--loading');
@@ -675,6 +675,8 @@ $('.user-form').on('submit', function (e) {
         type: "POST",
         url: url,
         data: formData,
+        processData: false,
+        contentType: false,
         dataType: "json",
         beforeSend: function(){  },
         success: function (data) {
@@ -832,7 +834,63 @@ $('.operators-form').on('submit', function (e) {
                 // }else{
                 //     app_msg('Dogodila se greška. Molimo pokušajte ponovo','danger',3500);
                 // }
-                $("#form-login .submit-btn").prop('disabled', false);
+                button.removeClass('btn--loading');
+            }
+        },
+        error: function (result) {
+            console.log('ERROR WITH PHP');
+            console.log(result);
+            button.removeClass('btn--loading');
+            app_msg('Problem sa serverom. Pokušajte ponovo ili kontaktirajte administratora.','error');
+            $("#form-login .submit-btn").prop('disabled', false);
+      }
+    });
+});
+$('#settings-form').on('submit', function (e) {
+    e.preventDefault();
+    var form = $(this);
+    console.log(form.attr('id') + ' submit');
+    var url = form.attr('action');
+	var formData = new FormData(this);
+    var button = form.find('button[type="submit"]');
+
+    button.addClass('btn--loading');
+    $('p.error_msg').remove();
+    $('input').removeClass('error');
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: formData,
+        processData: false,
+        contentType: false,
+        dataType: "json",
+        beforeSend: function(){  },
+        success: function (data) {
+            console.log(data);
+            if (data.success) {
+                console.log('SUCCESS');
+                app_msg('Sačuvano','success',1000);
+                setTimeout(function(){ 
+                    if(data.return_url){
+                        window.location = data.return_url;
+                    }
+                    button.removeClass('btn--loading');
+                },1000);
+            } else {
+                console.log('NO SUCCESS');
+                if(data.json){
+                    console.log(data.json);
+                    $.each(data.json, function(key, val){
+                        form.find('[id=' + key + "]").addClass('error').next('p.error_msg').remove();
+                        $('<p class="error_msg">' + val + '</p>').insertAfter(form.find('#' + key));
+                    });
+                }
+                // if(data.message){
+                //     app_msg(data.message,'danger',3500);
+                // }else{
+                //     app_msg('Dogodila se greška. Molimo pokušajte ponovo','danger',3500);
+                // }
                 button.removeClass('btn--loading');
             }
         },

@@ -55,6 +55,52 @@ class ClientsModel extends Model
         
         return $clients;
     }
+    public function all_permanent_clients($searchTerm = '', $order = '', $limit = NULL, $offset = NULL)
+    {
+        $clients = $this->query("SELECT *
+                FROM clients
+                WHERE not_active = 0
+                AND onetime = 0
+                AND deleted_at IS NULL
+                AND 
+                (
+                    name LIKE '%{$searchTerm}%'
+                    OR telefon LIKE '%{$searchTerm}%' 
+                    OR mail LIKE '%{$searchTerm}%' 
+                    OR city LIKE '%{$searchTerm}%'
+                    OR address LIKE '%{$searchTerm}%'
+                    OR contract LIKE '%{$searchTerm}%'
+                )
+                " . ($order != NULL ? " ORDER BY ". print_r($order,true) : '') . "
+                " . (($limit != NULL AND $limit != -1) ? " LIMIT {$limit} " : '') . "
+                " . (($limit != NULL AND $limit != -1 AND $offset != NULL) ? " OFFSET {$offset} " : '') . "
+        ")->getResultArray();
+        
+        return $clients;
+    }
+    public function all_onetime_clients($searchTerm = '', $order = '', $limit = NULL, $offset = NULL)
+    {
+        $clients = $this->query("SELECT *
+                FROM clients
+                WHERE not_active = 0
+                AND onetime = 1
+                AND deleted_at IS NULL
+                AND 
+                (
+                    name LIKE '%{$searchTerm}%'
+                    OR telefon LIKE '%{$searchTerm}%' 
+                    OR mail LIKE '%{$searchTerm}%' 
+                    OR city LIKE '%{$searchTerm}%'
+                    OR address LIKE '%{$searchTerm}%'
+                    OR contract LIKE '%{$searchTerm}%'
+                )
+                " . ($order != NULL ? " ORDER BY ". print_r($order,true) : '') . "
+                " . (($limit != NULL AND $limit != -1) ? " LIMIT {$limit} " : '') . "
+                " . (($limit != NULL AND $limit != -1 AND $offset != NULL) ? " OFFSET {$offset} " : '') . "
+        ")->getResultArray();
+        
+        return $clients;
+    }
     public function client_objects($id = NULL, $searchTerm = '', $order = '', $limit = NULL, $offset = NULL){
         if($id != NULL AND $id > 0){
             $objects = $this->query("SELECT cobjects.*, DATE_FORMAT(ar.date_done, '%d.%m.%Y \u %H:%i') as date_done, IF(ar.report_number IS NULL, CONCAT('00',ar.id, '/', '" . date('Y') . "'), ar.report_number) as report_num

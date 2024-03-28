@@ -541,6 +541,16 @@ table.dataTable td:first-child {
     width: 60px !important;
     padding-right: 0 !important;
 }
+.red-dot-left::before {
+  content: "●";
+  position: absolute;
+  left: -12px;
+  top: -1px;
+  color: red;
+}
+.red-dot-left {
+  position: relative;
+}
 /* RESPONSIVE */
 @media(max-width: 767px){
     .popup-header p {

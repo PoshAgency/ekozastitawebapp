@@ -43,7 +43,10 @@
 	cursor: pointer;
 	user-select: none;
 }
-
+.selectr-container.disabled {
+	opacity: 0.3;
+	pointer-events: none;
+}
 </style>
 </head>
 
@@ -87,44 +90,39 @@
 				<div class="flex items-center pt-4 px-4 w-full">
 					<div class="w-full p-4 bg-white rounded-md shadow-md">
                         <div class="flex flex-wrap gap-4 items-center">
-                            <div class="w-44 ">  
-                                <select id="clients_list" class="form-input w-full rounded-md border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500 dark:hover:border-slate-700">
-                                    <option value="" selected>Izaberi klijenta</option>
-                                    <?php foreach($all_active_clients as $single){ ?>
-                                    <option value="<?php echo (isset($single['id']) AND $single['id'] != '') ? $single['id'] : ''; ?>"><?php echo (isset($single['name']) AND $single['name'] != '') ? $single['name'] : ''; ?></option>
-                                    <?php } ?>
-                                </select>
-                            </div>
+                            <?php if(session('user')['group_id'] == 5){ ?>
+                                <input type="hidden" id="clients_list" value="<?php echo session('user')['ref_id']; ?>">
+                            <?php }else{ ?>
+                                    <div class="w-44 ">
+                                    <select id="clients_list" class="form-input w-full rounded-md border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500 dark:hover:border-slate-700">
+                                        <option value="" selected>Izaberi klijenta</option>
+                                        <?php foreach($all_active_clients as $single){ ?>
+                                        <option value="<?php echo (isset($single['id']) AND $single['id'] != '') ? $single['id'] : ''; ?>"><?php echo (isset($single['name']) AND $single['name'] != '') ? $single['name'] : ''; ?></option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
+                            <?php } ?>
                             <div class="w-44 ">  
                                 <select id="objects_list" class="form-input w-full rounded-md border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500 dark:hover:border-slate-700">
                                     <option value="" selected>Izaberi objekat</option>
-                                    <option value="111">Objekti 1</option>
-                                    <option value="144">Objekti 2</option>
-                                    <option value="132">Objekti 3</option>
                                 </select>
                             </div>
                             <div style="position: relative;width: 190px;"> 
                                 <input id="date" name="date" class="datepicker_range_table flatpickr form-input w-full rounded-md border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700" type="text" placeholder="Izveštaj za period" readonly="readonly">
                                 <span class="clear_dates" style="display: none;">×</span>
                             </div>
-							<div class="">
-                                <label id="select-all" class="flex items-center">
-                                    <input id="all" name="all" type="checkbox" value="1" class="accent-primary-500"> 
-                                    <span for="all" class="ml-1 text-sm font-medium text-slate-600 dark:text-gray-300"> Svi objekti</span>
-                                </label>
-                            </div>
-                            <div class="">
-                                <label id="select-critical" class="flex items-center">
-                                    <input id="critical" name="critical" type="checkbox" value="1" class="accent-primary-500"> 
-                                    <span for="critical" class="ml-1 text-sm font-medium text-slate-600 dark:text-gray-300"> Kritični objekti</span>
-                                </label> 
-                            </div>
-                            <div class="ms-auto">
-                                <div class="relative">
-                                    <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                                        <i data-lucide="search" class="z-[1] w-5 h-5 stroke-slate-400"></i>
-                                    </div>
-                                    <input type="search" id="productSearch" class="form-input w-52 rounded-md border border-slate-600 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none placeholder:text-slate-400 placeholder:font-normal placeholder:text-sm placeholder:text-gray-500 dark:focus:border-primary-500 dark:hover:border-slate-700 pl-10 p-2.5 text-gray-500" placeholder="Filtriraj po nazivu">
+                            <div class="flex gap-4 items-center ms-auto">
+                                <div class="">
+                                    <label id="select-all" class="flex items-center">
+                                        <input id="all" name="all" type="checkbox" value="1" class="accent-primary-500"> 
+                                        <span for="all" class="ml-1 text-sm font-medium text-slate-600 dark:text-gray-300"> Svi objekti</span>
+                                    </label>
+                                </div>
+                                <div class="">
+                                    <label id="select-critical" class="flex items-center">
+                                        <input id="critical" name="critical" type="checkbox" value="1" class="accent-primary-500"> 
+                                        <span for="critical" class="ml-1 text-sm font-medium text-slate-600 dark:text-gray-300"> Kritični objekti</span>
+                                    </label> 
                                 </div>
                             </div>
                         </div>
@@ -229,7 +227,7 @@ flatpic = $(".datepicker_range_table").flatpickr({
     mode: "range",
     // minDate: "today",
     dateFormat: "d.m.Y.",
-    onClose: function(selectedDates, dateStr, instance) {
+    onChange: function(selectedDates, dateStr, instance) {
         console.log(selectedDates);
         // console.log(dateStr);
         if(selectedDates.length){
@@ -244,7 +242,7 @@ flatpic = $(".datepicker_range_table").flatpickr({
             var yyyy2 = selectedDates[1].getFullYear();
 
             var to = dd2 + '.' + mm2 + '.' + yyyy2;
-            dates = from + ' do ' + to;
+            dates = from + ' to ' + to;
             console.log(instance);
             tablee.ajax.reload();
             $('.datepicker_range_table').val(dates);
@@ -270,9 +268,15 @@ flatpic = $(".datepicker_range_table").flatpickr({
 var svg = '<?php echo svg(); ?>'
 var filterData = {};
 
+<?php if(session('user')['group_id'] == 1 OR session('user')['group_id'] == 2){ ?>
 clients_list = new Selectr('#clients_list');
+<?php }else{ ?>
+$(document).ready(function(){
+    get_objects(<?php echo session('user')['ref_id']; ?>);
+});
+<?php } ?>
 objects_list = new Selectr('#objects_list', {
-    placeholder: 'Select objects'
+    placeholder: 'Izaberi objekat'
 });
 
 $('#clients_list').on('change', function(){
@@ -296,12 +300,13 @@ function get_objects(xx){
             var new_data = [];
             if(data.success){
                 if(data.objects.length > 0){
+                    new_data[0] = {};
+                    new_data[0]['value'] = "";
+                    new_data[0]['text'] = "Izaberi objekat";
                     data.objects.forEach(function(el, i){
-                        console.log(el);
-                        console.log(i);
-                        new_data[i] = {};
-                        new_data[i]['value'] = el.id;
-                        new_data[i]['text'] = el.name;
+                        new_data[i+1] = {};
+                        new_data[i+1]['value'] = el.id;
+                        new_data[i+1]['text'] = el.name;
                     })
                 }else{
                     new_data[0] = {};
@@ -330,13 +335,14 @@ var tablee = $('#reports_table').DataTable({
         url: "<?= base_url() ?>/reports/datatable",
         type: "POST",
         data: function(params) {
-            $('#clients_list').val()      != '' ? (filterData['client_id'] = $('#clients_list').val()) : '';
-            $('#objects_list').val()      != '' ? (filterData['object_id'] = $('#objects_list').val()) : '';
-            $('#all').is(':checked')      != '' ? (filterData['all_objects'] = 1) : '';
-            $('#critical').is(':checked') != '' ? (filterData['critical'] = 1) : '';
+            filterData = {};
+            $('#clients_list').val() != ''          ? filterData['client_id'] = $('#clients_list').val()       : filterData['client_id'] = '';
+            $('#objects_list').val() != ''          ? filterData['object_id'] = $('#objects_list').val()       : filterData['object_id'] = '';
+            $('#all').is(':checked')                ? filterData['all_objects'] = 1                            : filterData['all_objects'] = '';
+            $('#critical').is(':checked')           ? filterData['critical'] = 1                               : filterData['critical'] = '';
+            $('.datepicker_range_table').val != ''  ? filterData['dates'] = $('.datepicker_range_table').val() : filterData['dates'] = '';
             var tableData = $.extend({}, params, {
-                filter: filterData,
-                dates: dates
+                filter: filterData
             });
             return tableData;
         },
@@ -354,7 +360,7 @@ var tablee = $('#reports_table').DataTable({
         {data: 'report_num', render: function(data,type,row){
             return '<a href="reports/edit/' + row.id + '" class="flex items-center">'+
                         '<div class="self-center">'+
-                            '<h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">' + (row.report_num ?? '') + '</h5>'+
+                            '<h5 class="text-sm font-semibold dark:text-gray-400 text-slate-700' + (row.critical > 0 ? ' red-dot-left' : '') + '">' + (row.report_num ?? '') + '</h5>'+
                         '</div>'+
                     '</a>';
             }
@@ -442,7 +448,15 @@ $(document).on('click', '.clear_dates', function(){
     $(this).hide();
 });
 
-$(document).on('change', '#clients_list,#objects_list,#all,#critical', function(){
+$(document).on('change', '#clients_list,#objects_list,#critical', function(){
+    tablee.ajax.reload();
+});
+$(document).on('change', '#all', function(){
+    if($(this).is(':checked')){
+        $('#objects_list').parent().addClass('disabled');
+    }else{
+        $('#objects_list').parent().removeClass('disabled');
+    }
     tablee.ajax.reload();
 });
 

@@ -61,6 +61,68 @@ class Clients extends BaseController
 		);
 		echo json_encode($response, JSON_PRETTY_PRINT);
     }
+    public function permanent_datatable()
+    {
+		$post = $this->request->getPost();
+        
+		$draw = $post['draw'];
+		$row = $post['start'];
+		
+		$rowperpage = $post['length']; // Rows display per page
+		$columnIndex = $post['order'][0]['column']; // Column index
+		$columnName = $post['columns'][$columnIndex]['data']; // Column name
+		$columnSortOrder = $post['order'][0]['dir']; // asc or desc
+		$searchValue = $post['search']['value']; // Search value
+
+        $clientsModel = new ClientsModel();
+		$data = $clientsModel->all_permanent_clients();        
+        
+		$totalRecords = is_array($data) ? count($data) : 0;
+
+        $data = $clientsModel->all_permanent_clients($searchValue);
+		$totalRecordwithFilter = is_array($data) ? count($data) : 0;
+
+        $data_final = $clientsModel->all_permanent_clients($searchValue, $columnName." ".$columnSortOrder, $rowperpage, $row );
+		$response = array(
+		  //"mrnj" => $sql,
+		  "draw" => intval($draw),
+		  "iTotalRecords" => $totalRecords,
+		  "iTotalDisplayRecords" => $totalRecordwithFilter,
+		  "aaData" => $data_final
+		);
+		echo json_encode($response, JSON_PRETTY_PRINT);
+    }
+    public function onetime_datatable()
+    {
+		$post = $this->request->getPost();
+        
+		$draw = $post['draw'];
+		$row = $post['start'];
+		
+		$rowperpage = $post['length']; // Rows display per page
+		$columnIndex = $post['order'][0]['column']; // Column index
+		$columnName = $post['columns'][$columnIndex]['data']; // Column name
+		$columnSortOrder = $post['order'][0]['dir']; // asc or desc
+		$searchValue = $post['search']['value']; // Search value
+
+        $clientsModel = new ClientsModel();
+		$data = $clientsModel->all_onetime_clients();        
+        
+		$totalRecords = is_array($data) ? count($data) : 0;
+
+        $data = $clientsModel->all_onetime_clients($searchValue);
+		$totalRecordwithFilter = is_array($data) ? count($data) : 0;
+
+        $data_final = $clientsModel->all_onetime_clients($searchValue, $columnName." ".$columnSortOrder, $rowperpage, $row );
+		$response = array(
+		  //"mrnj" => $sql,
+		  "draw" => intval($draw),
+		  "iTotalRecords" => $totalRecords,
+		  "iTotalDisplayRecords" => $totalRecordwithFilter,
+		  "aaData" => $data_final
+		);
+		echo json_encode($response, JSON_PRETTY_PRINT);
+    }
     public function get_objects($id = 0)
     {         
         $clientsModel = new ClientsModel();

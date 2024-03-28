@@ -8,8 +8,7 @@
             </script>
             Ekozaštita
             <span class="float-right hidden text-slate-600 dark:text-slate-400 md:inline-block">
-                © 2024 Ekozaštita. Designed by
-                <a target="_blank" href="https://theposh.agency">The Posh Agency</a>
+                Designed by <a target="_blank" href="https://theposh.agency">The Posh Agency</a>
             </span>
         </footer>
     </div>

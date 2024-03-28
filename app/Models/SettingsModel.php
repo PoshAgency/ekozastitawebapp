@@ -5,7 +5,13 @@ use CodeIgniter\Model;
 class SettingsModel extends Model
 {
     protected $table = 'settings';
-	protected $allowedFields = ['header_js', 
+	protected $allowedFields = [
+                                'site_name',
+                                'main_name', 
+                                'main_email', 
+                                'main_phone', 
+                                'logo', 
+                                'header_js', 
                                 'footer_js', 
                                 'facebook', 
                                 'instagram', 
@@ -13,32 +19,7 @@ class SettingsModel extends Model
                                 'twitter', 
                                 'youtube', 
                                 'google_analytics', 
-                                'logo', 
-                                'main_name', 
-                                'main_email', 
-                                'main_phone', 
                                 'footer_text', 
-                                'cookie_name', 
-                                'popup_image', 
-                                'popup_title', 
-                                'popup_description', 
-                                'popup_button_label', 
-                                'popup_link', 
-                                'popup_button_label_logged', 
-                                'popup_link_logged', 
-                                'show_popup', 
-                                'newDateOfModification', 
-                                'aircraftLightPrice', 
-                                'fromDateValue', 
-                                'toDateValue', 
-                                'postedFuelPriceValue', 
-                                'lightValue', 
-                                'midValue', 
-                                'superMidValue', 
-                                'heavyValue', 
-                                'revenueChartData', 
-                                'revenueChartCategories', 
-                                'site_name'
                               ];
     protected $returnType     = 'array';
     // protected $protectFields = false; // to disable allowed fields

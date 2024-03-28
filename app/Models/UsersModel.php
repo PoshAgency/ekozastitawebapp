@@ -5,7 +5,7 @@ use CodeIgniter\Model;
 class UsersModel extends Model
 {
     protected $table = 'users';
-	protected $allowedFields = ["lastname","email","firstname","username","password","status","usertype","group_id","ref_id"];
+	protected $allowedFields = ["lastname","email","firstname","username","password","status","usertype","group_id","ref_id","image"];
 	protected $returnType     = 'array';
 
     protected $primaryKey = 'id';
@@ -74,12 +74,37 @@ class UsersModel extends Model
 			$response['group_id'] = $users[0]['group_id'];
             $role = $this->query('SELECT name FROM groups WHERE id = ' . $users[0]['group_id'])->getRowArray();
             $response['user']['role'] = $role['name'];
+            if($response['group_id'] == 5){
+                $image = $this->query('SELECT image FROM clients WHERE id = ' . $users[0]['ref_id'])->getRowArray();
+                $response['user']['image'] = $image['image'];
+            }
 			$response['success'] = TRUE;
 		}else{
 			$response['error'] = 'Email ili lozinka ne postoji u bazi.';
 		}
 		return $response;
 	}
+
+    public function all_users($searchTerm = '', $order = '', $limit = NULL, $offset = NULL){
+
+        $objects = $this->query("SELECT users.*, CONCAT(users.firstname, ' ' , users.lastname) as full_name, groups.name as type
+                FROM users
+                LEFT JOIN groups ON groups.id = users.group_id
+                WHERE deleted_at IS NULL
+                AND 
+                (
+                    firstname LIKE '%{$searchTerm}%'
+                    OR lastname LIKE '%{$searchTerm}%' 
+                    OR email LIKE '%{$searchTerm}%' 
+                    OR username LIKE '%{$searchTerm}%'
+                )
+                " . ($order != NULL ? " ORDER BY ". print_r($order,true) : '') . "
+                " . (($limit != NULL AND $limit != -1) ? " LIMIT {$limit} " : '') . "
+                " . (($limit != NULL AND $limit != -1 AND $offset != NULL) ? " OFFSET {$offset} " : '') . "
+        ")->getResultArray();
+        
+        return $objects;
+    }
 
 	protected function prepare_data(array $data)
 	{

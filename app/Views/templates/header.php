@@ -131,9 +131,13 @@
 			</div>
 			<div class="me-2 dropdown relative">
 				<button type="button" class="dropdown-toggle flex items-center rounded-full text-sm focus:bg-none focus:ring-0 dark:focus:ring-0 md:me-0" id="user-profile" aria-expanded="false" data-fc-autoclose="both" data-fc-type="dropdown">
-					<img class="h-8 w-8 rounded-full" src="assets/images/users/avatar-1.png" alt="user photo" />
+                    <?php if(session('user') != NULL AND session('user')['image']){ ?>
+					<img class="h-8 w-8" src="<?php echo session('user')['image'] ?>" alt="user photo" style="object-fit: cover" />
+                    <?php }else{ ?>
+                        <?php echo '<div class="no-img-icon me-2" style="width: 32px;height: 32px;min-width: 32px;min-height: 32px;background: #f0f0f0;display: flex;align-items: center;justify-content:center;border-radius: 3px;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="users" class="lucide lucide-users w-5 h-5 text-center text-slate-800" style="color: #777 !important;"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" ></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>'; ?>
+                    <?php } ?>
 					<span class="ltr:ms-2 rtl:ms-0 rtl:me-2 hidden text-left xl:block">
-						<span class="block font-medium text-slate-600 dark:text-gray-300">
+						<span class="block font-medium text-slate-900 dark:text-gray-300">
 							<?php echo session('user') != NULL ? session('user')['firstname'] : ''; ?> <?php echo session('user') != NULL ? session('user')['lastname'] : ''; ?>
 						</span>
 						<span class="-mt-0.5 block text-xs text-slate-500 dark:text-gray-400">
@@ -145,7 +149,7 @@
 				<div class="left-auto right-0 z-50 my-1 hidden list-none divide-y divide-gray-100 rounded border border-slate-700/10 text-base shadow dark:divide-gray-600 bg-white dark:bg-slate-800 w-40" id="navUserdata">
 					<ul class="py-1" aria-labelledby="navUserdata">
 						<li>
-							<a href="users/<?php echo session('user') != NULL ? session('user_id') : ''; ?>" class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-gray-900/20 dark:hover:text-white">
+							<a href="users/edit/<?php echo session('user') != NULL ? session('user')['id'] : ''; ?>" class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-gray-900/20 dark:hover:text-white">
 								<span data-lucide="user" class="w-4 h-4 inline-block text-slate-800 dark:text-slate-400 me-2"></span>
 								Profil
 							</a>

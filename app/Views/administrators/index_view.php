@@ -87,6 +87,9 @@
                                                                         Ime i prezime
                                                                     </th>
                                                                     <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
+                                                                        Username
+                                                                    </th>
+                                                                    <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
                                                                         Email
                                                                     </th>
                                                                     <th scope="col" class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
@@ -97,288 +100,7 @@
                                                                     </th>
                                                                 </tr>
                                                             </thead>
-                                                            <tbody>
-                                                                <!-- 1 -->
-                                                                <tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-                                                                    <td class="w-4 p-4">
-                                                                        <label class="custom-label">
-                                                                            <div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-                                                                            <input type="checkbox" class="hidden" >
-                                                                            <i class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-                                                                            </div>
-                                                                        </label>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-                                                                        <a href="administrators/edit" class="flex items-center">
-                                                                            <div class="self-center">                                                                        
-                                                                                <h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">Borko Ristić</h5>
-                                                                            </div>
-                                                                        </a>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                        <a href="mailto:exemple@gmail.com">exemple@gmail.com</a>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                        <span class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">super admin</span>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-                                                                        <a class="mr-3" href="administrators/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
-                                                                        <a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
-                                                                    </td>
-                                                                </tr>
-                                                                <!-- 2 -->
-                                                                <tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-                                                                    <td class="w-4 p-4">
-                                                                        <label class="custom-label">
-                                                                            <div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-                                                                            <input type="checkbox" class="hidden" >
-                                                                            <i class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-                                                                            </div>
-                                                                        </label>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-                                                                        <a href="administrators/edit" class="flex items-center">
-                                                                            <div class="self-center">                                                                        
-                                                                                <h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">Dragan Dragutinović</h5>
-                                                                            </div>
-                                                                        </a>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                        <a href="mailto:exemple@gmail.com">exemple@gmail.com</a>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                        <span class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">admin</span>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-                                                                        <a class="mr-3" href="administrators/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
-                                                                        <a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
-                                                                    </td>
-                                                                </tr>
-                                                                <!-- 3 -->
-                                                                <tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-                                                                    <td class="w-4 p-4">
-                                                                        <label class="custom-label">
-                                                                            <div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-                                                                            <input type="checkbox" class="hidden" >
-                                                                            <i class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-                                                                            </div>
-                                                                        </label>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-                                                                        <a href="administrators/edit" class="flex items-center">
-                                                                            <div class="self-center">                                                                        
-                                                                                <h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">Luna Winston</h5>
-                                                                            </div>
-                                                                        </a>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                        <a href="mailto:exemple@gmail.com">exemple@gmail.com</a>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                        <span class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">operater</span>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-                                                                        <a class="mr-3" href="administrators/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
-                                                                        <a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
-                                                                    </td>
-                                                                </tr>
-                                                                <!-- 4 -->
-                                                                <tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-                                                                    <td class="w-4 p-4">
-                                                                        <label class="custom-label">
-                                                                            <div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-                                                                            <input type="checkbox" class="hidden" >
-                                                                            <i class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-                                                                            </div>
-                                                                        </label>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-                                                                        <a href="administrators/edit" class="flex items-center">
-                                                                            <div class="self-center">                                                                        
-                                                                                <h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">Alejandro Ruiz</h5>
-                                                                            </div>
-                                                                        </a>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                        <a href="mailto:exemple@gmail.com">exemple@gmail.com</a>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                        <span class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">operater</span>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-                                                                        <a class="mr-3" href="administrators/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
-                                                                        <a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
-                                                                    </td>
-                                                                </tr>
-                                                                <!--5-->
-                                                                <tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-                                                                    <td class="w-4 p-4">
-                                                                        <label class="custom-label">
-                                                                            <div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-                                                                            <input type="checkbox" class="hidden" >
-                                                                            <i class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-                                                                            </div>
-                                                                        </label>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-                                                                        <a href="administrators/edit" class="flex items-center">
-                                                                            <div class="self-center">                                                                        
-                                                                                <h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">Jesus Oates</h5>
-                                                                            </div>
-                                                                        </a>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                        <a href="mailto:exemple@gmail.com">exemple@gmail.com</a>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                        <span class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">operater</span>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-                                                                        <a class="mr-3" href="administrators/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
-                                                                        <a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
-                                                                    </td>
-                                                                </tr>
-                                                                <!--6-->
-                                                                <tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-                                                                    <td class="w-4 p-4">
-                                                                        <label class="custom-label">
-                                                                            <div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-                                                                            <input type="checkbox" class="hidden" >
-                                                                            <i class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-                                                                            </div>
-                                                                        </label>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-                                                                        <a href="administrators/edit" class="flex items-center">
-                                                                            <div class="self-center">                                                                        
-                                                                                <h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">Glenn Rogers</h5>
-                                                                            </div>
-                                                                        </a>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                        <a href="mailto:exemple@gmail.com">exemple@gmail.com</a>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                        <span class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">operater</span>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-                                                                        <a class="mr-3" href="administrators/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
-                                                                        <a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
-                                                                    </td>
-                                                                </tr>
-                                                                <!--7-->
-                                                                <tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-                                                                    <td class="w-4 p-4">
-                                                                        <label class="custom-label">
-                                                                            <div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-                                                                            <input type="checkbox" class="hidden" >
-                                                                            <i class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-                                                                            </div>
-                                                                        </label>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-                                                                        <a href="administrators/edit" class="flex items-center">
-                                                                            <div class="self-center">                                                                        
-                                                                                <h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">April Boyce</h5>
-                                                                            </div>
-                                                                        </a>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                        <a href="mailto:exemple@gmail.com">exemple@gmail.com</a>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                        <span class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">operater</span>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-                                                                        <a class="mr-3" href="administrators/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
-                                                                        <a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
-                                                                    </td>
-                                                                </tr>
-                                                                <!--8-->
-                                                                <tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-                                                                    <td class="w-4 p-4">
-                                                                        <label class="custom-label">
-                                                                            <div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-                                                                            <input type="checkbox" class="hidden" >
-                                                                            <i class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-                                                                            </div>
-                                                                        </label>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-                                                                        <a href="administrators/edit" class="flex items-center">
-                                                                            <div class="self-center">                                                                        
-                                                                                <h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">Maria Johnson</h5>
-                                                                            </div>
-                                                                        </a>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                        <a href="mailto:exemple@gmail.com">exemple@gmail.com</a>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                        <span class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">operater</span>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-                                                                        <a class="mr-3" href="administrators/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
-                                                                        <a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
-                                                                    </td>
-                                                                </tr>
-                                                                <!--9-->
-                                                                <tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-                                                                    <td class="w-4 p-4">
-                                                                        <label class="custom-label">
-                                                                            <div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-                                                                            <input type="checkbox" class="hidden" >
-                                                                            <i class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-                                                                            </div>
-                                                                        </label>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-                                                                        <a href="administrators/edit" class="flex items-center">
-                                                                            <div class="self-center">                                                                        
-                                                                                <h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">Anna Ruiz</h5>
-                                                                            </div>
-                                                                        </a>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                        <a href="mailto:exemple@gmail.com">exemple@gmail.com</a>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                        <span class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">operater</span>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-                                                                        <a class="mr-3" href="administrators/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
-                                                                        <a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
-                                                                    </td>
-                                                                </tr>
-                                                                <!--10-->
-                                                                <tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-                                                                    <td class="w-4 p-4">
-                                                                        <label class="custom-label">
-                                                                            <div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-                                                                            <input type="checkbox" class="hidden" >
-                                                                            <i class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-                                                                            </div>
-                                                                        </label>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-                                                                        <a href="administrators/edit" class="flex items-center">
-                                                                            <div class="self-center">                                                                        
-                                                                                <h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">Lisa Henriquez</h5>
-                                                                            </div>
-                                                                        </a>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                        <a href="mailto:exemple@gmail.com">exemple@gmail.com</a>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                        <span class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">operater</span>
-                                                                    </td>
-                                                                    <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-                                                                        <a class="mr-3" href="administrators/edit"><i class="icofont-ui-edit text-xxl text-gray-500 dark:text-gray-400"></i></a>
-                                                                        <a class="mr-3" href="javascript:;"><i class="icofont-ui-delete text-xxl text-red-500 dark:text-red-400" data-fc-type="modal" data-fc-target="smallmodal"></i></a>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
+                                                            <tbody></tbody>
                                                         </table>
                                                     </div>
                                                 </div>
@@ -397,26 +119,6 @@
 	</div>
 </div>
 
-<!-- Small Modal -->
-<div class="modal animate-ModalSlide hidden" id="smallmodal">
-    <div class="relative w-auto pointer-events-none  sm:my-7 sm:mx-auto z-[99] sm:max-w-xs">
-        <div class="relative flex flex-col w-full pointer-events-auto bg-white dark:bg-slate-800 bg-clip-padding rounded">
-            <div class="flex shrink-0 items-center justify-between py-2 px-4 rounded-t border-b border-solid dark:border-gray-700 bg-slate-800">
-                <h6 class="mb-0 leading-4 text-base font-semibold text-white mt-0" id="staticBackdropLabel1">Brisanje</h6>
-                <button type="button" class="box-content w-4 h-4 p-1 bg-slate-700/60 rounded-full text-white leading-4 text-xl close" aria-label="Close"  data-fc-dismiss>&times;</button>
-            </div>
-            <div class="relative flex-auto p-4 text-slate-600 dark:text-gray-300 leading-relaxed">
-                <p class="font-semibold text-base">Da li ste sigurni da želite da obrišete?</p>
-                <!-- <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, pariatur.</p> -->
-            </div>
-            <div class="flex flex-wrap shrink-0 justify-end p-3 rounded-b border-t border-dashed dark:border-gray-700">
-                <button class="inline-block focus:outline-none text-red-500 hover:bg-red-500 hover:text-white bg-transparent border border-gray-200 dark:bg-transparent dark:text-red-500 dark:hover:text-white dark:border-gray-700 dark:hover:bg-red-500 text-sm font-medium py-1 px-3 rounded mr-1 close" data-fc-dismiss>Da</button>
-                <button class="inline-block focus:outline-none text-primary-500 hover:bg-primary-500 hover:text-white bg-transparent border border-gray-200 dark:bg-transparent dark:text-primary-500 dark:hover:text-white dark:border-gray-700 dark:hover:bg-primary-500 text-sm font-medium py-1 px-3 rounded" data-fc-dismiss>Ne</button>
-            </div>
-        </div>
-    </div>
-</div>
-
 <?php echo view('templates/popups'); ?>	
 
 <!-- <div class="menu-overlay"></div> -->
@@ -426,8 +128,6 @@
 <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
 <script src="assets/libs/@frostui/tailwindcss/frostui.js"></script>
 
-<script src="assets/libs/prismjs/prism.js"></script> 
-<!-- <script src="assets/libs/simple-datatables/umd/simple-datatables.js"></script> -->
 <!-- datatable -->
 <script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>
 <!-- export datatable -->
@@ -438,7 +138,112 @@
 <!-- fixedcolumns datatable -->
 <script src="https://cdn.datatables.net/fixedcolumns/3.3.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="assets/js/app.js"></script>
+<script>
+// var svg = '<?php // echo svg(); ?>'
 
+var tablee = $('#admnistrators_table').DataTable({
+    processing: true,
+    serverSide: true,
+    serverMethod: 'post',
+    ajax: {
+        url: "<?= base_url() ?>/administrators/datatable",
+    },
+    rowCallback: function( row, data ) {
+        $(row).addClass('UsersModel_row').attr('data-id', data.id);
+    },
+    retrieve: true,
+    cache: true,
+    'columns': [
+        {data: 'id', render: function(data,type,row){
+                return '<label class="custom-label"><div class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]"><input type="checkbox" class="hidden" data-remove onchange="data_remove($(this))" data-id="' + row.id + '" ><i class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i></div></label>';
+            }
+        }, 
+        {data: 'full_name', render: function(data,type,row){
+            return '<a href="administrators/edit/' + row.id + '" class="flex items-center">'+
+                        // (row.image != '' ? '<img src="' + row.image + '" alt="" class="me-2 h-8 inline-block" style="width: 32px;height: 32px !important;object-fit: cover;">'  : svg) +
+                        '<div class="self-center">'+
+                            '<h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">' + (row.full_name ?? '') + '</h5>'+
+                        '</div>'+
+                    '</a>';
+            }
+        },
+        {data: 'username'},
+        {data: 'email', render: function(data,type,row){
+                return (row.email != null && row.email != '') ? '<a href="mailto:' + row.email + '"><span class="py-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">' + row.email + '</span></a>' : '';
+            }
+        },
+        {data: 'type'},
+        {data: null, render: function(data,type,row){
+                if(row.id != 0)
+                    return '<div class="flex gap-5 justify-center">'+
+                                '<a href="operators/edit/' + row.id + '"><i class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"></i></a>'+
+                                '<a href="javascript:;"><i class="icofont-ui-delete text-lg text-red-500 dark:text-red-400 delete_record" data-id="' + row.id + '" data-model="UsersModel" data-popup="delete-popup" ></i></a>'+
+                            '</div>';
+                else
+                    return "";
+            }
+        },
+    ],
+    language: {
+        lengthMenu: '<select>' +
+                '<option value="10">Per Page: 10</option>' +
+                '<option value="20">Per Page: 20</option>' +
+                '<option value="30">Per Page: 30</option>' +
+                '<option value="40">Per Page: 40</option>' +
+                '<option value="50">Per Page: 50</option>' +
+                '<option value="-1">All</option>' +
+                '</select>',
 
+        search: "",
+        searchPlaceholder: "Pretraži...",
+        info: "_TOTAL_ Operativaca",
+        infoFiltered: "",
+        processing: "<div class='loading-wrap'><span class='loader'></span>&emsp;Loading ...</div>",
+        infoEmpty: "0 Rezultata",
+        paginate: {
+            previous: " < ",
+            next: " > ",
+        }
+    },
+    // order: [[1, 'desc']],
+    columnDefs: [
+        {width: '30px', targets: 0},
+        {width: '50px', targets: -1},
+        {width: '200px', targets: 1},
+        {className: 'p-3 text-xs font-medium text-left text-gray-700 dark:text-gray-400', targets: [1,2,3,4] },
+        {className: 'text-end', targets: [0] },
+        {className: 'text-center', targets: [-1] },
+        {orderable: false, targets: [0,-1] } // last column (Actions) not orderable
+    ],
+    dom: '<"table-filters"iB<"btn-holder"<"date_range">fr>>t<"table-footer"<"bottom-footer-container"pl>>',
+    buttons: [
+        // {
+        //     extend: 'excel',
+        //     text: 'Export',
+        //     attr: {
+        //         class: 'flex items-center focus:outline-none bg-brand-500 text-white hover:bg-brand-600 hover:text-white  text-md font-medium py-2 px-4 rounded',
+        //         style: 'max-height: 32px;'
+        //     },
+        //     title: "<?php // echo $_ENV['company_name']; ?>",
+        //     messageBottom: null,
+        //     exportOptions: {
+        //         columns: ':visible'
+        //     }
+        // },
+        {
+            text: 'Obriši selektovano',
+            attr: {
+                class: 'delete_multiple focus:outline-none bg-red-500 text-white hover:bg-brand-600 hover:text-white  text-md font-medium py-2 px-4 rounded ml-5',
+                style: 'max-height: 32px;display: none;line-height: 13px;',
+                "data-popup": 'delete-popup',
+                "data-model": 'UsersModel',
+            },
+            // action: function ( e, dt, node, config ) {
+            //     dt.ajax.reload();
+            // }
+        }
+    ]
+});
+</script>
 </body>
 </html>

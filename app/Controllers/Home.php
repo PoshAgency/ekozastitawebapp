@@ -12,6 +12,10 @@ class Home extends BaseController
 
     public function index()
     {
+        if ( !session()->has('isLogged')){
+            return redirect()->to('login?return_url=' . current_url());
+        }
+
         $data = [];
 		echo view('home_view', $data);
     }
