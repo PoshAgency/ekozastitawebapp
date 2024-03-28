@@ -65,10 +65,10 @@ $routes->group('objecttypes', ['filter' => 'adminAuthFilter:1,2,5'], function ($
     $routes->add('(:any)', 'ObjectTypes::$1');
     $routes->add('(:any)/(:any)', 'ObjectTypes::$1/$2');
 });
-$routes->group('preparations', ['filter' => 'adminAuthFilter:1,2,5'], function ($routes) {
-    $routes->add('', 'Preparations::index');
-    $routes->add('(:any)', 'Preparations::$1');
-    $routes->add('(:any)/(:any)', 'Preparations::$1/$2');
+$routes->group('products', ['filter' => 'adminAuthFilter:1,2,5'], function ($routes) {
+    $routes->add('', 'Products::index');
+    $routes->add('(:any)', 'Products::$1');
+    $routes->add('(:any)/(:any)', 'Products::$1/$2');
 });
 $routes->group('reports', ['filter' => 'adminAuthFilter:1,2,5'], function ($routes) {
     $routes->add('', 'Reports::index');

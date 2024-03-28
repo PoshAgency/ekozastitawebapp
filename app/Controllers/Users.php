@@ -12,7 +12,6 @@ use App\Models\UsersModel;
 class Users extends BaseController
 {
     use ResponseTrait;
-    protected $helpers = ['form'];
 
     public function index()
     {         
@@ -93,6 +92,7 @@ class Users extends BaseController
             unset($rules['password']);
             unset($data['password']);
             $rules['id'] = 'required';
+            $image_exists = $data['image_exists'];
         }else{
             unset($data['id']);
             unset($rules['id']);

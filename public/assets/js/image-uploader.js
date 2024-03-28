@@ -6,7 +6,7 @@
         let defaults = {
             preloaded: [],
             imagesInputName: 'images',
-            preloadedInputName: 'preloaded',
+            preloadedInputName: 'images_uploaded',
             label: 'Drag & Drop files here or click to browse',
             extensions: ['.jpg', '.jpeg', '.png', '.gif'],
             mimes: ['image/jpeg', 'image/png', 'image/gif', 'image/svg+xml'],

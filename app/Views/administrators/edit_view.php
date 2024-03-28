@@ -50,23 +50,23 @@
 		</div>
 
 		<div class="main-content-container xl:w-full  min-h-[calc(100vh-138px)] relative pb-14 mt-5 px-4"> 
-			<div class="main-content-wrapper grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 justify-between">
+			<form action="administrators/save" id="user-form" class="user-form  main-content-wrapper grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 justify-between">
 				<div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-5 xl:col-span-5">
 					<div class="w-full relative mb-4">  
-						<form action="administrators/save" id="user-form" class="user-form flex-auto p-0 md:p-4 bg-white rounded-md shadow-md">
-							<div class="mb-2">
+						<div class="flex-auto p-0 md:p-4 bg-white rounded-md shadow-md">
+							<div class="mb-3">
 								<label for="firstname" class="font-medium text-sm text-slate-600 dark:text-slate-400">Ime</label>
 								<input type="text" id="firstname" name="firstname" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700" value="<?php echo (isset($current['firstname']) AND $current['firstname'] != '') ? $current['firstname'] : ''; ?>">
 							</div>
-							<div class="mb-2">
+							<div class="mb-3">
 								<label for="lastname" class="font-medium text-sm text-slate-600 dark:text-slate-400">Prezime</label>
 								<input type="text" id="lastname" name="lastname" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700" value="<?php echo (isset($current['lastname']) AND $current['lastname'] != '') ? $current['lastname'] : ''; ?>">
 							</div>
-							<div class="mb-2">
+							<div class="mb-3">
 								<label for="email" class="font-medium text-sm text-slate-600 dark:text-slate-400">Email</label>
 								<input type="email" id="email" autocomplete="new-password" name="email" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700" value="<?php echo (isset($current['email']) AND $current['email'] != '') ? $current['email'] : ''; ?>">
 							</div>
-							<div class="mb-2">
+							<div class="mb-3">
 								<label for="group_id" class="font-medium text-sm text-slate-600 dark:text-slate-400">Tip naloga</label>
 								<select id="group_id" name="group_id" class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700">
 									<option selected="true" disabled="disabled">Izaberi...</option>
@@ -92,7 +92,7 @@
                                 <input type="hidden" name="id" value="<?php echo (isset($current['id']) AND $current['id'] != '') ? $current['id'] : ''; ?>">
 								<button class="px-2 py-2 lg:px-4 bg-brand  text-white text-sm  rounded hover:bg-brand-600 border border-brand-500">Snimi</button>
 							</div>							
-						</form>
+						</div>
 					</div>                             
 				</div>	
 				<div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-3 xl:col-span-3">
@@ -122,7 +122,7 @@
 						</div>
 					</div>
 				</div>			                     
-			</div>
+            </form>
 
 			<!-- footer -->
 			<?php echo view('templates/footer'); ?>

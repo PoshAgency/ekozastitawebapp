@@ -9,6 +9,7 @@ use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
 use App\Models\UsersModel;
+use App\Models\SettingsModel;
 
 /**
  * Class BaseController
@@ -36,8 +37,8 @@ abstract class BaseController extends Controller
      *
      * @var array
      */
-    protected $helpers = ['front','text'];
-
+    protected $helpers = ['front','text','form'];
+    protected $settings;
     /**
      * Be sure to declare properties for any property fetch you initialized.
      * The creation of dynamic property is deprecated in PHP 8.2.
@@ -53,7 +54,9 @@ abstract class BaseController extends Controller
         parent::initController($request, $response, $logger);
 
         // Preload any models, libraries, etc, here.        
+        $SettingsModel = new SettingsModel();
 
+        $this->settings = $SettingsModel->where(['id' => 1])->first();
         // E.g.: $this->session = \Config\Services::session();
     }
     public function ajax_delete($model = '', $record_id = 0)

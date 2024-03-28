@@ -726,6 +726,67 @@ $('.user-form').on('submit', function (e) {
       }
     });
 });
+$('.product-form').on('submit', function (e) {
+    e.preventDefault();
+    var form = $(this);
+    console.log(form.attr('id') + ' submit');
+    var url = form.attr('action');
+	var formData = new FormData(this);
+    var button = form.find('button[type="submit"]');
+    var prev_ID = $('#id').val();
+
+    button.addClass('btn--loading');
+    $('p.error_msg').remove();
+    $('input').removeClass('error');
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: formData,
+        processData: false,
+        contentType: false,
+        dataType: "json",
+        beforeSend: function(){  },
+        success: function (data) {
+            console.log(data);
+            if (data.success) {
+                console.log('SUCCESS');
+                app_msg('Snimljeno','success',1000);
+                if (data.inserted_id) {
+                    form.find('#id').val(data.inserted_id);
+                    if(prev_ID == ''){
+                        document.title = 'Snimljeno | Ekozaštita';
+                        window.history.pushState({"html": '',"pageTitle":"Snimljeno | Ekozaštita"},"", window.location.href + "/" + data.inserted_id);
+                    }
+                }
+                setTimeout(function(){ 
+                    button.removeClass('btn--loading');
+                },1000);
+            } else {
+                console.log('NO SUCCESS');
+                if(data.json){
+                    $.each(data.json, function(key, val){
+                        if(key != 'image'){
+                            form.find('[id=' + key + "]").addClass('error').next('p.error_msg').remove();
+                            $('<p class="error_msg">' + val + '</p>').insertAfter(form.find('#user_' + key));
+                        }else{
+                            app_msg(val,'danger',3500);
+                        }
+                    });
+                }
+                $("#form-login .submit-btn").prop('disabled', false);
+                button.removeClass('btn--loading');
+            }
+        },
+        error: function (result) {
+            console.log('ERROR WITH PHP');
+            console.log(result);
+            button.removeClass('btn--loading');
+            app_msg('Problem sa serverom. Pokušajte ponovo ili kontaktirajte administratora.','error');
+            $("#form-login .submit-btn").prop('disabled', false);
+      }
+    });
+});
 $('.clients-form').on('submit', function (e) {
     e.preventDefault();
     var form = $(this);
